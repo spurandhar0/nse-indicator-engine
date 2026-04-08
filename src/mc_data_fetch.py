@@ -179,7 +179,7 @@ def run_trend_fetch(trend_label, filename):
     print(f'\n{getISTtime()} | Fetching {trend_label} data...')
     start   = time.time()
     results = []
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor(max_workers=1) as executor:
         futures = [executor.submit(getMCProdata, idx, trend_label.lower())
                    for idx in list_index]
         for f in futures:
@@ -311,7 +311,7 @@ def run_technical_picks():
             limit  = 12
             starts = list(range(0, total + limit, limit))
             all_data = []
-            with ThreadPoolExecutor(max_workers=8) as executor:
+            with ThreadPoolExecutor(max_workers=1) as executor:
                 futures = {executor.submit(_fetch_tech_picks_batch, url, reco_type, s, limit): s
                            for s in starts}
                 for future in as_completed(futures):
@@ -353,7 +353,7 @@ def run_stock_ideas():
         return
     all_data.extend(first)
     args_list = [(url, s, limit) for s in range(limit, 12000, limit)]
-    with ThreadPoolExecutor(max_workers=20) as executor:
+    with ThreadPoolExecutor(max_workers=1) as executor:
         futures = {executor.submit(_fetch_stock_ideas_batch, *args): args[1]
                    for args in args_list}
         for future in as_completed(futures):
@@ -442,10 +442,22 @@ def _extract_nscode(scannerDetails_raw):
 
 def _fetch_scanner_id(scan_id, cat_id, subcat_id=None):
     url    = baseurl + '/v1/techscanner/scanner-detail'
-    params = {'catId': str(cat_id), 'scanId': scan_id}
+    
+    # 1. Added deviceType and ex parameters
+    params = {
+        'catId': str(cat_id), 
+        'scanId': scan_id,
+        'deviceType': 'W',
+        'ex': 'N'
+    }
+    
     if subcat_id:
         params['subcatId'] = str(subcat_id)
+        
     try:
+        # 2. Added a tiny delay to prevent rate-limiting bans
+        time.sleep(0.3)
+        
         resp = requests.get(url, headers=mc_headers, params=params, timeout=15)
         if resp.status_code == 401:
             return None
@@ -517,7 +529,9 @@ def run_stock_scanners():
         subcat_id = cfg.get('subcat_id')
         scan_ids  = cfg['ids']
         dfs       = []
-        with ThreadPoolExecutor(max_workers=8) as executor:
+        
+        # 3. Lowered from 8 to 3 to prevent 429 HTTP Errors
+        with ThreadPoolExecutor(max_workers=1) as executor:
             futures = {executor.submit(_fetch_scanner_id, sid, cat_id, subcat_id): sid
                        for sid in scan_ids}
             for future in as_completed(futures):
