@@ -467,6 +467,22 @@ def zip_and_send():
         lines.append(f'{icon} {fname}: {count}')
     caption = '\n'.join(lines)
 
+  # ── SAVE TO REPO ──────────────────────────────────────────
+import shutil
+from datetime import datetime
+import pytz
+
+IST = pytz.timezone('Asia/Kolkata')
+today_label = datetime.now(IST).strftime('%d-%b-%Y')   # e.g. 08-Apr-2026
+repo_folder = os.path.join('indicator_data', today_label)
+os.makedirs(repo_folder, exist_ok=True)
+
+for fname in csvfiles:
+    shutil.copy(outpath(fname), os.path.join(repo_folder, fname))
+
+print(f"Saved {len(csvfiles)} CSVs to {repo_folder}")
+# ──────────────────────────────────────────────────────────
+
     TGsendDocument(zip_path, caption[:1024])
 
 # ========================= MAIN ==============================
