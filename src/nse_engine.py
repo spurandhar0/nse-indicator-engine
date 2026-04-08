@@ -262,7 +262,10 @@ def main():
 
     # ── Save output
     latest_date = df["Date"].max()
-    output_file = f"/tmp/NSE_Indicator_Report_{latest_date.replace(' ','_')}.csv"
+    # ── SAVE TO REPO ──────────────────────────────────────────
+os.makedirs('output_data', exist_ok=True)
+outputfile = f'output_data/NSE_Indicator_Report_{latestdate}.csv'
+# ──────────────────────────────────────────────────────────
     df.to_csv(output_file, index=False)
     print(f"💾 Saved: {output_file}")
 
