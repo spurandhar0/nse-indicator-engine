@@ -1,17 +1,18 @@
-name: NSE Indicator Engine
+name: NSE Indicator Engine (Daily 8PM IST)
 
 on:
   schedule:
-    - cron: '30 14 * * 1-5'   # 8:00 PM IST (2:30 PM UTC) Mon-Fri
+    - cron: "30 14 * * 1-5"   # 8:00 PM IST = 14:30 UTC, Mon-Fri
   workflow_dispatch:
 
-jobs:
-  run-engine:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
+permissions:
+  contents: write
 
+jobs:
+  engine:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -19,21 +20,21 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pandas requests pytz openpyxl
+        run: pip install requests pandas pytz
 
       - name: Run NSE Indicator Engine
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          TG_CHAT_ID:   ${{ secrets.TG_CHAT_ID }}
         run: python src/nse_engine.py
 
       - name: Commit output report to repo
         run: |
-          git config user.name "github-actions[bot]"
+          git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add output_data/
-          git diff --staged --quiet || git commit -m "Auto: NSE Report $(date +'%d-%b-%Y')"
+          git diff --cached --quiet || git commit -m "auto: NSE report $(date +'%d-%b-%Y')"
           git push
