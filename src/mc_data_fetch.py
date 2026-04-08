@@ -1,6 +1,6 @@
 """
-MoneyControl Data Fetcher → Telegram
-=====================================
+MoneyControl Data Fetcher → GitHub + Telegram
+==============================================
 Runs automatically via GitHub Actions every weekday at 7 PM IST.
 Tokens are stored as GitHub Secrets — never hardcoded here.
 
@@ -10,6 +10,10 @@ HOW TO UPDATE Auth-Token (do this whenever Bullish/Bearish/Scanners stop working
   3. Click any stock or scanner on the page
   4. In the request headers, copy the value of "Auth-Token"
   5. Go to your GitHub repo → Settings → Secrets → Update MC_AUTH_TOKEN
+
+OUTPUT: All 27 CSV files are saved to indicator_data/DD-Mon-YYYY/ so they are
+        committed to the repo and processed by nse_engine.py.
+        A zip copy is also sent to Telegram for quick review.
 """
 
 import os, zipfile, requests, time, threading
@@ -18,7 +22,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime as dt, timedelta, timezone
 
 # ======================= CONFIGURATION =======================
-# Tokens come from GitHub Secrets (environment variables)
 token     = os.environ['MC_AUTH_TOKEN']
 bot_token = os.environ['TG_BOT_TOKEN']
 chat_id   = os.environ['TG_CHAT_ID']
@@ -31,9 +34,16 @@ mc_headers = {
 }
 
 IST = timezone(timedelta(hours=5, minutes=30))
-RUN_TIMESTAMP = dt.now(tz=IST).strftime('%Y-%m-%d_%H%M')
-OUTPUT_DIR = f'/tmp/mc_data_{RUN_TIMESTAMP}'
+NOW_IST = dt.now(tz=IST)
+RUN_TIMESTAMP = NOW_IST.strftime('%Y-%m-%d_%H%M')
+
+# ── Critical fix: save to indicator_data/DATE/ so workflow commits all 27 CSVs ──
+IST_DATE_FOLDER = NOW_IST.strftime('%d-%b-%Y')           # e.g., "08-Apr-2026"
+OUTPUT_DIR = f'indicator_data/{IST_DATE_FOLDER}'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# Zip is kept at /tmp/ for Telegram (large file, not needed in repo)
+TMP_ZIP_DIR = '/tmp'
 
 SUMMARY = {}
 
@@ -147,7 +157,9 @@ def getMCProdata(index, trend):
         return pd.DataFrame()
 
     df = pd.DataFrame(all_data)
-    df.drop(columns=['scId', 'prevTrend', 'performance', 'url', 'analysisUrl'],
+    # Keep scId (MC code), stkId — they help with symbol resolution
+    # Only drop truly useless/large columns
+    df.drop(columns=['prevTrend', 'performance', 'url', 'analysisUrl'],
             inplace=True, errors='ignore')
     df.insert(0, 'Index', indexname)
     return df
@@ -202,11 +214,18 @@ def get52wkdata(category, result):
 
     rows = []
     for row in all_data:
-        if isinstance(row, list) and len(row) > 30:
-            rows.append({'StockName': row[2], 'lastUpdatedTime': row[30]})
+        if isinstance(row, list):
+            # API returns array format: try to extract all useful fields
+            d = {}
+            if len(row) > 0:  d['MC_Code']        = row[0]   # MC internal code
+            if len(row) > 1:  d['BSE_Code']        = row[1]
+            if len(row) > 2:  d['StockName']       = row[2]   # company name
+            if len(row) > 3:  d['nsCode']          = row[3] if row[3] else ''  # NSE symbol (if present)
+            if len(row) > 4:  d['currPrice']       = row[4]
+            if len(row) > 30: d['lastUpdatedTime'] = row[30]
+            rows.append(d)
         elif isinstance(row, dict):
-            rows.append({'StockName': row.get('company', row.get('StockName', '')),
-                         'lastUpdatedTime': row.get('lastUpdatedTime', '')})
+            rows.append(row)  # keep all dict fields
 
     df = pd.DataFrame(rows)
     df.insert(0, 'Category', category)
@@ -451,7 +470,7 @@ def zip_and_send():
         return
 
     zip_name = f'mc_data_{RUN_TIMESTAMP}.zip'
-    zip_path = f'/tmp/{zip_name}'
+    zip_path = os.path.join(TMP_ZIP_DIR, zip_name)
 
     print(f'\n{getISTtime()} | Creating zip: {zip_name} ({len(csv_files)} files)...')
     with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:

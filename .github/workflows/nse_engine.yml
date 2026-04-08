@@ -27,8 +27,9 @@ jobs:
 
       - name: Run NSE Indicator Engine
         env:
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_CHAT_ID:   ${{ secrets.TG_CHAT_ID }}
+          TG_BOT_TOKEN:  ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID:    ${{ secrets.TG_CHAT_ID }}
+          MC_AUTH_TOKEN: ${{ secrets.MC_AUTH_TOKEN }}   # optional: enables MC Search API (P5 fallback)
         run: python src/nse_engine.py
 
       - name: Commit output report to repo
