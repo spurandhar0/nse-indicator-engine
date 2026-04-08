@@ -1,17 +1,18 @@
-name: NSE Bhavcopy Daily Fetch
+name: NSE Bhavcopy Fetch (Daily 7:15PM IST)
 
 on:
   schedule:
-    - cron: '45 13 * * 1-5'   # 7:15 PM IST (1:45 PM UTC) Mon-Fri
+    - cron: "45 13 * * 1-5"   # 7:15 PM IST = 13:45 UTC, Mon-Fri
   workflow_dispatch:
 
-jobs:
-  fetch-and-send:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+permissions:
+  contents: write
 
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -19,21 +20,21 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests pytz
+        run: pip install requests pandas pytz
 
-      - name: Download NSE Bhavcopy and Send to Telegram
+      - name: Run NSE Bhavcopy Fetch
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          TG_CHAT_ID:   ${{ secrets.TG_CHAT_ID }}
         run: python src/nse_bhavcopy_fetch.py
 
-      - name: Commit bhavcopy file to repo
+      - name: Commit bhav data to repo
         run: |
-          git config user.name "github-actions[bot]"
+          git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add bhav_data/
-          git diff --staged --quiet || git commit -m "Auto: NSE Bhavcopy $(date +'%d-%b-%Y')"
+          git diff --cached --quiet || git commit -m "auto: NSE bhavcopy $(date +'%d-%b-%Y')"
           git push
