@@ -11,9 +11,19 @@ HOW TO UPDATE Auth-Token (do this whenever Bullish/Bearish/Scanners stop working
   4. In the request headers, copy the value of "Auth-Token"
   5. Go to your GitHub repo → Settings → Secrets → Update MC_AUTH_TOKEN
 
-OUTPUT: All 27 CSV files are saved to indicator_data/DD-Mon-YYYY/ so they are
+OUTPUT: All 30 CSV files are saved to indicator_data/DD-Mon-YYYY/ so they are
         committed to the repo and processed by nse_engine.py.
         A zip copy is also sent to Telegram for quick review.
+
+FILES (30 total):
+  Core (9):   52wk, chart_patterns_active, chart_patterns_inactive,
+              technical_picks_active, technical_picks_inactive,
+              stock_ideas, analysts_choice, bullish, bearish
+  Scanners (18): candlestick_bull/bear, moving_avg_bull/bear,
+                 volume_delivery_bull/bear, supertrend_bull/bear,
+                 rsi, stochastic, adx, mfi, macd, adaptive_rsi,
+                 range_breakout_bull/bear, bullish/bearish_breakout
+  New (3):    gainers, losers, most_active
 """
 
 import os, zipfile, requests, time, threading
@@ -37,14 +47,11 @@ IST = timezone(timedelta(hours=5, minutes=30))
 NOW_IST = dt.now(tz=IST)
 RUN_TIMESTAMP = NOW_IST.strftime('%Y-%m-%d_%H%M')
 
-# ── Critical fix: save to indicator_data/DATE/ so workflow commits all 27 CSVs ──
-IST_DATE_FOLDER = NOW_IST.strftime('%d-%b-%Y')           # e.g., "08-Apr-2026"
+IST_DATE_FOLDER = NOW_IST.strftime('%d-%b-%Y')   # e.g., "08-Apr-2026"
 OUTPUT_DIR = f'indicator_data/{IST_DATE_FOLDER}'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Zip is kept at /tmp/ for Telegram (large file, not needed in repo)
 TMP_ZIP_DIR = '/tmp'
-
 SUMMARY = {}
 
 # ======================== HELPERS ============================
@@ -89,7 +96,7 @@ def check_auth_token():
                 "2. Press F12 → Network tab → Filter: mcapi\n"
                 "3. Click any scanner/stock\n"
                 "4. Copy 'Auth-Token' from request headers\n"
-                "5. Go to GitHub repo → Settings → Secrets → Update MC_AUTH_TOKEN\n\n"
+                "5. GitHub repo → Settings → Secrets → Update MC_AUTH_TOKEN\n\n"
                 "⚙️ Bullish/Bearish trends and Scanners SKIPPED this run."
             )
             print(msg)
@@ -157,10 +164,8 @@ def getMCProdata(index, trend):
         return pd.DataFrame()
 
     df = pd.DataFrame(all_data)
-    # Keep scId (MC code), stkId — they help with symbol resolution
-    # Only drop truly useless/large columns
-    df.drop(columns=['prevTrend', 'performance', 'url', 'analysisUrl'],
-            inplace=True, errors='ignore')
+    # Keep scId, stkId, currPrice — all useful for symbol resolution & LTP validation
+    df.drop(columns=['prevTrend', 'url', 'analysisUrl'], inplace=True, errors='ignore')
     df.insert(0, 'Index', indexname)
     return df
 
@@ -168,16 +173,15 @@ def run_trend_fetch(trend_label, filename):
     print(f'\n{getISTtime()} | Fetching {trend_label} data...')
     start = time.time()
     results = []
-    fetch_fn = lambda idx: getMCProdata(idx, trend_label.lower())
     with ThreadPoolExecutor(max_workers=5) as executor:
-        futures = [executor.submit(fetch_fn, idx) for idx in list_index]
+        futures = [executor.submit(getMCProdata, idx, trend_label.lower()) for idx in list_index]
         for f in futures:
             df = f.result()
             if not df.empty:
                 results.append(df)
 
     if not results:
-        print(f'  ⚠ No {trend_label} data fetched.')
+        print(f'  ⚠ No {trend_label} data.')
         SUMMARY[filename] = 'SKIPPED'
         return
 
@@ -215,17 +219,16 @@ def get52wkdata(category, result):
     rows = []
     for row in all_data:
         if isinstance(row, list):
-            # API returns array format: try to extract all useful fields
             d = {}
-            if len(row) > 0:  d['MC_Code']        = row[0]   # MC internal code
+            if len(row) > 0:  d['MC_Code']        = row[0]
             if len(row) > 1:  d['BSE_Code']        = row[1]
-            if len(row) > 2:  d['StockName']       = row[2]   # company name
-            if len(row) > 3:  d['nsCode']          = row[3] if row[3] else ''  # NSE symbol (if present)
+            if len(row) > 2:  d['StockName']       = row[2]
+            if len(row) > 3:  d['nsCode']          = row[3] if row[3] else ''
             if len(row) > 4:  d['currPrice']       = row[4]
             if len(row) > 30: d['lastUpdatedTime'] = row[30]
             rows.append(d)
         elif isinstance(row, dict):
-            rows.append(row)  # keep all dict fields
+            rows.append(row)
 
     df = pd.DataFrame(rows)
     df.insert(0, 'Category', category)
@@ -251,6 +254,92 @@ def run_52wk():
     else:
         SUMMARY['52wk.csv'] = 'NO DATA'
         print('  ⚠ No 52wk data.')
+
+# ============ NEW: GAINERS / LOSERS / MOST ACTIVE ============
+
+def _fetch_market_movers_type(mtype, label):
+    """
+    Fetch market movers of a specific type (Gainer, Loser, VolumeShockers).
+    Returns DataFrame with nsCode, StockName, currPrice, pChange, etc.
+    """
+    url = baseurl + '/v1/marketstats/market-movers'
+    page, all_data = 1, []
+    while True:
+        try:
+            resp = requests.get(url=url, headers=mc_headers,
+                                params={'ex': 'N', 'type': mtype, 'page': page}, timeout=15)
+        except Exception as e:
+            print(f'  {label} error: {e}')
+            break
+        if resp.status_code != 200:
+            print(f'  {label} HTTP {resp.status_code} for type={mtype}')
+            break
+        data_section = resp.json().get('data', {})
+        # Try both possible response structures
+        data = (data_section.get('list', {}).get('data', []) or
+                data_section.get('list', []) or
+                data_section.get('data', []))
+        if not data:
+            break
+        all_data.extend(data)
+        page += 1
+        if len(data) < 20:   # last page
+            break
+
+    if not all_data:
+        return pd.DataFrame()
+
+    rows = []
+    for row in all_data:
+        if isinstance(row, list):
+            d = {}
+            if len(row) > 0:  d['MC_Code']   = row[0]
+            if len(row) > 1:  d['BSE_Code']  = row[1]
+            if len(row) > 2:  d['StockName'] = row[2]
+            if len(row) > 3:  d['nsCode']    = row[3] if row[3] else ''
+            if len(row) > 4:  d['currPrice'] = row[4]
+            if len(row) > 5:  d['pChange']   = row[5]
+            rows.append(d)
+        elif isinstance(row, dict):
+            rows.append(row)
+
+    return pd.DataFrame(rows)
+
+def run_gainers_losers_active():
+    """Fetch Top Gainers, Top Losers, and Most Active stocks."""
+    print(f'\n{getISTtime()} | Fetching Gainers / Losers / Most Active...')
+
+    movers_config = [
+        ('Gainer',         'gainers.csv',     'Gainers'),
+        ('Loser',          'losers.csv',       'Losers'),
+        ('VolumeShockers', 'most_active.csv',  'Most Active'),
+    ]
+
+    for mtype, fname, label in movers_config:
+        df = _fetch_market_movers_type(mtype, label)
+        if not df.empty:
+            df.to_csv(out_path(fname), index=False)
+            SUMMARY[fname] = len(df)
+            print(f'  ✅ {label}: {len(df)} stocks → {fname}')
+        else:
+            # Fallback: try alternative type names
+            alt_types = {
+                'Gainer': ['TopGainer', 'gainer', 'Gainers'],
+                'Loser': ['TopLoser', 'loser', 'Losers'],
+                'VolumeShockers': ['MostActive', 'Volume', 'ActiveByValue']
+            }
+            found = False
+            for alt in alt_types.get(mtype, []):
+                df2 = _fetch_market_movers_type(alt, label)
+                if not df2.empty:
+                    df2.to_csv(out_path(fname), index=False)
+                    SUMMARY[fname] = len(df2)
+                    print(f'  ✅ {label} (via {alt}): {len(df2)} stocks → {fname}')
+                    found = True
+                    break
+            if not found:
+                SUMMARY[fname] = 'NO DATA'
+                print(f'  ⚠ No {label} data — all type variations tried.')
 
 # =================== CHART PATTERNS ==========================
 
@@ -459,7 +548,7 @@ def run_stock_scanners():
             print(f'  ✅ Scanner [{group_name}]: {len(df)} rows → {fname}')
         else:
             SUMMARY[f'{group_name}.csv'] = 'NO DATA'
-            print(f'  ⚠ No data for scanner group: {group_name}')
+            print(f'  ⚠ No data for scanner: {group_name}')
 
 # =================== ZIP & SEND ==============================
 
@@ -478,9 +567,12 @@ def zip_and_send():
             zf.write(out_path(fname), fname)
 
     zip_size_mb = os.path.getsize(zip_path) / 1024 / 1024
-    print(f'  ✅ Zip created: {zip_path} ({zip_size_mb:.2f} MB)')
+    print(f'  ✅ Zip: {zip_path} ({zip_size_mb:.2f} MB)')
 
-    lines = [f'📦 MC Data — {RUN_TIMESTAMP}', f'Files: {len(csv_files)} | Size: {zip_size_mb:.1f} MB', '']
+    ok_count  = sum(1 for v in SUMMARY.values() if isinstance(v, int))
+    err_count = sum(1 for v in SUMMARY.values() if not isinstance(v, int))
+    lines = [f'📦 MC Data — {RUN_TIMESTAMP}',
+             f'Files: {len(csv_files)} ({ok_count} ✅ {err_count} ⚠️) | {zip_size_mb:.1f} MB', '']
     for fname, count in sorted(SUMMARY.items()):
         icon = '✅' if isinstance(count, int) else '⚠️'
         lines.append(f'{icon} {fname}: {count}')
@@ -499,11 +591,15 @@ if __name__ == '__main__':
     overall_start = time.time()
     token_valid = check_auth_token()
 
+    # Core data (no auth token needed for most)
     run_52wk()
     run_chart_patterns()
     run_technical_picks()
     run_stock_ideas()
     run_analysts_choice()
+
+    # New: Gainers / Losers / Most Active
+    run_gainers_losers_active()
 
     if token_valid:
         run_trend_fetch('Bullish', 'bullish.csv')
