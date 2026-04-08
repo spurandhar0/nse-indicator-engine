@@ -93,6 +93,15 @@ try:
         print("📤 Sending to Telegram...")
         tg_send_file(local_path, caption)
         print("✅ Successfully sent to Telegram!")
+
+    # ── SAVE TO REPO ──────────────────────────────────────────
+month_folder = os.path.join('bhav_data', today.strftime('%b-%Y'))  # Apr-2026
+os.makedirs(month_folder, exist_ok=True)
+repo_path = os.path.join(month_folder, filename)
+import shutil
+shutil.copy(localpath, repo_path)
+print(f"Saved to repo: {repo_path}")
+# ──────────────────────────────────────────────────────────
         
     elif resp.status_code == 404:
         # File not available — likely market holiday or file not yet published
