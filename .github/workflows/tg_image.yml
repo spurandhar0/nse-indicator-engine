@@ -2,7 +2,7 @@ name: NSE Telegram Image Report (Daily 9PM IST)
 
 on:
   schedule:
-    - cron: "30 15 * * 1-5"   # 9:00 PM IST = 15:30 UTC, Mon-Fri
+    - cron: "30 13 * * 1-5"   # 7:00 PM IST = 13:30 UTC, Mon-Fri
   workflow_dispatch:           # allow manual trigger from GitHub UI
 
 permissions:
