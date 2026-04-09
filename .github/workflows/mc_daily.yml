@@ -1,4 +1,4 @@
-name: MC Data Fetch (Daily 7PM IST)
+name: MC Data Fetch (Daily 6PM IST)
 
 on:
   schedule:
