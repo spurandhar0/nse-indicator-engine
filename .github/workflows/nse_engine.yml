@@ -36,6 +36,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output_data/
+          mkdir -p consolidated_data
+          git add output_data/ consolidated_data/
           git diff --cached --quiet || git commit -m "auto: NSE report $(date +'%d-%b-%Y')"
           git push
