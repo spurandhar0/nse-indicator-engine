@@ -466,16 +466,50 @@ def run_technical_picks():
 
 # =================== STOCK IDEAS =============================
 
+def _extract_stock_ideas_rows(j):
+    """Try multiple known response keys to extract rows robustly."""
+    for key in ('data', 'stockResearch', 'result', 'ideas', 'stocks', 'stockIdeas', 'list'):
+        val = j.get(key)
+        if isinstance(val, list) and val:
+            return val
+        if isinstance(val, dict):
+            # e.g. {"result": {"stockResearch": [...]}}
+            for subkey in ('data', 'stockResearch', 'list', 'ideas'):
+                sub = val.get(subkey)
+                if isinstance(sub, list) and sub:
+                    return sub
+    return []
+
 def _fetch_stock_ideas_batch(url, start, limit):
     params = {'deviceType': 'W', 'start': start, 'limit': limit}
     try:
         resp = requests.get(url=url, headers=mc_headers, params=params, timeout=30)
         if resp.status_code != 200:
+            print(f'  Stock ideas HTTP {resp.status_code} at start={start}')
             return []
-        return resp.json().get('data', [])
+        j = resp.json()
+        rows = _extract_stock_ideas_rows(j)
+        if not rows and start == 0:
+            # Debug: print top-level keys so we can fix quickly
+            print(f'  ⚠ stock_ideas API keys: {list(j.keys())}')
+        return rows
     except Exception as e:
         print(f'  Stock ideas batch error: {e}')
         return []
+
+def _get_stock_ideas_total(url):
+    """Try to get total count from first response to avoid over-fetching."""
+    params = {'deviceType': 'W', 'start': 0, 'limit': 1}
+    try:
+        resp = requests.get(url=url, headers=mc_headers, params=params, timeout=30)
+        j = resp.json()
+        for key in ('totalCount', 'total', 'count', 'totalRecords', 'total_count'):
+            val = j.get(key)
+            if isinstance(val, (int, str)) and str(val).isdigit():
+                return int(val)
+        return 12000  # fallback
+    except Exception:
+        return 12000
 
 def run_stock_ideas():
     print(f'\n{getISTtime()} | Fetching Stock Ideas...')
@@ -485,10 +519,12 @@ def run_stock_ideas():
     first = _fetch_stock_ideas_batch(url, 0, limit)
     if not first:
         SUMMARY['stock_ideas.csv'] = 'NO DATA'
-        print('  ⚠ No stock ideas data.')
+        print('  ⚠ No stock ideas data — check API keys logged above.')
         return
     all_data.extend(first)
-    args_list = [(url, s, limit) for s in range(limit, 12000, limit)]
+    total = _get_stock_ideas_total(url)
+    print(f'  Total stock ideas available: {total}')
+    args_list = [(url, s, limit) for s in range(limit, total + limit, limit)]
     with ThreadPoolExecutor(max_workers=20) as executor:
         futures = {executor.submit(_fetch_stock_ideas_batch, *args): args[1] for args in args_list}
         for future in as_completed(futures):
