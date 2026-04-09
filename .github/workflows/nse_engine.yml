@@ -2,7 +2,7 @@ name: NSE Indicator Engine (Daily 8PM IST)
 
 on:
   schedule:
-    - cron: "30 14 * * 1-5"   # 8:00 PM IST = 14:30 UTC, Mon-Fri
+    - cron: "00 13 * * 1-5"   # 6:30 PM IST = 13:00 UTC, Mon-Fri
   workflow_dispatch:
 
 permissions:
