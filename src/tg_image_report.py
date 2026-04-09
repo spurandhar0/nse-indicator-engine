@@ -37,7 +37,7 @@ MAPPING_FILE  = "src/mc_nse_mapping.csv"
 TWILIO_SID    = os.environ.get("TWILIO_SID", "")
 TWILIO_TOKEN  = os.environ.get("TWILIO_AUTH_TOKEN", "")
 WA_FROM       = os.environ.get("WA_FROM_NUMBER", "")   # e.g. whatsapp:+14155238886
-WA_TO         = "whatsapp:+919372941573"
+WA_TO         = "whatsapp:+97450740794"
 IMGBB_KEY     = os.environ.get("IMGBB_API_KEY", "")
 
 IST   = pytz.timezone("Asia/Kolkata")
