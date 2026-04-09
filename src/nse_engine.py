@@ -1033,6 +1033,21 @@ def main():
     df.to_csv(tmp_path, index=False)
     print(f"💾 Saved: {out_path}")
 
+    # ── Save consolidated report ──
+    CONSOLIDATED_ROOT = "consolidated_data"
+    os.makedirs(CONSOLIDATED_ROOT, exist_ok=True)
+    consolidated_path = os.path.join(CONSOLIDATED_ROOT, "NSE_Indicator_Report_Consolidated.csv")
+    if os.path.exists(consolidated_path):
+        existing = pd.read_csv(consolidated_path, low_memory=False)
+        # Remove today's date if already present (avoid duplicates on re-run)
+        if "Date" in existing.columns:
+            existing = existing[existing["Date"] != df["Date"].max()]
+        combined = pd.concat([existing, df], ignore_index=True)
+    else:
+        combined = df.copy()
+    combined.to_csv(consolidated_path, index=False)
+    print(f"📦 Consolidated: {consolidated_path} ({len(combined):,} rows, {combined['Date'].nunique()} dates)")
+
     # ── Top signals ──
     top_bull = (df[(df["Trend"] == "Bullish") & (df["ConfidenceScore"] >= 80)]
                 ["NSE_SYMBOL"].value_counts().head(6).index.tolist())
