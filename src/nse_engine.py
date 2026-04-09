@@ -1037,14 +1037,40 @@ def main():
     CONSOLIDATED_ROOT = "consolidated_data"
     os.makedirs(CONSOLIDATED_ROOT, exist_ok=True)
     consolidated_path = os.path.join(CONSOLIDATED_ROOT, "NSE_Indicator_Report_Consolidated.csv")
+
+    # Load existing consolidated file
     if os.path.exists(consolidated_path):
         existing = pd.read_csv(consolidated_path, low_memory=False)
-        # Remove today's date if already present (avoid duplicates on re-run)
-        if "Date" in existing.columns:
-            existing = existing[existing["Date"] != df["Date"].max()]
-        combined = pd.concat([existing, df], ignore_index=True)
+        existing_dates = set(existing["Date"].unique()) if "Date" in existing.columns else set()
     else:
-        combined = df.copy()
+        existing = pd.DataFrame()
+        existing_dates = set()
+
+    # Scan ALL daily output files — pick up any dates not yet in consolidated
+    all_parts = [df]  # today's fresh data always included
+    for daily_file in sorted(glob.glob(os.path.join(OUTPUT_ROOT, "NSE_Indicator_Report_*.csv"))):
+        try:
+            part = pd.read_csv(daily_file, low_memory=False)
+            if "Date" not in part.columns or part.empty:
+                continue
+            file_date = part["Date"].max()
+            if file_date not in existing_dates and file_date != df["Date"].max():
+                all_parts.append(part)
+                print(f"  ➕ Backfilled from {os.path.basename(daily_file)} ({len(part):,} rows)")
+        except Exception as e:
+            print(f"  ⚠️ Could not read {daily_file}: {e}")
+
+    # Merge: existing consolidated (minus today to avoid dupes) + all missing dates + today
+    if not existing.empty and "Date" in existing.columns:
+        existing = existing[existing["Date"] != df["Date"].max()]
+        all_parts.append(existing)
+
+    combined = pd.concat(all_parts, ignore_index=True)
+    # Sort by Date descending then Symbol
+    if "Date" in combined.columns:
+        combined.sort_values(["Date", "NSE_SYMBOL"], ascending=[False, True], inplace=True)
+        combined.reset_index(drop=True, inplace=True)
+
     combined.to_csv(consolidated_path, index=False)
     print(f"📦 Consolidated: {consolidated_path} ({len(combined):,} rows, {combined['Date'].nunique()} dates)")
 
