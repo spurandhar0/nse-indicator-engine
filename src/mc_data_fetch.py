@@ -256,17 +256,27 @@ def run_52wk():
         print('  ⚠ No 52wk data.')
 
 # ============ NEW: GAINERS / LOSERS / MOST ACTIVE ============
+# MC API valid type values: topGainers, topLosers, 52High, 52Low, onlyBuyers, onlySellers
+# Response rows are arrays; header order:
+#   [0]=scId(MC_Code), [1]=did(shortName), [2]=company, [3]=companyUrl(skip),
+#   [4]=open, [5]=high, [6]=low, [7]=lastPrice, [8]=prevPrice,
+#   [9]=change, [10]=perChange, [11]=volume
 
 def _fetch_market_movers_type(mtype, label):
     """
-    Fetch market movers of a specific type (Gainer, Loser, VolumeShockers).
-    Returns DataFrame with nsCode, StockName, currPrice, pChange, etc.
+    Fetch market movers from MC API using correct type names (topGainers/topLosers).
+    No Auth-Token needed for this endpoint.
     """
     url = baseurl + '/v1/marketstats/market-movers'
+    bare_headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        'Origin': 'https://www.moneycontrol.com',
+        'Referer': 'https://www.moneycontrol.com/'
+    }
     page, all_data = 1, []
     while True:
         try:
-            resp = requests.get(url=url, headers=mc_headers,
+            resp = requests.get(url=url, headers=bare_headers,
                                 params={'ex': 'N', 'type': mtype, 'page': page}, timeout=15)
         except Exception as e:
             print(f'  {label} error: {e}')
@@ -275,10 +285,7 @@ def _fetch_market_movers_type(mtype, label):
             print(f'  {label} HTTP {resp.status_code} for type={mtype}')
             break
         data_section = resp.json().get('data', {})
-        # Try both possible response structures
-        data = (data_section.get('list', {}).get('data', []) or
-                data_section.get('list', []) or
-                data_section.get('data', []))
+        data = data_section.get('list', {}).get('data', [])
         if not data:
             break
         all_data.extend(data)
@@ -292,54 +299,98 @@ def _fetch_market_movers_type(mtype, label):
     rows = []
     for row in all_data:
         if isinstance(row, list):
+            # Correct index mapping from actual API header array
             d = {}
-            if len(row) > 0:  d['MC_Code']   = row[0]
-            if len(row) > 1:  d['BSE_Code']  = row[1]
-            if len(row) > 2:  d['StockName'] = row[2]
-            if len(row) > 3:  d['nsCode']    = row[3] if row[3] else ''
-            if len(row) > 4:  d['currPrice'] = row[4]
-            if len(row) > 5:  d['pChange']   = row[5]
+            if len(row) > 0:  d['MC_Code']   = row[0]   # scId
+            if len(row) > 1:  d['shortName']  = row[1]   # did (MC short identifier)
+            if len(row) > 2:  d['StockName']  = row[2]   # company full name
+            # row[3] = companyUrl — skip
+            if len(row) > 4:  d['open']       = row[4]
+            if len(row) > 5:  d['high']        = row[5]
+            if len(row) > 6:  d['low']         = row[6]
+            if len(row) > 7:  d['currPrice']  = row[7]   # lastPrice
+            if len(row) > 8:  d['prevPrice']  = row[8]   # prevPrice
+            if len(row) > 9:  d['change']     = row[9]
+            if len(row) > 10: d['pChange']    = row[10]  # perChange
+            if len(row) > 11: d['volume']     = row[11]
             rows.append(d)
         elif isinstance(row, dict):
             rows.append(row)
 
     return pd.DataFrame(rows)
 
+
+def _fetch_nse_most_active():
+    """
+    Fetch Most Active stocks by volume from NSE directly.
+    NSE API returns NSE symbol directly - no MC mapping needed.
+    """
+    url = 'https://www.nseindia.com/api/live-analysis-most-active-securities'
+    session = requests.Session()
+    session.headers.update({
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        'Accept': 'application/json',
+        'Referer': 'https://www.nseindia.com/'
+    })
+    try:
+        session.get('https://www.nseindia.com', timeout=15)  # get cookies
+    except Exception:
+        pass
+    try:
+        resp = session.get(url, params={'index': 'volume', 'key': 'allSec'}, timeout=20)
+        if resp.status_code != 200:
+            print(f'  NSE most-active HTTP {resp.status_code}')
+            return pd.DataFrame()
+        data = resp.json().get('data', [])
+        if not data:
+            return pd.DataFrame()
+        rows = []
+        for item in data:
+            rows.append({
+                'MC_Code':   '',
+                'shortName': item.get('symbol', ''),
+                'StockName': item.get('symbol', ''),
+                'nsCode':    item.get('symbol', ''),   # direct NSE symbol!
+                'currPrice': item.get('lastPrice', ''),
+                'prevPrice': item.get('previousClose', ''),
+                'change':    item.get('change', ''),
+                'pChange':   item.get('pChange', ''),
+                'volume':    item.get('quantityTraded', ''),
+                'open':      item.get('open', ''),
+                'high':      item.get('dayHigh', ''),
+                'low':       item.get('dayLow', ''),
+            })
+        return pd.DataFrame(rows)
+    except Exception as e:
+        print(f'  NSE most-active error: {e}')
+        return pd.DataFrame()
+
+
 def run_gainers_losers_active():
-    """Fetch Top Gainers, Top Losers, and Most Active stocks."""
+    """Fetch Top Gainers, Top Losers (MC API) and Most Active (NSE API)."""
     print(f'\n{getISTtime()} | Fetching Gainers / Losers / Most Active...')
 
-    movers_config = [
-        ('Gainer',         'gainers.csv',     'Gainers'),
-        ('Loser',          'losers.csv',       'Losers'),
-        ('VolumeShockers', 'most_active.csv',  'Most Active'),
-    ]
-
-    for mtype, fname, label in movers_config:
+    # MC API — correct type names are topGainers / topLosers
+    for mtype, fname, label in [('topGainers', 'gainers.csv', 'Gainers'),
+                                 ('topLosers',  'losers.csv',  'Losers')]:
         df = _fetch_market_movers_type(mtype, label)
         if not df.empty:
             df.to_csv(out_path(fname), index=False)
             SUMMARY[fname] = len(df)
             print(f'  ✅ {label}: {len(df)} stocks → {fname}')
         else:
-            # Fallback: try alternative type names
-            alt_types = {
-                'Gainer': ['TopGainer', 'gainer', 'Gainers'],
-                'Loser': ['TopLoser', 'loser', 'Losers'],
-                'VolumeShockers': ['MostActive', 'Volume', 'ActiveByValue']
-            }
-            found = False
-            for alt in alt_types.get(mtype, []):
-                df2 = _fetch_market_movers_type(alt, label)
-                if not df2.empty:
-                    df2.to_csv(out_path(fname), index=False)
-                    SUMMARY[fname] = len(df2)
-                    print(f'  ✅ {label} (via {alt}): {len(df2)} stocks → {fname}')
-                    found = True
-                    break
-            if not found:
-                SUMMARY[fname] = 'NO DATA'
-                print(f'  ⚠ No {label} data — all type variations tried.')
+            SUMMARY[fname] = 'NO DATA'
+            print(f'  ⚠ No {label} data (type={mtype})')
+
+    # Most Active — NSE direct API (has real NSE symbols)
+    df_active = _fetch_nse_most_active()
+    if not df_active.empty:
+        df_active.to_csv(out_path('most_active.csv'), index=False)
+        SUMMARY['most_active.csv'] = len(df_active)
+        print(f'  ✅ Most Active (NSE): {len(df_active)} stocks → most_active.csv')
+    else:
+        SUMMARY['most_active.csv'] = 'NO DATA'
+        print(f'  ⚠ No Most Active data from NSE')
 
 # =================== CHART PATTERNS ==========================
 
