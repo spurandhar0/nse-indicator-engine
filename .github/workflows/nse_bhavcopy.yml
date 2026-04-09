@@ -2,7 +2,7 @@ name: NSE Bhavcopy Fetch (Daily 7:15PM IST)
 
 on:
   schedule:
-    - cron: "45 13 * * 1-5"   # 7:15 PM IST = 13:45 UTC, Mon-Fri
+    - cron: "45 12 * * 1-5"   # 6:15 PM IST = 12:45 UTC, Mon-Fri
   workflow_dispatch:
 
 permissions:
