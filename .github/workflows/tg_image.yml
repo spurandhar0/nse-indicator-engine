@@ -24,8 +24,12 @@ jobs:
       - name: Install dependencies
         run: pip install pandas matplotlib requests pytz
 
-      - name: Generate image & send to Telegram
+      - name: Generate images & send to Telegram + WhatsApp
         env:
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_CHAT_ID:   ${{ secrets.TG_CHAT_ID }}
+          TG_BOT_TOKEN:      ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID:        ${{ secrets.TG_CHAT_ID }}
+          TWILIO_SID:        ${{ secrets.TWILIO_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          WA_FROM_NUMBER:    ${{ secrets.WA_FROM_NUMBER }}
+          IMGBB_API_KEY:     ${{ secrets.IMGBB_API_KEY }}
         run: python src/tg_image_report.py

@@ -967,6 +967,9 @@ def main():
         print(msg); tg_message(msg)
         return
 
+    # Process ONLY the latest date folder (today's data — not consolidated)
+    date_folders = date_folders[:1]
+
     all_results = []
     for folder in date_folders:
         if not os.path.isdir(folder):
