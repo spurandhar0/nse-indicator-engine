@@ -1,0 +1,211 @@
+Index,scId,StockName,type,currTrend,currPrice,performance,trendChngDate,trendChngPrice,updatedTime
+NIFTY 50,ITC,ITC,Stock,Bearish,302.05,-25.26,"26 Dec, 2025",404.15,Apr 15 | 15:59
+NIFTY 50,C,Cipla,Stock,Very Bearish,"1,227.00",-16.41,"07 Jan, 2026","1,467.90",Apr 15 | 15:59
+NIFTY 50,RI,Reliance,Stock,Very Bearish,"1,344.10",-5.32,"13 Feb, 2026","1,419.60",Apr 15 | 15:59
+NIFTY 50,MHI,Max Healthcare,Stock,Bearish,990.05,-4.99,"06 Mar, 2026","1,042.00",Apr 15 | 15:59
+NIFTY 50,SPI,Sun Pharma,Stock,Very Bearish,"1,696.60",-3.45,"30 Mar, 2026","1,757.20",Apr 15 | 15:59
+NIFTY 50,DRL,Dr Reddys Labs,Stock,Very Bearish,"1,217.80",-2.96,"30 Mar, 2026","1,254.90",Apr 15 | 15:59
+NIFTY 50,CI29,Coal India,Stock,Bearish,435.80,0.39,"10 Apr, 2026",434.10,Apr 15 | 15:59
+NIFTY MIDCAP100,SL23,Swiggy,Stock,Very Bearish,272.25,-18.48,"18 Feb, 2026",333.95,Apr 15 | 15:59
+NIFTY MIDCAP100,MMF04,M&M Financial,Stock,Bearish,299.95,-18.05,"02 Mar, 2026",366.00,Apr 15 | 15:59
+NIFTY MIDCAP100,DI,Dabur India,Stock,Bearish,433.25,-14.65,"02 Mar, 2026",507.60,Apr 15 | 15:59
+NIFTY MIDCAP100,RSI,Patanjali Foods,Stock,Very Bearish,464.70,-10.42,"25 Feb, 2026",518.75,Apr 15 | 15:59
+NIFTY MIDCAP100,BL03,Biocon,Stock,Very Bearish,350.35,-7.08,"16 Mar, 2026",377.05,Apr 15 | 15:59
+NIFTY MIDCAP100,BI26,INDUS TOWERS,Stock,Very Bearish,420.25,0.00,"15 Apr, 2026",420.25,Apr 15 | 15:59
+NIFTY MIDCAP100,OI13,Oil India,Stock,Bearish,463.25,0.94,"08 Apr, 2026",458.95,Apr 15 | 15:59
+NIFTY NEXT 50,HMI01,Hyundai Motor,Stock,Very Bearish,"1,781.40",-17.52,"24 Feb, 2026","2,159.90",Apr 15 | 15:59
+NIFTY NEXT 50,PI11,Pidilite Ind,Stock,Bearish,"1,329.50",-9.28,"02 Mar, 2026","1,465.50",Apr 15 | 15:59
+NIFTY NEXT 50,MC08,United Spirits,Stock,Very Bearish,"1,252.40",-8.36,"02 Mar, 2026","1,366.60",Apr 15 | 15:59
+NIFTY 500,ES07,eClerx Services,Stock,Bearish,"1,489.10",-64.43,"06 Feb, 2026","4,185.90",Apr 15 | 15:58
+NIFTY 500,IDB,IDBI Bank,Stock,Bearish,74.39,-24.86,"09 Mar, 2026",99.00,Apr 15 | 15:59
+NIFTY 500,ACC,ACC,Stock,Bearish,"1,431.20",-22.66,"28 Nov, 2025","1,850.60",Apr 15 | 15:58
+NIFTY 500,GSP02,Guj State Petro,Stock,Very Bearish,242.98,-19.09,"19 Feb, 2026",300.30,Apr 15 | 15:59
+NIFTY 500,CB09,Concord Biotech,Stock,Very Bearish,"1,040.60",-13.37,"04 Mar, 2026","1,201.20",Apr 15 | 15:53
+NIFTY 500,II15,IIFL Finance,Stock,Bearish,469.25,-12.90,"22 Jan, 2026",538.75,Apr 15 | 15:56
+NIFTY 500,PTC02,PTC Industries,Stock,Very Bearish,"15,756.00",-11.96,"24 Feb, 2026","17,897.00",Apr 15 | 15:59
+NIFTY 500,AIS,Asahi India,Stock,Bearish,850.20,-9.30,"16 Feb, 2026",937.40,Apr 15 | 15:59
+NIFTY 500,UBB,United Brewerie,Stock,Very Bearish,"1,470.70",-9.03,"16 Mar, 2026","1,616.70",Apr 15 | 15:56
+NIFTY 500,AII01,Authum Invest,Stock,Very Bearish,445.35,-8.35,"27 Mar, 2026",485.90,Apr 15 | 15:59
+NIFTY 500,PVR,PVR INOX,Stock,Very Bearish,942.90,-5.36,"12 Mar, 2026",996.30,Apr 15 | 15:57
+NIFTY 500,KP,Abbott India,Stock,Very Bearish,"25,975.00",-4.45,"09 Mar, 2026","27,185.00",Apr 15 | 15:48
+NIFTY 500,JBC,JB Chemicals,Stock,Bearish,"1,981.10",-3.68,"27 Mar, 2026","2,056.70",Apr 15 | 15:59
+NIFTY 500,GDGIL,Go Digit,Stock,Very Bearish,320.10,-3.28,"17 Mar, 2026",330.95,Apr 15 | 15:54
+NIFTY 500,IL,Ipca Labs,Stock,Very Bearish,"1,470.90",-1.17,"02 Apr, 2026","1,488.30",Apr 15 | 15:59
+NIFTY 500,PFL06,Piramal Finance,Stock,Bearish,"1,743.70",-1.11,"02 Apr, 2026","1,763.20",Apr 15 | 15:59
+NIFTY 500,MRP,MRPL,Stock,Bearish,175.80,-0.73,"27 Mar, 2026",177.10,Apr 15 | 15:59
+NIFTY 500,JRRL,Jain Resource,Stock,Bearish,418.90,-0.57,"13 Apr, 2026",421.30,Apr 15 | 15:59
+NIFTY 500,JCA,Jyoti CNC Auto,Stock,Very Bearish,698.65,-0.04,"13 Apr, 2026",698.95,Apr 15 | 15:59
+NIFTY 500,C07,Ceat,Stock,Bearish,"3,625.30",0.00,"15 Apr, 2026","3,625.30",Apr 15 | 15:59
+NIFTY 500,CI01,Castrol,Stock,Bearish,180.01,1.53,"23 Mar, 2026",177.29,Apr 15 | 15:59
+ALL NSE,SAB,Aqylon Nexus,Stock,Very Bearish,47.37,-97.24,"17 Feb, 2026","1,713.60",Apr 15 | 15:55
+ALL NSE,RD03,RB Denims,Stock,Bearish,15.66,-89.84,"04 Mar, 2026",154.16,Apr 15 | 15:59
+ALL NSE,PI30,Perfect Infra,Stock,Very Bearish,1.40,-88.19,"27 Jun, 2025",11.85,Apr 15 | 15:45
+ALL NSE,OHR,Osia Hyper Reta,Stock,Very Bearish,4.46,-81.93,"30 Sep, 2025",24.68,Apr 15 | 15:51
+ALL NSE,FI19,Flexituff Ventu,Stock,Bearish,6.47,-76.15,"04 Sep, 2025",27.13,Apr 15 | 15:49
+ALL NSE,FI21,Foce India,Stock,Very Bearish,557.00,-67.78,"17 Feb, 2026","1,729.00",Apr 15 | 15:31
+ALL NSE,BCI02,Blue Chip,Stock,Very Bearish,2.34,-67.13,"01 Apr, 2025",7.12,Apr 15 | 15:43
+ALL NSE,MID,MEP Infra,Stock,Bearish,0.89,-61.47,"20 Nov, 2025",2.31,Apr 15 | 15:57
+ALL NSE,KDI,Kilitch Drugs,Stock,Very Bearish,129.53,-60.75,"12 Feb, 2026",330.00,Apr 15 | 15:54
+ALL NSE,DCM05,DRS Cargo Mover,Stock,Bearish,21.80,-54.35,"05 Dec, 2025",47.75,Apr 15 | 15:31
+ALL NSE,SLL02,Stanley Lifesty,Stock,Bearish,139.88,-53.18,"25 Sep, 2025",298.75,Apr 15 | 15:59
+ALL NSE,TGL,Teerth Gopicon,Stock,Bearish,33.65,-53.00,"09 Jan, 2026",71.60,Apr 15 | 15:40
+ALL NSE,FPB01,Fino Payments,Stock,Bearish,134.81,-51.31,"08 Dec, 2025",276.90,Apr 15 | 15:59
+ALL NSE,DL04,Dhariwalcorp,Stock,Very Bearish,38.65,-50.89,"06 Feb, 2026",78.70,Apr 15 | 15:50
+ALL NSE,PI08,Pil Italica,Stock,Bearish,7.16,-49.82,"22 Sep, 2025",14.27,Apr 15 | 15:50
+ALL NSE,JT03,Jalan Transolut,Stock,Very Bearish,1.80,-49.30,"23 Jan, 2026",3.55,Apr 15 | 15:53
+ALL NSE,RD02,Rushil Decor,Stock,Bearish,15.01,-46.01,"06 Oct, 2025",27.80,Apr 15 | 15:59
+ALL NSE,MIE02,Manglam Infra,Stock,Bearish,13.70,-45.74,"15 Sep, 2025",25.25,Apr 15 | 15:51
+ALL NSE,GCH01,Grand Continent,Stock,Bearish,93.30,-40.80,"06 Jan, 2026",157.60,Apr 15 | 15:51
+ALL NSE,WF03,Wonder Elect.,Stock,Very Bearish,93.36,-40.75,"17 Dec, 2025",157.57,Apr 15 | 15:58
+ALL NSE,TPI01,Tokyo Plast,Stock,Bearish,74.17,-40.22,"30 Oct, 2025",124.08,Apr 15 | 15:50
+ALL NSE,RML04,C K K Retail,Stock,Bearish,130.15,-39.14,"27 Feb, 2026",213.85,Apr 15 | 15:57
+ALL NSE,RTN,Raj Television,Stock,Very Bearish,24.91,-38.22,"13 Feb, 2026",40.32,Apr 15 | 15:53
+ALL NSE,KI26,KCK Industries,Stock,Very Bearish,14.25,-38.04,"11 Mar, 2026",23.00,Apr 15 | 15:43
+ALL NSE,LG,Lexus Granito,Stock,Very Bearish,19.18,-36.76,"19 Mar, 2026",30.33,Apr 15 | 15:58
+ALL NSE,TFP,Tapi Fruit,Stock,Bearish,59.00,-36.32,"14 Nov, 2025",92.65,Apr 15 | 15:57
+ALL NSE,AIS03,ANI Integrated ,Stock,Very Bearish,58.90,-35.17,"26 Sep, 2025",90.85,Apr 15 | 15:31
+ALL NSE,NB01,Navkar Urban.,Stock,Bearish,0.85,-34.11,"26 Feb, 2026",1.29,Apr 15 | 15:54
+ALL NSE,MB,Medicamen Bio,Stock,Bearish,247.77,-33.68,"16 Jan, 2026",373.60,Apr 15 | 15:46
+ALL NSE,ZL,Zee Learn,Stock,Bearish,4.90,-33.42,"23 Dec, 2025",7.36,Apr 15 | 15:58
+ALL NSE,CSA,Continental See,Stock,Very Bearish,14.95,-32.81,"30 Dec, 2025",22.25,Apr 15 | 15:31
+ALL NSE,JSW,JSW Holdings,Stock,Very Bearish,"13,208.00",-31.99,"26 Dec, 2025","19,420.00",Apr 15 | 15:52
+ALL NSE,PEL05,Presstonic,Stock,Bearish,36.00,-31.62,"06 Mar, 2026",52.65,Apr 15 | 15:53
+ALL NSE,DI25,Dhunseri Invest,Stock,Bearish,844.10,-31.22,"05 Jan, 2026","1,227.30",Apr 15 | 15:40
+ALL NSE,PEC02,PRITIKA,Stock,Very Bearish,51.05,-31.11,"06 Jan, 2026",74.10,Apr 15 | 15:56
+ALL NSE,VSA,Vaidya Sane,Stock,Very Bearish,190.00,-29.39,"08 Jan, 2026",269.10,Apr 15 | 15:40
+ALL NSE,CFC03,Camlin Fine,Stock,Very Bearish,106.96,-28.62,"16 Feb, 2026",149.85,Apr 15 | 15:59
+ALL NSE,ADL03,Aaradhya Dispos,Stock,Very Bearish,88.10,-27.79,"14 Jan, 2026",122.00,Apr 15 | 15:48
+ALL NSE,PM10,Precision,Stock,Very Bearish,7.25,-27.50,"18 Feb, 2026",10.00,Apr 15 | 15:31
+ALL NSE,SA05,Sical Logistics,Stock,Bearish,64.60,-27.30,"16 Feb, 2026",88.86,Apr 15 | 15:57
+ALL NSE,IL04,INDIFRA,Stock,Very Bearish,12.40,-27.06,"01 Oct, 2025",17.00,Apr 15 | 15:31
+ALL NSE,TLI02,Timescan Logist,Stock,Very Bearish,42.90,-24.07,"12 Dec, 2025",56.50,Apr 15 | 15:31
+ALL NSE,HPI02,Hariom Pipe,Stock,Very Bearish,294.50,-23.81,"09 Feb, 2026",386.55,Apr 15 | 15:59
+ALL NSE,STL07,SAR Televenture,Stock,Bearish,165.50,-23.01,"24 Feb, 2026",214.95,Apr 15 | 15:56
+ALL NSE,PGI,P and G,Stock,Bearish,"9,900.00",-22.98,"02 Jan, 2026","12,854.00",Apr 15 | 15:56
+ALL NSE,VO01,Vinati Organics,Stock,Very Bearish,"1,231.60",-22.49,"08 Jan, 2026","1,589.00",Apr 15 | 15:58
+ALL NSE,STM03,Spectrum Talent,Stock,Very Bearish,60.80,-22.35,"13 Feb, 2026",78.30,Apr 15 | 15:41
+ALL NSE,CS15,California Soft,Stock,Very Bearish,11.92,-21.06,"05 Jan, 2026",15.10,Apr 15 | 15:59
+ALL NSE,NII03,Niraj Ispat,Stock,Bearish,210.00,-20.92,"04 Mar, 2026",265.55,Apr 15 | 15:31
+ALL NSE,GJL01,Grover Jewells,Stock,Bearish,151.80,-20.77,"01 Apr, 2026",191.60,Apr 15 | 15:31
+ALL NSE,GGC,Gujarat Gas,Stock,Very Bearish,325.65,-20.17,"19 Feb, 2026",407.95,Apr 15 | 15:59
+ALL NSE,MPEL,Manas Polymers,Stock,Very Bearish,44.80,-19.71,"25 Mar, 2026",55.80,Apr 15 | 15:31
+ALL NSE,CSL01,CSL Fin,Stock,Bearish,238.90,-18.84,"08 Jan, 2026",294.35,Apr 15 | 15:57
+ALL NSE,RM,Rane Holdings,Stock,Bearish,"1,066.90",-18.53,"16 Feb, 2026","1,309.50",Apr 15 | 15:58
+ALL NSE,WIL01,Wakefit Inno,Stock,Bearish,152.87,-18.18,"27 Feb, 2026",186.83,Apr 15 | 15:52
+ALL NSE,CSSL,Clear Secured,Stock,Bearish,106.75,-17.95,"05 Feb, 2026",130.10,Apr 15 | 15:31
+ALL NSE,CPD,Creative New,Stock,Bearish,588.30,-17.20,"09 Jan, 2026",710.55,Apr 15 | 15:59
+ALL NSE,OG01,OnMobile Global,Stock,Bearish,47.19,-17.17,"08 Jan, 2026",56.97,Apr 15 | 15:52
+ALL NSE,VMF,Kellton Tech,Stock,Very Bearish,14.93,-17.15,"02 Mar, 2026",18.02,Apr 15 | 15:59
+ALL NSE,MML06,Maitreya Medica,Stock,Very Bearish,169.20,-16.98,"13 Mar, 2026",203.80,Apr 15 | 15:55
+ALL NSE,GOL01,Gulf Oil Lubric,Stock,Bearish,930.60,-16.44,"16 Feb, 2026","1,113.70",Apr 15 | 15:55
+ALL NSE,S24,C P S Shapers,Stock,Bearish,940.00,-16.44,"26 Feb, 2026","1,125.00",Apr 15 | 15:31
+ALL NSE,BPL11,Balaji Phosphat,Stock,Very Bearish,109.00,-16.15,"18 Mar, 2026",130.00,Apr 15 | 15:31
+ALL NSE,SSF09,Srivari Spices,Stock,Very Bearish,109.70,-15.94,"19 Mar, 2026",130.50,Apr 15 | 15:55
+ALL NSE,ESL02,Enfuse Solution,Stock,Bearish,185.00,-15.91,"08 Jan, 2026",220.00,Apr 15 | 15:31
+ALL NSE,FI08,Uflex,Stock,Bearish,393.55,-15.61,"13 Feb, 2026",466.35,Apr 15 | 15:53
+ALL NSE,LGHL18475,Laxmi Goldorna,Stock,Very Bearish,244.29,-15.41,"20 Feb, 2026",288.80,Apr 15 | 15:31
+ALL NSE,KC13,KNR Construct,Stock,Bearish,124.51,-15.16,"09 Feb, 2026",146.76,Apr 15 | 15:59
+ALL NSE,APF02,Anya Polytech &,Stock,Very Bearish,16.95,-15.04,"03 Feb, 2026",19.95,Apr 15 | 15:40
+ALL NSE,IL07,V L Infraprojec,Stock,Bearish,22.05,-13.70,"13 Mar, 2026",25.55,Apr 15 | 15:58
+ALL NSE,VAL,Veritaas Advert,Stock,Bearish,48.00,-13.67,"09 Mar, 2026",55.60,Apr 15 | 15:31
+ALL NSE,SS57,Sahana Systems,Stock,Very Bearish,860.70,-13.48,"13 Mar, 2026",994.85,Apr 15 | 15:51
+ALL NSE,HAI,HMA Agro,Stock,Very Bearish,23.28,-12.94,"24 Feb, 2026",26.74,Apr 15 | 15:59
+ALL NSE,YCC,YCCL,Stock,Bearish,10.10,-12.17,"13 Jan, 2026",11.50,Apr 15 | 15:40
+ALL NSE,JLS,JFL Life Scienc,Stock,Bearish,9.60,-11.93,"19 Feb, 2026",10.90,Apr 15 | 15:31
+ALL NSE,DSC01,Davangere Sugar,Stock,Very Bearish,3.69,-11.93,"20 Feb, 2026",4.19,Apr 15 | 15:59
+ALL NSE,DSL02,Digikore Studio,Stock,Very Bearish,70.40,-10.83,"18 Mar, 2026",78.95,Apr 15 | 15:57
+ALL NSE,I12,A B Infrabuild,Stock,Very Bearish,16.33,-10.81,"25 Feb, 2026",18.31,Apr 15 | 15:49
+ALL NSE,CEL04,Chamunda Electr,Stock,Very Bearish,42.20,-10.78,"04 Mar, 2026",47.30,Apr 15 | 15:43
+ALL NSE,MES,Maks Energy,Stock,Very Bearish,26.50,-10.62,"16 Dec, 2025",29.65,Apr 15 | 15:31
+ALL NSE,SI59,Sanco Ind,Stock,Very Bearish,2.06,-10.43,"27 Mar, 2026",2.30,Apr 15 | 15:55
+ALL NSE,MFS04,Sasta Sundar,Stock,Bearish,272.40,-10.31,"20 Jan, 2026",303.70,Apr 15 | 15:41
+ALL NSE,SEP01,Shaily Engg,Stock,Very Bearish,"1,882.50",-10.04,"07 Apr, 2026","2,092.50",Apr 15 | 15:59
+ALL NSE,SEI06,Spectrum Electr,Stock,Very Bearish,"1,204.00",-9.93,"07 Apr, 2026","1,336.70",Apr 15 | 15:55
+ALL NSE,BCL11,BAG Convergence,Stock,Bearish,107.65,-9.92,"29 Dec, 2025",119.50,Apr 15 | 15:40
+ALL NSE,SP46,Sotac Pharma,Stock,Very Bearish,107.00,-9.89,"18 Feb, 2026",118.75,Apr 15 | 15:40
+ALL NSE,VIP,VIP Industries,Stock,Bearish,322.75,-9.25,"19 Feb, 2026",355.65,Apr 15 | 15:59
+ALL NSE,AO,Ador Welding,Stock,Bearish,957.30,-9.14,"27 Feb, 2026","1,053.60",Apr 15 | 15:59
+ALL NSE,MAC02,Maha Rasht Apex,Stock,Bearish,51.32,-9.09,"20 Mar, 2026",56.45,Apr 15 | 15:56
+ALL NSE,TC15,Twamev Construc,Stock,Very Bearish,22.14,-9.00,"23 Mar, 2026",24.33,Apr 15 | 15:59
+ALL NSE,AF08,Vipul,Stock,Very Bearish,10.12,-8.99,"19 Mar, 2026",11.12,Apr 15 | 15:49
+ALL NSE,KIS02,Krystal Integra,Stock,Bearish,547.45,-8.96,"06 Mar, 2026",601.35,Apr 15 | 15:48
+ALL NSE,CS18,Chemplast,Stock,Very Bearish,236.80,-8.87,"01 Apr, 2026",259.85,Apr 15 | 15:59
+ALL NSE,KAL,Accelya,Stock,Bearish,"1,161.20",-8.87,"06 Feb, 2026","1,274.20",Apr 15 | 15:56
+ALL NSE,VTI04,N R Vandana Tex,Stock,Bearish,50.15,-8.82,"09 Mar, 2026",55.00,Apr 15 | 15:31
+ALL NSE,SFI06,Sabar Flex ,Stock,Very Bearish,4.75,-8.65,"01 Apr, 2026",5.20,Apr 15 | 15:31
+ALL NSE,PFS01,Paragon Fine & ,Stock,Very Bearish,40.40,-7.34,"19 Mar, 2026",43.60,Apr 15 | 15:53
+ALL NSE,SAL06,Studds Access,Stock,Bearish,471.45,-7.32,"04 Mar, 2026",508.70,Apr 15 | 15:56
+ALL NSE,MN,Modis Navnirman,Stock,Very Bearish,299.50,-7.17,"19 Feb, 2026",322.65,Apr 15 | 15:54
+ALL NSE,FI12,Foseco India,Stock,Very Bearish,"4,518.90",-7.14,"27 Mar, 2026","4,866.50",Apr 15 | 15:50
+ALL NSE,BPSL,Boss Packaging ,Stock,Very Bearish,37.25,-6.64,"24 Mar, 2026",39.90,Apr 15 | 15:31
+ALL NSE,NT02,EQUIPPP,Stock,Very Bearish,15.68,-6.39,"24 Mar, 2026",16.75,Apr 15 | 15:31
+ALL NSE,AEL13,Acetech E-Com,Stock,Bearish,129.40,-6.33,"27 Mar, 2026",138.15,Apr 15 | 15:40
+ALL NSE,RP28,Remus Pharmaceu,Stock,Bearish,637.25,-6.15,"25 Feb, 2026",679.00,Apr 15 | 15:40
+ALL NSE,ETM,Emerald Tyre,Stock,Bearish,90.35,-5.93,"24 Feb, 2026",96.05,Apr 15 | 15:31
+ALL NSE,PD09,Panache Digilif,Stock,Bearish,301.85,-5.92,"04 Mar, 2026",320.85,Apr 15 | 15:47
+ALL NSE,AES01,Aakash Explorat,Stock,Very Bearish,8.22,-5.73,"17 Mar, 2026",8.72,Apr 15 | 15:59
+ALL NSE,GCD02,Giriraj Civil D,Stock,Very Bearish,158.65,-5.73,"10 Apr, 2026",168.30,Apr 15 | 15:31
+ALL NSE,NTE,Norben Tea,Stock,Very Bearish,80.60,-5.72,"09 Apr, 2026",85.49,Apr 15 | 15:48
+ALL NSE,GC16,Mahindra Life,Stock,Bearish,342.50,-5.70,"18 Feb, 2026",363.20,Apr 15 | 15:59
+ALL NSE,U01,A G Universal,Stock,Bearish,68.75,-5.69,"09 Mar, 2026",72.90,Apr 15 | 15:42
+ALL NSE,ESI,Eastern Silk,Stock,Bearish,63.00,-5.56,"16 Mar, 2026",66.71,Apr 15 | 15:47
+ALL NSE,VFA,Veekayem Fashio,Stock,Bearish,124.80,-5.49,"06 Mar, 2026",132.05,Apr 15 | 15:31
+ALL NSE,NPL03,Nikita Greentec,Stock,Bearish,113.75,-4.81,"27 Feb, 2026",119.50,Apr 15 | 15:44
+ALL NSE,FI,Finolex Ind,Stock,Bearish,172.48,-4.31,"16 Mar, 2026",180.25,Apr 15 | 15:59
+ALL NSE,AEL07,Apex Ecotech,Stock,Very Bearish,110.95,-3.52,"10 Apr, 2026",115.00,Apr 15 | 15:40
+ALL NSE,CE08,Creative Eye,Stock,Bearish,6.44,-3.16,"13 Mar, 2026",6.65,Apr 15 | 15:46
+ALL NSE,DSS03,R M Drip Spri,Stock,Bearish,24.97,-3.14,"13 Apr, 2026",25.78,Apr 15 | 15:56
+ALL NSE,TTK02,TTK Prestige,Stock,Bearish,480.75,-2.29,"16 Mar, 2026",492.00,Apr 15 | 15:58
+ALL NSE,TT06,TT,Stock,Very Bearish,8.57,-2.17,"23 Mar, 2026",8.76,Apr 15 | 15:56
+ALL NSE,GMB,GM Breweries,Stock,Very Bearish,972.70,-2.13,"10 Apr, 2026",993.85,Apr 15 | 15:59
+ALL NSE,KS20,Aarnav Fashions,Stock,Bearish,24.40,-2.09,"23 Mar, 2026",24.92,Apr 15 | 15:53
+ALL NSE,HMT01,Happiest Minds ,Stock,Bearish,380.90,-2.07,"27 Mar, 2026",388.95,Apr 15 | 15:59
+ALL NSE,EEL02,Ecoline Exim,Stock,Bearish,121.85,-1.93,"25 Mar, 2026",124.25,Apr 15 | 15:52
+ALL NSE,LME01,Le Merite,Stock,Very Bearish,437.70,-1.64,"19 Mar, 2026",445.00,Apr 15 | 15:40
+ALL NSE,AGS01,Akiko Global,Stock,Very Bearish,202.60,-1.17,"24 Mar, 2026",205.00,Apr 15 | 15:41
+ALL NSE,ACI13,AB Cotspin,Stock,Bearish,405.50,-1.17,"19 Feb, 2026",410.30,Apr 15 | 15:49
+ALL NSE,ET05,Exxaro,Stock,Very Bearish,6.48,-1.07,"13 Apr, 2026",6.55,Apr 15 | 15:59
+ALL NSE,TI09,Tilaknagar Ind,Stock,Very Bearish,430.35,-1.06,"19 Mar, 2026",434.95,Apr 15 | 15:56
+ALL NSE,NIF1022524,UTI NIF10GETF,ETF,Very Bearish,25.73,-0.43,"09 Apr, 2026",25.84,Apr 15 | 15:31
+ALL NSE,PP38,Pramara Promoti,Stock,Very Bearish,346.45,-0.23,"09 Apr, 2026",347.25,Apr 15 | 15:40
+ALL NSE,SFP02,Sawaliya Food,Stock,Bearish,304.05,-0.16,"30 Mar, 2026",304.55,Apr 15 | 15:40
+ALL NSE,CSB01,Commercial Syn ,Stock,Very Bearish,153.09,-0.14,"09 Apr, 2026",153.30,Apr 15 | 15:31
+ALL NSE,ZLSL,BlackBuck,Stock,Very Bearish,576.30,-0.10,"30 Mar, 2026",576.90,Apr 15 | 15:59
+ALL NSE,DSPPV17576,DSP Priv Bank,ETF,Bearish,27.37,0.00,"15 Apr, 2026",27.37,Apr 15 | 15:55
+ALL NSE,GRC02,Gayatri Rubbers,Stock,Bearish,379.90,0.00,"15 Apr, 2026",379.90,Apr 15 | 15:31
+ALL NSE,CC25,Cinevista,Stock,Bearish,15.27,0.00,"19 Mar, 2026",15.27,Apr 15 | 15:44
+ALL NSE,EIL05,EPW India,Stock,Bearish,114.00,0.00,"15 Apr, 2026",114.00,Apr 15 | 15:59
+ALL NSE,RAE01,Royal Arc Elect,Stock,Very Bearish,153.10,0.00,"15 Apr, 2026",153.10,Apr 15 | 15:31
+ALL NSE,GSL06,Galaxy Surfacta,Stock,Bearish,"1,797.80",0.00,"15 Apr, 2026","1,797.80",Apr 15 | 15:45
+ALL NSE,BIR,Brookfield Ind,Stock,Bearish,327.88,0.00,"15 Apr, 2026",327.88,Apr 15 | 15:58
+ALL NSE,OCA,Onelife Capital,Stock,Bearish,15.00,0.00,"15 Apr, 2026",15.00,Apr 15 | 15:40
+ALL NSE,PS20,Prataap Snacks ,Stock,Bearish,954.00,0.12,"13 Apr, 2026",952.90,Apr 15 | 15:56
+ALL NSE,NS,Nucleus Softwar,Stock,Bearish,795.10,0.27,"13 Apr, 2026",792.95,Apr 15 | 15:59
+ALL NSE,ABS02,ABSL NiftyHeal,ETF,Bearish,14.83,0.34,"16 Mar, 2026",14.78,Apr 15 | 15:59
+ALL NSE,SFP01,Shanthala,Stock,Very Bearish,26.80,1.13,"02 Mar, 2026",26.50,Apr 15 | 15:31
+ALL NSE,OBL,Onyx Biotec,Stock,Very Bearish,33.00,1.38,"15 Apr, 2026",32.55,Apr 15 | 15:31
+ALL NSE,JIOTMARL,Jaro Insti Tech,Stock,Bearish,434.70,1.47,"27 Mar, 2026",428.40,Apr 15 | 15:52
+ALL NSE,IID,Arshiya,Stock,Bearish,1.35,1.50,"23 Mar, 2026",1.33,Apr 15 | 15:41
+ALL NSE,PKT,Peria Karamalai,Stock,Bearish,769.60,1.50,"08 Apr, 2026",758.20,Apr 15 | 15:41
+ALL NSE,FTIL,Falcon Technopr,Stock,Very Bearish,11.85,1.72,"18 Mar, 2026",11.65,Apr 15 | 15:42
+ALL NSE,VI16,V-Guard Ind,Stock,Bearish,321.30,2.37,"13 Apr, 2026",313.85,Apr 15 | 15:53
+ALL NSE,IPHL25036,IPHL,Stock,Bearish,54.30,3.23,"17 Mar, 2026",52.60,Apr 15 | 15:31
+ALL NSE,IGS,Inventure Grow,Stock,Very Bearish,0.97,4.30,"10 Apr, 2026",0.93,Apr 15 | 15:59
+MIDCAP,MMF04,MM Financial,Stock,Bearish,299.95,-18.05,"02 Mar, 2026",366.00,Apr 15 | 15:59
+SMALLCAP,SLL02,Stanley Life,Stock,Bearish,139.88,-53.18,"25 Sep, 2025",298.75,Apr 15 | 15:59
+SMALLCAP,KI26,KCK Ind,Stock,Very Bearish,14.25,-38.04,"11 Mar, 2026",23.00,Apr 15 | 15:43
+SMALLCAP,PEC02,Pritika Eng,Stock,Very Bearish,51.05,-31.11,"06 Jan, 2026",74.10,Apr 15 | 15:56
+SMALLCAP,VSA,Vaidya Sane Ayu,Stock,Very Bearish,190.00,-29.39,"08 Jan, 2026",269.10,Apr 15 | 15:40
+SMALLCAP,PM10,Precision Metal,Stock,Very Bearish,7.25,-27.50,"18 Feb, 2026",10.00,Apr 15 | 15:31
+SMALLCAP,IL04,Indifra,Stock,Very Bearish,12.40,-27.06,"01 Oct, 2025",17.00,Apr 15 | 15:31
+SMALLCAP,MML06,Maitreya,Stock,Very Bearish,169.20,-16.98,"13 Mar, 2026",203.80,Apr 15 | 15:55
+SMALLCAP,APF02,Anya Polytech,Stock,Very Bearish,16.95,-15.04,"03 Feb, 2026",19.95,Apr 15 | 15:40
+SMALLCAP,YCC,Yasons Chemex,Stock,Bearish,10.10,-12.17,"13 Jan, 2026",11.50,Apr 15 | 15:40
+SMALLCAP,DSL02,Digikore,Stock,Very Bearish,70.40,-10.83,"18 Mar, 2026",78.95,Apr 15 | 15:57
+SMALLCAP,CS18,CHEMPLAST SANMA,Stock,Very Bearish,236.80,-8.87,"01 Apr, 2026",259.85,Apr 15 | 15:59
+SMALLCAP,PFS01,Paragon Fine,Stock,Very Bearish,40.40,-7.34,"19 Mar, 2026",43.60,Apr 15 | 15:53
+SMALLCAP,RP28,Remus Pharma,Stock,Bearish,637.25,-6.15,"25 Feb, 2026",679.00,Apr 15 | 15:40
+SMALLCAP,ET05,Exxaro Tiles,Stock,Very Bearish,6.48,-1.07,"13 Apr, 2026",6.55,Apr 15 | 15:59
+SMALLCAP,PP38,Pramara,Stock,Very Bearish,346.45,-0.23,"09 Apr, 2026",347.25,Apr 15 | 15:40
+SMALLCAP,GSL06,Galaxy Surf,Stock,Bearish,"1,797.80",0.00,"15 Apr, 2026","1,797.80",Apr 15 | 15:45
+SMALLCAP,BIR,Brookfield REIT,Stock,Bearish,327.88,0.00,"15 Apr, 2026",327.88,Apr 15 | 15:58
