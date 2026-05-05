@@ -962,12 +962,12 @@ def main():
     name_map = load_equity_l()
 
     def _folder_sort_key(path):
-    try:
-        return datetime.strptime(os.path.basename(path), "%d-%b-%Y")
-    except Exception:
-        return datetime.min
+        try:
+            return datetime.strptime(os.path.basename(path), "%d-%b-%Y")
+        except Exception:
+            return datetime.min
 
-date_folders = sorted(glob.glob(os.path.join(INDICATOR_ROOT, "*")), key=_folder_sort_key, reverse=True)
+    date_folders = sorted(glob.glob(os.path.join(INDICATOR_ROOT, "*")), key=_folder_sort_key, reverse=True)
     if not date_folders:
         msg = f"❌ NSE Engine — No indicator folders in `{INDICATOR_ROOT}/`"
         print(msg); tg_message(msg)
