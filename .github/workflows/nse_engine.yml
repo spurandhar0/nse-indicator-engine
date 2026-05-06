@@ -1,10 +1,6 @@
-name: NSE Indicator Engine (Daily 6:30PM IST)
+name: NSE Indicator Engine
 
 on:
-  workflow_run:
-    workflows: ["NSE Bhavcopy Fetch (Daily 6:15PM IST)"]
-    types: [completed]
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -13,8 +9,6 @@ permissions:
 jobs:
   engine:
     runs-on: ubuntu-latest
-    # On workflow_run: only proceed if bhavcopy succeeded
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -33,7 +27,7 @@ jobs:
         env:
           TG_BOT_TOKEN:  ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID:    ${{ secrets.TG_CHAT_ID }}
-          MC_AUTH_TOKEN: ${{ secrets.MC_AUTH_TOKEN }}   # optional: enables MC Search API (P5 fallback)
+          MC_AUTH_TOKEN: ${{ secrets.MC_AUTH_TOKEN }}
         run: python src/nse_engine.py
 
       - name: Commit output report to repo
