@@ -1,0 +1,40 @@
+name: NSE Consolidate Excel
+
+on:
+  workflow_run:
+    workflows: ["NSE Indicator Engine"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  consolidate:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pandas openpyxl pytz
+
+      - name: Run consolidator
+        run: python src/consolidate_to_excel.py
+
+      - name: Commit Excel to repo
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add consolidated_excel/
+          git diff --cached --quiet || git commit -m "auto: consolidated Excel $(date +'%d-%b-%Y')"
+          git pull --rebase --autostash origin main
+          git push
