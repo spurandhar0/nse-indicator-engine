@@ -5,6 +5,11 @@ on:
     workflows: ["NSE Indicator Engine"]
     types: [completed]
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Reprocess all dates (overwrite existing Excel files)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -28,9 +33,14 @@ jobs:
         run: pip install pandas openpyxl pytz
 
       - name: Run consolidator
-        run: python src/consolidate_to_excel.py
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python src/consolidate_to_excel.py --force
+          else
+            python src/consolidate_to_excel.py
+          fi
 
-      - name: Commit Excel to repo
+      - name: Commit Excel files to repo
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
