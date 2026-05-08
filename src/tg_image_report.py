@@ -58,7 +58,14 @@ WHITE  = "#FFFFFF"
 
 # ── Load latest output report (date-specific) ─────────────────────────────────
 def load_report():
-    files = sorted(glob.glob(f"{OUTPUT_DIR}/NSE_Indicator_Report_*.csv"), reverse=True)
+    # Sort by actual date in filename (not alphabetical which breaks across months)
+    def _date_key(f):
+        m = re.search(r"(\d{2}-\w{3}-\d{4})", f)
+        if m:
+            try: return datetime.strptime(m.group(1), "%d-%b-%Y")
+            except: pass
+        return datetime.min
+    files = sorted(glob.glob(f"{OUTPUT_DIR}/NSE_Indicator_Report_*.csv"), key=_date_key, reverse=True)
     if not files:
         print("[ERROR] No report CSV found in", OUTPUT_DIR)
         sys.exit(1)
@@ -621,7 +628,98 @@ def main():
     for path, caption in images:
         send_whatsapp(path, caption)
 
-    print(f"[DONE] 4 images generated | Telegram: sent | WhatsApp: {'enabled' if TWILIO_SID else 'skipped (no creds)'}")
+    # ── Combined 1920x1080 Wallpaper ─────────────────────────────────────────
+    combined_path = f"/tmp/NSE_Combined_Wallpaper_{dt}.png"
+    try:
+        from PIL import Image
+        imgs = [Image.open(p) for p, _ in images if os.path.exists(p)]
+        if len(imgs) == 4:
+            W, H = 1920, 1080
+            wall = Image.new("RGB", (W, H), "#FFFFFF")
+            # Layout: 2x2 grid
+            cell_w, cell_h = W // 2, H // 2
+            for idx, im in enumerate(imgs):
+                # Resize to fit cell while maintaining aspect
+                im.thumbnail((cell_w - 4, cell_h - 4), Image.LANCZOS)
+                x = (idx % 2) * cell_w + (cell_w - im.width) // 2
+                y = (idx // 2) * cell_h + (cell_h - im.height) // 2
+                wall.paste(im, (x, y))
+            wall.save(combined_path, dpi=(150, 150))
+            print(f"[WALLPAPER] Saved → {combined_path}")
+            cap_wall = (
+                f"*NSE Daily Summary — {report_date}*\n"
+                f"🟢 Bullish: {bull_cnt:,} | 🔴 Bearish: {bear_cnt:,} | 🔵 Neutral: {neut_cnt:,}\n"
+                f"Total EQ Signals: {total_cnt:,} | Gainers: {len(gainers)} | Losers: {len(losers)}"
+            )
+            send_telegram(combined_path, cap_wall)
+            for path_w, _ in [(combined_path, "")]:
+                send_whatsapp(path_w, cap_wall)
+        else:
+            print(f"[WALLPAPER] Need 4 images, got {len(imgs)} — skipping")
+    except ImportError:
+        print("[WALLPAPER] Pillow not installed — skipping (add pillow to requirements)")
+    except Exception as e:
+        print(f"[WALLPAPER] Error: {e}")
+
+    # ── Excel Trend Tracker (date-wise) ──────────────────────────────────────
+    try:
+        import openpyxl
+        from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
+        excel_path = "output_data/NSE_Trends_DateWise.xlsx"
+        try:
+            wb = openpyxl.load_workbook(excel_path)
+        except Exception:
+            wb = openpyxl.Workbook()
+            if "Sheet" in wb.sheetnames:
+                del wb["Sheet"]
+
+        # Summary sheet
+        if "Daily_Summary" not in wb.sheetnames:
+            ws_sum = wb.create_sheet("Daily_Summary")
+            ws_sum.append(["Date", "Bullish", "Bearish", "Neutral", "Total", "Top_Bullish", "Top_Bearish"])
+            ws_sum.column_dimensions["A"].width = 14
+            for col in ["B","C","D","E"]: ws_sum.column_dimensions[col].width = 10
+            ws_sum.column_dimensions["F"].width = 40
+            ws_sum.column_dimensions["G"].width = 40
+        else:
+            ws_sum = wb["Daily_Summary"]
+
+        # Check if today's date already recorded
+        existing_dates = set()
+        for row in ws_sum.iter_rows(min_row=2, values_only=True):
+            if row[0]: existing_dates.add(str(row[0]))
+
+        if report_date not in existing_dates:
+            top_bull_syms = (
+                df[df["Trend"].str.lower()=="bullish"]["NSE_SYMBOL"]
+                .value_counts().head(10).index.tolist()
+            ) if "Trend" in df.columns and "NSE_SYMBOL" in df.columns else []
+            top_bear_syms = (
+                df[df["Trend"].str.lower()=="bearish"]["NSE_SYMBOL"]
+                .value_counts().head(10).index.tolist()
+            ) if "Trend" in df.columns and "NSE_SYMBOL" in df.columns else []
+            ws_sum.append([
+                report_date, bull_cnt, bear_cnt, neut_cnt, total_cnt,
+                ", ".join(top_bull_syms), ", ".join(top_bear_syms)
+            ])
+            print(f"[EXCEL] Added {report_date} to Daily_Summary")
+
+        # Per-date detail sheet
+        sheet_name = report_date.replace("-","_")[:31]
+        if sheet_name not in wb.sheetnames:
+            ws_det = wb.create_sheet(sheet_name)
+            cols = ["NSE_SYMBOL","Trend","Signal","ScannerName","CLOSE","PREV_CLOSE","CHANGE_PCT","ConfidenceScore"]
+            ws_det.append(cols)
+            for row in df[cols].fillna("").itertuples(index=False):
+                ws_det.append(list(row))
+            print(f"[EXCEL] Created sheet: {sheet_name} ({len(df)} rows)")
+
+        wb.save(excel_path)
+        print(f"[EXCEL] Saved → {excel_path}")
+    except Exception as e:
+        print(f"[EXCEL] Error: {e}")
+
+    print(f"[DONE] 4 images + wallpaper + Excel | Telegram: sent | WhatsApp: {'enabled' if TWILIO_SID else 'skipped (no creds)'}")
 
 
 if __name__ == "__main__":
