@@ -266,6 +266,36 @@ def mc_search_symbol(company_name):
     _mc_search_cache[name] = None
     return None
 
+
+# ─── AUTO-DOWNLOAD BHAVCOPY ──────────────────────────────────────────────────
+def _download_bhav(dt_obj, save_path):
+    """Download bhavcopy from NSE if local file not found. Returns True on success."""
+    import time as _time
+    ddmmyyyy = dt_obj.strftime("%d%m%Y")
+    filename = f"sec_bhavdata_full_{ddmmyyyy}.csv"
+    url = f"https://nsearchives.nseindia.com/products/content/{filename}"
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+    dl_headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Referer": "https://www.nseindia.com/",
+        "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
+    }
+    session = requests.Session()
+    try:
+        session.get("https://www.nseindia.com", headers=dl_headers, timeout=15)
+        _time.sleep(1)
+        resp = session.get(url, headers=dl_headers, timeout=60)
+        if resp.status_code == 200 and len(resp.content) > 1000:
+            with open(save_path, "wb") as f:
+                f.write(resp.content)
+            print(f"  ✅ Auto-downloaded: {filename} ({len(resp.content)//1024} KB) → {save_path}")
+            return True
+        else:
+            print(f"  ❌ Auto-download failed: HTTP {resp.status_code} for {url}")
+    except Exception as e:
+        print(f"  ❌ Auto-download error: {e}")
+    return False
+
 # ─── BHAV LOADER ─────────────────────────────────────────────────────────────
 def load_bhav(trade_date_str):
     try:
@@ -280,8 +310,10 @@ def load_bhav(trade_date_str):
     path         = os.path.join(BHAV_ROOT, month_folder, fname)
 
     if not os.path.isfile(path):
-        print(f"  ⚠️ Bhav file not found: {path}")
-        return None
+        print(f"  ⚠️ Bhav file not found: {path} — attempting auto-download...")
+        if not _download_bhav(dt_obj, path):
+            tg_message(f"⚠️ NSE Engine — Bhav file not found and auto-download failed for {trade_date_str}")
+            return None
 
     bhav = pd.read_csv(path)
     bhav.columns        = bhav.columns.str.strip()
