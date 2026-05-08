@@ -22,7 +22,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pandas matplotlib requests pytz
+        run: pip install pandas matplotlib requests pytz pillow openpyxl
 
       - name: Generate images & send to Telegram + WhatsApp
         env:
