@@ -1,18 +1,14 @@
 """
-NSE Telegram + WhatsApp Image Report
-4 images:
-  1. Bullish Trend  — Top 10 EQ Symbols (white bg)
-  2. Bearish Trend  — Top 10 EQ Symbols (white bg)
-  3. Neutral Trend  — Top 10 EQ Symbols (white bg)
-  4. Market Movers  — Top 10 Gainers / Losers / Most Active (white bg)
+NSE Telegram + WhatsApp Image Report  — Single Combined Image
+=============================================================
+Generates ONE image with 4 sections in a 2x2 grid:
+  Top-left:     Bullish Top 10  (Symbol · Close · Chg% · Vol)
+  Top-right:    Bearish Top 10  (Symbol · Close · Chg% · Vol)
+  Bottom-left:  Neutral Top 10  (Symbol · Close · Chg% · Vol)
+  Bottom-right: Most Active Top 10 (Symbol · Close · Chg% · Vol)
 
-Fixes vs previous version:
-  - CHANGE_PCT computed from CLOSE & PREV_CLOSE (not a CSV column)
-  - Scanner name extraction simplified — no silent failures
-  - Layout: wider canvas (12"), dynamic height, no text clipping
-  - 4th image: Gainers / Losers / Most Active in one image
-  - WhatsApp sending via Twilio + ImgBB image hosting
-  - Today-specific data only (nse_engine already writes date-named file)
+Sends the single image to Telegram + WhatsApp.
+Canvas height is computed exactly from content — no empty space.
 """
 
 import os, sys, glob, re, base64
@@ -36,7 +32,7 @@ MAPPING_FILE  = "src/mc_nse_mapping.csv"
 # WhatsApp via Twilio + ImgBB
 TWILIO_SID    = os.environ.get("TWILIO_SID", "")
 TWILIO_TOKEN  = os.environ.get("TWILIO_AUTH_TOKEN", "")
-WA_FROM       = os.environ.get("WA_FROM_NUMBER", "")   # e.g. whatsapp:+14155238886
+WA_FROM       = os.environ.get("WA_FROM_NUMBER", "")
 WA_TO         = "whatsapp:+97450740794"
 IMGBB_KEY     = os.environ.get("IMGBB_API_KEY", "")
 
@@ -45,27 +41,30 @@ NOW   = datetime.now(IST)
 TOP_N = 10
 
 # ── Colours ───────────────────────────────────────────────────────────────────
+WHITE  = "#FFFFFF"
+LGREY  = "#F4F4F4"
+MGREY  = "#DDDDDD"
+BGPAGE = "#F0F2F5"
+DARK   = "#1A1A1A"
+MUTED  = "#888888"
 GREEN  = "#1B8C3E"
 RED    = "#C0392B"
 BLUE   = "#2471A3"
-ORANGE = "#E67E22"
-LGREY  = "#F7F7F7"
-MGREY  = "#DDDDDD"
-DARK   = "#1A1A1A"
-MUTED  = "#666666"
-WHITE  = "#FFFFFF"
+ORANGE = "#D4680A"
+HEADER = "#0D1B2A"
 
 
-# ── Load latest output report (date-specific) ─────────────────────────────────
+# ── Load latest output report ─────────────────────────────────────────────────
 def load_report():
-    # Sort by actual date in filename (not alphabetical which breaks across months)
     def _date_key(f):
         m = re.search(r"(\d{2}-\w{3}-\d{4})", f)
         if m:
             try: return datetime.strptime(m.group(1), "%d-%b-%Y")
             except: pass
         return datetime.min
-    files = sorted(glob.glob(f"{OUTPUT_DIR}/NSE_Indicator_Report_*.csv"), key=_date_key, reverse=True)
+
+    files = sorted(glob.glob(f"{OUTPUT_DIR}/NSE_Indicator_Report_*.csv"),
+                   key=_date_key, reverse=True)
     if not files:
         print("[ERROR] No report CSV found in", OUTPUT_DIR)
         sys.exit(1)
@@ -74,12 +73,11 @@ def load_report():
     df = pd.read_csv(path, dtype=str)
     print(f"[DATA] Total rows: {len(df):,}")
 
-    # Convert numeric columns
-    for col in ["CLOSE", "PREV_CLOSE", "LTP_MC"]:
+    for col in ["CLOSE", "PREV_CLOSE", "LTP_MC", "VOLUME"]:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    # Compute CHANGE_PCT (not present in CSV — derive from bhavcopy prices)
+    # Compute CHANGE_PCT from bhavcopy prices
     if "CLOSE" in df.columns and "PREV_CLOSE" in df.columns:
         df["CHANGE_PCT"] = (
             (df["CLOSE"] - df["PREV_CLOSE"]) / df["PREV_CLOSE"].replace(0, np.nan)
@@ -91,13 +89,13 @@ def load_report():
     else:
         df["CHANGE_PCT"] = np.nan
 
-    # Fallback CLOSE → LTP_MC if bhavcopy price missing
     if "CLOSE" in df.columns and "LTP_MC" in df.columns:
         df["CLOSE"] = df["CLOSE"].fillna(df["LTP_MC"])
     if "PREV_CLOSE" not in df.columns:
         df["PREV_CLOSE"] = np.nan
+    if "VOLUME" not in df.columns:
+        df["VOLUME"] = np.nan
 
-    # EQ series only, valid NSE symbol
     if "SERIES" in df.columns:
         df = df[df["SERIES"].fillna("").str.upper() == "EQ"]
     if "NSE_SYMBOL" in df.columns:
@@ -110,12 +108,11 @@ def load_report():
 
 
 # ── Build top-10 per trend ────────────────────────────────────────────────────
-def top10(df, trend):
+def top10_trend(df, trend):
     sub = df[df["Trend"].fillna("").str.lower() == trend.lower()].copy()
     if sub.empty:
         return pd.DataFrame()
 
-    # Signal count per symbol → pick top N
     counts = (
         sub.groupby("NSE_SYMBOL").size()
         .reset_index(name="Count")
@@ -124,191 +121,23 @@ def top10(df, trend):
         .reset_index(drop=True)
     )
     top_syms = counts["NSE_SYMBOL"].tolist()
-    sub_top = sub[sub["NSE_SYMBOL"].isin(top_syms)]
+    sub_top  = sub[sub["NSE_SYMBOL"].isin(top_syms)]
 
-    # Price: median per symbol (handles duplicates)
-    price_cols = [c for c in ["CLOSE", "PREV_CLOSE", "CHANGE_PCT"] if c in sub_top.columns]
+    price_cols = [c for c in ["CLOSE", "PREV_CLOSE", "CHANGE_PCT", "VOLUME"]
+                  if c in sub_top.columns]
     if price_cols:
         price = sub_top.groupby("NSE_SYMBOL")[price_cols].median().reset_index()
     else:
         price = pd.DataFrame({"NSE_SYMBOL": top_syms})
 
-    # Top scanner name per symbol — simplified, no silent failure
-    scanner_col = next(
-        (c for c in ["ScannerName", "Scanner", "SignalName", "IndicatorSummary", "Signal"]
-         if c in sub_top.columns),
-        None
-    )
-    if scanner_col:
-        def _top_name(x):
-            vals = x.dropna().astype(str)
-            return vals.value_counts().index[0] if len(vals) > 0 else ""
-        sc = (
-            sub_top.groupby("NSE_SYMBOL")[scanner_col]
-            .agg(_top_name)
-            .reset_index(name="Scanner")
-        )
-    else:
-        sc = pd.DataFrame({"NSE_SYMBOL": top_syms, "Scanner": [""] * len(top_syms)})
-
-    result = counts.merge(price, on="NSE_SYMBOL", how="left").merge(sc, on="NSE_SYMBOL", how="left")
-    result["Scanner"] = result["Scanner"].fillna("").astype(str)
+    result = counts.merge(price, on="NSE_SYMBOL", how="left")
+    for col in ["CLOSE", "PREV_CLOSE", "CHANGE_PCT", "VOLUME"]:
+        if col not in result.columns:
+            result[col] = np.nan
     return result
 
 
-# ── Draw one trend image ──────────────────────────────────────────────────────
-def draw_trend_image(df_top, trend, accent, icon, report_date,
-                     bull_cnt, bear_cnt, neut_cnt, total_cnt, out_path):
-    n = max(len(df_top), 1)
-
-    # Canvas sizing
-    HDR_H   = 1.05
-    COLH_H  = 0.42
-    ROW_H   = 0.58
-    GAP     = 0.12
-    FOOT_H  = 0.90
-    fig_h   = HDR_H + GAP + COLH_H + n * ROW_H + GAP*2 + FOOT_H
-
-    fig, ax = plt.subplots(figsize=(12, fig_h))
-    ax.set_xlim(0, 12)
-    ax.set_ylim(0, fig_h)
-    ax.axis("off")
-    fig.patch.set_facecolor(WHITE)
-
-    y = fig_h
-
-    # ── Header bar ───────────────────────────────────────────────────────────
-    y -= HDR_H
-    ax.add_patch(FancyBboxPatch((0, y), 12, HDR_H, boxstyle="square,pad=0",
-                                linewidth=0, facecolor=accent, zorder=3))
-    ax.add_patch(plt.Circle((0.7, y + HDR_H * 0.5), 0.27, color=WHITE, alpha=0.20, zorder=4))
-    ax.text(0.7, y + HDR_H * 0.5, icon, ha="center", va="center",
-            fontsize=18, color=WHITE, fontweight="bold", zorder=5)
-    trend_cnt = bull_cnt if trend == "Bullish" else (bear_cnt if trend == "Bearish" else neut_cnt)
-    ax.text(1.25, y + HDR_H * 0.68,
-            f"{trend.upper()} TREND — Top {n} NSE EQ Symbols",
-            ha="left", va="center", fontsize=13, color=WHITE, fontweight="bold", zorder=5)
-    ax.text(1.25, y + HDR_H * 0.28,
-            f"Date: {report_date}   |   {trend} Signals: {trend_cnt:,}   /   Total EQ: {total_cnt:,}",
-            ha="left", va="center", fontsize=9, color=WHITE, alpha=0.90, zorder=5)
-
-    # ── Column header row ─────────────────────────────────────────────────────
-    y -= GAP + COLH_H
-    cx = {"rank": 0.38, "sym": 1.55, "scan": 5.20,
-          "cls": 8.30, "prev": 9.65, "chg": 10.95, "cnt": 11.75}
-    ax.add_patch(FancyBboxPatch((0.1, y), 11.8, COLH_H, boxstyle="round,pad=0.04",
-                                linewidth=0, facecolor=accent, alpha=0.10, zorder=2))
-    hy = y + COLH_H / 2
-    hs = dict(ha="center", va="center", fontsize=8, color=accent, fontweight="bold", zorder=3)
-    ax.text(cx["rank"], hy, "#", **hs)
-    ax.text(cx["sym"],  hy, "NSE SYMBOL",
-            ha="left", va="center", fontsize=8, color=accent, fontweight="bold", zorder=3)
-    ax.text(cx["scan"], hy, "TOP SCANNER / SIGNAL",
-            ha="left", va="center", fontsize=8, color=accent, fontweight="bold", zorder=3)
-    ax.text(cx["cls"],  hy, "CLOSE (Rs.)", **hs)
-    ax.text(cx["prev"], hy, "PREV CLOSE",  **hs)
-    ax.text(cx["chg"],  hy, "CHG %",       **hs)
-    ax.text(cx["cnt"],  hy, "SIG",         **hs)
-
-    # ── Data rows ─────────────────────────────────────────────────────────────
-    for i, row in enumerate(df_top.itertuples(index=False)):
-        y -= ROW_H
-        ry = y + ROW_H / 2
-
-        bg = LGREY if i % 2 == 0 else WHITE
-        ax.add_patch(FancyBboxPatch((0.1, y), 11.8, ROW_H * 0.90,
-                                    boxstyle="round,pad=0.04", linewidth=0.3,
-                                    edgecolor=MGREY, facecolor=bg, zorder=1))
-
-        rk = i + 1
-        bc = accent if rk <= 3 else MGREY
-        tc = WHITE  if rk <= 3 else DARK
-        ax.add_patch(plt.Circle((cx["rank"], ry), 0.19, color=bc, zorder=2))
-        ax.text(cx["rank"], ry, str(rk), ha="center", va="center",
-                fontsize=7.5, color=tc, fontweight="bold", zorder=3)
-
-        ax.text(cx["sym"], ry, str(row.NSE_SYMBOL),
-                ha="left", va="center", fontsize=11, color=accent, fontweight="bold", zorder=3)
-
-        # Scanner — safe access + truncate
-        scan_txt = str(getattr(row, "Scanner", "") or "")
-        if len(scan_txt) > 48:
-            scan_txt = scan_txt[:46] + "…"
-        ax.text(cx["scan"], ry, scan_txt,
-                ha="left", va="center", fontsize=7, color=MUTED, zorder=3)
-
-        # Prices
-        cls_v = getattr(row, "CLOSE", np.nan)      if hasattr(row, "CLOSE")      else np.nan
-        prv_v = getattr(row, "PREV_CLOSE", np.nan) if hasattr(row, "PREV_CLOSE") else np.nan
-        chg_v = getattr(row, "CHANGE_PCT", np.nan) if hasattr(row, "CHANGE_PCT") else np.nan
-
-        try: cls_v = float(cls_v)
-        except: cls_v = np.nan
-        try: prv_v = float(prv_v)
-        except: prv_v = np.nan
-        try: chg_v = float(chg_v)
-        except: chg_v = np.nan
-
-        ax.text(cx["cls"],  ry, f"{cls_v:,.2f}" if not np.isnan(cls_v) else "—",
-                ha="center", va="center", fontsize=9, color=DARK, fontweight="bold", zorder=3)
-        ax.text(cx["prev"], ry, f"{prv_v:,.2f}" if not np.isnan(prv_v) else "—",
-                ha="center", va="center", fontsize=9, color=MUTED, zorder=3)
-
-        if not np.isnan(chg_v):
-            cc  = GREEN if chg_v >= 0 else RED
-            cbg = "#E9F7EF" if chg_v >= 0 else "#FDEDEC"
-            ax.add_patch(FancyBboxPatch((cx["chg"] - 0.58, ry - 0.15), 1.16, 0.30,
-                                        boxstyle="round,pad=0.04", linewidth=0, facecolor=cbg, zorder=2))
-            ax.text(cx["chg"], ry, f"{'+'if chg_v>=0 else ''}{chg_v:.2f}%",
-                    ha="center", va="center", fontsize=8, color=cc, fontweight="bold", zorder=3)
-        else:
-            ax.text(cx["chg"], ry, "—", ha="center", va="center", fontsize=9, color=MUTED, zorder=3)
-
-        cnt_v = int(getattr(row, "Count", 0))
-        ax.add_patch(FancyBboxPatch((cx["cnt"] - 0.36, ry - 0.14), 0.72, 0.28,
-                                    boxstyle="round,pad=0.03", linewidth=0, facecolor=accent, alpha=0.12, zorder=2))
-        ax.text(cx["cnt"], ry, str(cnt_v),
-                ha="center", va="center", fontsize=8, color=accent, fontweight="bold", zorder=3)
-
-    # ── Divider ───────────────────────────────────────────────────────────────
-    y -= GAP
-    ax.plot([0.1, 11.9], [y, y], color=MGREY, lw=0.8, zorder=2)
-
-    # ── Totals summary bar ────────────────────────────────────────────────────
-    SUM_H = 0.52
-    y -= SUM_H
-    ax.add_patch(FancyBboxPatch((0.1, y), 11.8, SUM_H, boxstyle="round,pad=0.05",
-                                linewidth=0, facecolor=LGREY, zorder=1))
-    sy = y + SUM_H / 2
-    share = (trend_cnt / total_cnt * 100) if total_cnt else 0
-
-    ax.text(1.5,  sy, f"● Bullish: {bull_cnt:,}", ha="center", va="center",
-            fontsize=9, color=GREEN,  fontweight="bold", zorder=3)
-    ax.plot([2.7, 2.7], [y+0.08, y+0.44], color=MGREY, lw=0.8)
-    ax.text(3.95, sy, f"● Bearish: {bear_cnt:,}", ha="center", va="center",
-            fontsize=9, color=RED,    fontweight="bold", zorder=3)
-    ax.plot([5.1, 5.1], [y+0.08, y+0.44], color=MGREY, lw=0.8)
-    ax.text(6.35, sy, f"● Neutral: {neut_cnt:,}", ha="center", va="center",
-            fontsize=9, color=BLUE,   fontweight="bold", zorder=3)
-    ax.plot([7.55, 7.55], [y+0.08, y+0.44], color=MGREY, lw=0.8)
-    ax.text(9.30, sy, f"Total EQ Signals: {total_cnt:,}", ha="center", va="center",
-            fontsize=9, color=DARK,   fontweight="bold", zorder=3)
-    ax.text(11.2, sy, f"{share:.1f}%", ha="center", va="center",
-            fontsize=9, color=accent, fontweight="bold", zorder=3)
-
-    # ── Footer ────────────────────────────────────────────────────────────────
-    y -= 0.28
-    ax.text(6, y,
-            f"Generated: {NOW.strftime('%d %b %Y  %I:%M %p IST')}   |   NSE Indicator Engine   |   Series: EQ",
-            ha="center", va="top", fontsize=7.5, color=MUTED, zorder=3)
-
-    plt.tight_layout(pad=0.2)
-    fig.savefig(out_path, dpi=150, bbox_inches="tight", facecolor=WHITE, edgecolor="none")
-    plt.close(fig)
-    print(f"[IMAGE] Saved → {out_path}")
-
-
-# ── Market Movers: load & prep ────────────────────────────────────────────────
+# ── MC mapping + movers ───────────────────────────────────────────────────────
 def load_mc_mapping():
     if os.path.exists(MAPPING_FILE):
         try:
@@ -321,18 +150,12 @@ def load_mc_mapping():
 
 
 def load_movers(report_date):
-    folders = sorted(
-        [f for f in glob.glob(f"{INDICATOR_DIR}/*") if os.path.isdir(f)],
-        reverse=True
-    )
-    date_folder = None
-    for f in folders:
-        if os.path.basename(f) == report_date:
-            date_folder = f
-            break
+    folders = sorted([f for f in glob.glob(f"{INDICATOR_DIR}/*") if os.path.isdir(f)],
+                     reverse=True)
+    date_folder = next((f for f in folders if os.path.basename(f) == report_date), None)
     if not date_folder and folders:
         date_folder = folders[0]
-        print(f"[MOVERS] Exact date folder not found — using {date_folder}")
+        print(f"[MOVERS] Using latest folder: {date_folder}")
 
     out = {}
     for fname in ["gainers.csv", "losers.csv", "most_active.csv"]:
@@ -340,9 +163,7 @@ def load_movers(report_date):
         if path and os.path.exists(path):
             try:
                 out[fname] = pd.read_csv(path, dtype=str)
-                print(f"[MOVERS] {fname}: {len(out[fname])} rows")
-            except Exception as e:
-                print(f"[MOVERS] {fname} read error: {e}")
+            except Exception:
                 out[fname] = pd.DataFrame()
         else:
             out[fname] = pd.DataFrame()
@@ -354,27 +175,24 @@ def prep_mover_df(df, mc_map):
         return df
     df = df.copy()
 
-    # Resolve NSE symbol: direct nsCode > MC mapping > shortName > StockName
     if "nsCode" in df.columns:
         df["NSE_SYMBOL"] = df["nsCode"].fillna("")
     elif "MC_Code" in df.columns:
         df["NSE_SYMBOL"] = df["MC_Code"].map(mc_map).fillna(
-            df.get("shortName", df.get("StockName", ""))
-        )
+            df.get("shortName", df.get("StockName", "")))
     elif "shortName" in df.columns:
         df["NSE_SYMBOL"] = df["shortName"]
     else:
         df["NSE_SYMBOL"] = ""
 
-    # Standardise price columns
     col_map = [
-        ("currPrice",     "CLOSE"),
-        ("lastPrice",     "CLOSE"),
-        ("prevPrice",     "PREV_CLOSE"),
-        ("previousClose", "PREV_CLOSE"),
-        ("pChange",       "CHANGE_PCT"),
-        ("volume",        "VOLUME"),
-        ("quantityTraded","VOLUME"),
+        ("currPrice",      "CLOSE"),
+        ("lastPrice",      "CLOSE"),
+        ("prevPrice",      "PREV_CLOSE"),
+        ("previousClose",  "PREV_CLOSE"),
+        ("pChange",        "CHANGE_PCT"),
+        ("volume",         "VOLUME"),
+        ("quantityTraded", "VOLUME"),
     ]
     for src, dst in col_map:
         if src in df.columns and dst not in df.columns:
@@ -387,144 +205,251 @@ def prep_mover_df(df, mc_map):
     return df.head(TOP_N)
 
 
-# ── Draw Market Movers image (3 sections stacked) ─────────────────────────────
-def draw_movers_image(gainers, losers, most_active, report_date, out_path):
-    sections = [
-        ("TOP 10 GAINERS",     GREEN,  "▲", gainers),
-        ("TOP 10 LOSERS",      RED,    "▼", losers),
-        ("TOP 10 MOST ACTIVE", ORANGE, "★", most_active),
-    ]
+# ── Drawing helpers ───────────────────────────────────────────────────────────
+def rrect(ax, x, y, w, h, fc, ec="none", lw=0, alpha=1, r=0.05, zorder=1):
+    ax.add_patch(FancyBboxPatch((x, y), w, h,
+        boxstyle=f"round,pad={r}", linewidth=lw,
+        facecolor=fc, edgecolor=ec, alpha=alpha, zorder=zorder))
 
-    TITLE_H  = 0.85
-    SEC_H    = 0.45
-    COLH_H   = 0.35
-    ROW_H    = 0.42
-    SEC_GAP  = 0.22
-    FOOT_H   = 0.70
 
-    def section_h(df):
-        n = min(len(df), TOP_N) if not df.empty else 1
-        return SEC_H + COLH_H + n * ROW_H + 0.10
+def circle(ax, cx, cy, r, fc, zorder=2):
+    ax.add_patch(plt.Circle((cx, cy), r, color=fc, zorder=zorder))
 
-    fig_h = TITLE_H + sum(section_h(s[3]) for s in sections) + SEC_GAP * 2 + FOOT_H + 0.30
-    fig, ax = plt.subplots(figsize=(11, fig_h))
-    ax.set_xlim(0, 11)
-    ax.set_ylim(0, fig_h)
-    ax.axis("off")
-    fig.patch.set_facecolor(WHITE)
 
-    y = fig_h
+def fmt_vol(v):
+    """Format volume: >=1Cr -> xCr, else xL"""
+    try:
+        v = float(v)
+        if np.isnan(v):
+            return "-"
+        if v >= 1e7:
+            return f"{v/1e7:.1f}Cr"
+        return f"{v/1e5:.1f}L"
+    except Exception:
+        return "-"
 
-    # ── Main title bar ────────────────────────────────────────────────────────
-    y -= TITLE_H
-    ax.add_patch(FancyBboxPatch((0, y), 11, TITLE_H, boxstyle="square,pad=0",
-                                linewidth=0, facecolor=DARK, zorder=3))
-    ax.text(5.5, y + TITLE_H * 0.67, "NSE MARKET MOVERS",
-            ha="center", va="center", fontsize=15, color=WHITE, fontweight="bold", zorder=5)
-    ax.text(5.5, y + TITLE_H * 0.28,
-            f"Date: {report_date}   |   Top 10 Gainers · Losers · Most Active by Volume",
-            ha="center", va="center", fontsize=9, color=WHITE, alpha=0.85, zorder=5)
 
-    # ── 3 sections ────────────────────────────────────────────────────────────
-    for s_idx, (title, accent, icon, df) in enumerate(sections):
-        if s_idx > 0:
-            y -= SEC_GAP
+# ── Draw one section (Bullish / Bearish / Neutral / Most Active) ──────────────
+# All sections: # | SYMBOL | CLOSE | CHG% | VOL
+def draw_section(ax, x, y, w, title, accent, icon, df_rows,
+                 SEC_HDR, COL_H, ROW_H):
+    col = {
+        "rk":  x + 0.17,
+        "sym": x + 0.36,
+        "cls": x + w - 1.55,
+        "chg": x + w - 0.90,
+        "vol": x + w - 0.22,
+    }
 
-        # Section header
-        y -= SEC_H
-        ax.add_patch(FancyBboxPatch((0.1, y), 10.8, SEC_H,
-                                    boxstyle="square,pad=0", linewidth=0, facecolor=accent, zorder=3))
-        ax.text(0.55, y + SEC_H * 0.5, icon, ha="center", va="center",
-                fontsize=13, color=WHITE, fontweight="bold", zorder=5)
-        ax.text(0.95, y + SEC_H * 0.5, title, ha="left", va="center",
-                fontsize=11, color=WHITE, fontweight="bold", zorder=5)
+    # Section header bar
+    rrect(ax, x, y - SEC_HDR, w, SEC_HDR, accent, r=0.04, zorder=3)
+    ax.text(x + 0.26, y - SEC_HDR/2, icon,
+            ha="center", va="center", fontsize=9, color=WHITE,
+            fontweight="bold", zorder=5)
+    ax.text(x + 0.42, y - SEC_HDR/2, title,
+            ha="left", va="center", fontsize=6.5, color=WHITE,
+            fontweight="bold", zorder=5)
+    y -= SEC_HDR
 
-        # Column header
-        y -= COLH_H
-        show_vol = (title == "TOP 10 MOST ACTIVE")
-        cx = {"rank": 0.35, "sym": 1.35, "cls": 6.80, "prv": 8.20, "chg": 9.65, "vol": 10.70}
-        ax.add_patch(FancyBboxPatch((0.1, y), 10.8, COLH_H, boxstyle="round,pad=0.03",
-                                    linewidth=0, facecolor=accent, alpha=0.10, zorder=2))
-        hy = y + COLH_H / 2
-        hs = dict(ha="center", va="center", fontsize=7.5, color=accent, fontweight="bold", zorder=3)
-        ax.text(cx["rank"], hy, "#", **hs)
-        ax.text(cx["sym"],  hy, "NSE SYMBOL",
-                ha="left", va="center", fontsize=7.5, color=accent, fontweight="bold", zorder=3)
-        ax.text(cx["cls"],  hy, "CLOSE (Rs.)", **hs)
-        ax.text(cx["prv"],  hy, "PREV CLOSE",  **hs)
-        ax.text(cx["chg"],  hy, "CHG %",        **hs)
-        if show_vol:
-            ax.text(cx["vol"], hy, "VOL (Cr)", **hs)
+    # Column header row
+    rrect(ax, x, y - COL_H, w, COL_H, accent, alpha=0.12, r=0.03, zorder=2)
+    cy = y - COL_H / 2
+    hs = dict(ha="center", va="center", fontsize=4.8,
+              color=accent, fontweight="bold", zorder=3)
+    ax.text(col["rk"],       cy, "#",      **hs)
+    ax.text(col["sym"]+0.04, cy, "SYMBOL", ha="left", va="center",
+            fontsize=4.8, color=accent, fontweight="bold", zorder=3)
+    ax.text(col["cls"], cy, "CLOSE",  **hs)
+    ax.text(col["chg"], cy, "CHG%",   **hs)
+    ax.text(col["vol"], cy, "VOL",    **hs)
+    y -= COL_H
 
-        # Data rows
-        rows_n = min(len(df), TOP_N) if not df.empty else 0
-        if rows_n == 0:
-            y -= ROW_H
-            ax.text(5.5, y + ROW_H / 2, "No data available for today",
-                    ha="center", va="center", fontsize=9, color=MUTED, style="italic", zorder=3)
+    # Data rows
+    rows = df_rows.itertuples(index=False) if hasattr(df_rows, "itertuples") else iter(df_rows)
+    for i, row in enumerate(rows):
+        if i >= TOP_N:
+            break
+
+        # Support both DataFrame rows (namedtuple) and plain tuples
+        if hasattr(row, "NSE_SYMBOL"):
+            sym     = str(row.NSE_SYMBOL)
+            cls_v   = float(row.CLOSE)      if not pd.isna(row.CLOSE)      else np.nan
+            chg_v   = float(row.CHANGE_PCT) if not pd.isna(row.CHANGE_PCT) else np.nan
+            vol_raw = row.VOLUME
         else:
-            for i in range(rows_n):
-                row = df.iloc[i]
-                y -= ROW_H
-                ry = y + ROW_H / 2
+            sym, cls_v, _, chg_v, vol_raw = row[0], row[1], row[2], row[3], row[4]
 
-                bg = LGREY if i % 2 == 0 else WHITE
-                ax.add_patch(FancyBboxPatch((0.1, y), 10.8, ROW_H * 0.90,
-                                            boxstyle="round,pad=0.03", linewidth=0.3,
-                                            edgecolor=MGREY, facecolor=bg, zorder=1))
+        try: cls_v = float(cls_v)
+        except: cls_v = np.nan
+        try: chg_v = float(chg_v)
+        except: chg_v = np.nan
+        try: vol_raw = float(vol_raw)
+        except: vol_raw = np.nan
 
-                rk = i + 1
-                bc = accent if rk <= 3 else MGREY
-                tc = WHITE  if rk <= 3 else DARK
-                ax.add_patch(plt.Circle((cx["rank"], ry), 0.17, color=bc, zorder=2))
-                ax.text(cx["rank"], ry, str(rk), ha="center", va="center",
-                        fontsize=7, color=tc, fontweight="bold", zorder=3)
+        ry_top = y - ROW_H
+        bg = LGREY if i % 2 == 0 else WHITE
+        rrect(ax, x, ry_top, w, ROW_H * 0.88, bg, ec=MGREY, lw=0.2, r=0.03, zorder=1)
+        ry = ry_top + ROW_H * 0.44
 
-                sym = str(row.get("NSE_SYMBOL", ""))[:18]
-                ax.text(cx["sym"], ry, sym, ha="left", va="center",
-                        fontsize=10, color=accent, fontweight="bold", zorder=3)
+        # Rank circle
+        rk = i + 1
+        bc = accent if rk <= 3 else MGREY
+        tc = WHITE  if rk <= 3 else DARK
+        circle(ax, col["rk"], ry, 0.088, bc, zorder=2)
+        ax.text(col["rk"], ry, str(rk),
+                ha="center", va="center", fontsize=4.8,
+                color=tc, fontweight="bold", zorder=3)
 
-                def _fval(key):
-                    try: return float(row.get(key, np.nan))
-                    except: return np.nan
+        # Symbol
+        sym_txt = sym[:10] if len(sym) > 10 else sym
+        ax.text(col["sym"]+0.04, ry, sym_txt,
+                ha="left", va="center", fontsize=6.2,
+                color=accent, fontweight="bold", zorder=3)
 
-                cls_v = _fval("CLOSE")
-                prv_v = _fval("PREV_CLOSE")
-                chg_v = _fval("CHANGE_PCT")
-                vol_v = _fval("VOLUME")
+        # Close price
+        ax.text(col["cls"], ry,
+                f"{cls_v:,.1f}" if not np.isnan(cls_v) else "-",
+                ha="center", va="center", fontsize=5.8,
+                color=DARK, fontweight="bold", zorder=3)
 
-                ax.text(cx["cls"], ry, f"{cls_v:,.2f}" if not np.isnan(cls_v) else "—",
-                        ha="center", va="center", fontsize=9, color=DARK, fontweight="bold", zorder=3)
-                ax.text(cx["prv"], ry, f"{prv_v:,.2f}" if not np.isnan(prv_v) else "—",
-                        ha="center", va="center", fontsize=9, color=MUTED, zorder=3)
+        # Change % pill
+        if not np.isnan(chg_v):
+            cc  = GREEN if chg_v >= 0 else RED
+            cbg = "#E9F7EF" if chg_v >= 0 else "#FDEDEC"
+            rrect(ax, col["chg"]-0.27, ry-0.068, 0.54, 0.136, cbg, r=0.03, zorder=2)
+            ax.text(col["chg"], ry,
+                    f"{'+'if chg_v>=0 else ''}{chg_v:.2f}%",
+                    ha="center", va="center", fontsize=5.2,
+                    color=cc, fontweight="bold", zorder=3)
+        else:
+            ax.text(col["chg"], ry, "-", ha="center", va="center",
+                    fontsize=5.2, color=MUTED, zorder=3)
 
-                if not np.isnan(chg_v):
-                    cc  = GREEN if chg_v >= 0 else RED
-                    cbg = "#E9F7EF" if chg_v >= 0 else "#FDEDEC"
-                    ax.add_patch(FancyBboxPatch((cx["chg"] - 0.56, ry - 0.13), 1.12, 0.26,
-                                                boxstyle="round,pad=0.03", linewidth=0, facecolor=cbg, zorder=2))
-                    ax.text(cx["chg"], ry, f"{'+'if chg_v>=0 else ''}{chg_v:.2f}%",
-                            ha="center", va="center", fontsize=8, color=cc, fontweight="bold", zorder=3)
-                else:
-                    ax.text(cx["chg"], ry, "—", ha="center", va="center", fontsize=9, color=MUTED, zorder=3)
+        # Volume
+        ax.text(col["vol"], ry, fmt_vol(vol_raw),
+                ha="center", va="center", fontsize=5.0, color=DARK, zorder=3)
 
-                if show_vol and not np.isnan(vol_v):
-                    ax.text(cx["vol"], ry, f"{vol_v/1e7:.2f}",
-                            ha="center", va="center", fontsize=8.5, color=DARK, zorder=3)
+        y -= ROW_H
+
+    return y
+
+
+# ── Build combined single image ───────────────────────────────────────────────
+def draw_combined_image(df, report_date, mc_map, out_path):
+    # ── Prep data ─────────────────────────────────────────────────────────────
+    bull_df = top10_trend(df, "Bullish")
+    bear_df = top10_trend(df, "Bearish")
+    neut_df = top10_trend(df, "Neutral")
+
+    movers      = load_movers(report_date)
+    active_df   = prep_mover_df(movers.get("most_active.csv", pd.DataFrame()), mc_map)
+
+    bull_cnt  = len(df[df["Trend"].str.lower() == "bullish"])
+    bear_cnt  = len(df[df["Trend"].str.lower() == "bearish"])
+    neut_cnt  = len(df[df["Trend"].str.lower() == "neutral"])
+    total_cnt = bull_cnt + bear_cnt + neut_cnt
+
+    # ── Layout constants ──────────────────────────────────────────────────────
+    FIG_W    = 7.2
+    DPI      = 150
+    MARGIN   = 0.18
+    PANEL_W  = FIG_W - 2 * MARGIN
+    COL_GAP  = 0.10
+    COL2_W   = (PANEL_W - COL_GAP) / 2
+
+    MAIN_HDR = 0.55
+    PILL_H   = 0.25
+    SEC_HDR  = 0.30
+    COL_H    = 0.21
+    ROW_H    = 0.225
+    SEC_GAP  = 0.10
+    FOOT_H   = 0.18
+
+    def section_height(n=10):
+        return SEC_HDR + COL_H + n * ROW_H + 0.04
+
+    TOP_H = 0.10 + MAIN_HDR + 0.08 + PILL_H + 0.12
+    FIG_H = TOP_H + section_height() + SEC_GAP + section_height() + 0.06 + FOOT_H + 0.10
+
+    # ── Canvas ────────────────────────────────────────────────────────────────
+    fig, ax = plt.subplots(figsize=(FIG_W, FIG_H))
+    ax.set_xlim(0, FIG_W)
+    ax.set_ylim(0, FIG_H)
+    ax.axis("off")
+    fig.patch.set_facecolor(BGPAGE)
+
+    # ── Main header ───────────────────────────────────────────────────────────
+    y = FIG_H - 0.10
+    y -= MAIN_HDR
+    rrect(ax, MARGIN, y, PANEL_W, MAIN_HDR, HEADER, r=0.08, zorder=3)
+    ax.text(FIG_W/2, y + MAIN_HDR*0.68, "NSE DAILY MARKET REPORT",
+            ha="center", va="center", fontsize=11, color=WHITE,
+            fontweight="bold", zorder=5, family="monospace")
+    ax.text(FIG_W/2, y + MAIN_HDR*0.26,
+            f"Date: {report_date}   |   NSE Indicator Engine   |   Series: EQ",
+            ha="center", va="center", fontsize=6.5, color=WHITE, alpha=0.85, zorder=5)
+
+    # ── Summary pills ─────────────────────────────────────────────────────────
+    y -= 0.08
+    y -= PILL_H
+    pill_w = PANEL_W / 4 - 0.05
+    pill_colors = [GREEN, RED, BLUE, DARK]
+    pill_labels = [f"Bullish\n{bull_cnt}", f"Bearish\n{bear_cnt}",
+                   f"Neutral\n{neut_cnt}", f"Total EQ\n{total_cnt}"]
+    for i, (col, lbl) in enumerate(zip(pill_colors, pill_labels)):
+        px = MARGIN + i * (pill_w + 0.067)
+        rrect(ax, px, y, pill_w, PILL_H, col, alpha=0.92, r=0.06, zorder=3)
+        parts = lbl.split("\n")
+        ax.text(px + pill_w/2, y + PILL_H*0.70, parts[0],
+                ha="center", va="center", fontsize=5.5, color=WHITE,
+                fontweight="bold", zorder=5)
+        ax.text(px + pill_w/2, y + PILL_H*0.25, parts[1],
+                ha="center", va="center", fontsize=7.5, color=WHITE,
+                fontweight="bold", zorder=5)
+
+    y -= 0.12
+
+    LX = MARGIN
+    RX = MARGIN + COL2_W + COL_GAP
+
+    # ── Row 1: Bullish | Bearish ───────────────────────────────────────────────
+    y1_start = y
+    y1L = draw_section(ax, LX, y1_start, COL2_W,
+                       "BULLISH TOP 10", GREEN, "^", bull_df,
+                       SEC_HDR, COL_H, ROW_H)
+    y1R = draw_section(ax, RX, y1_start, COL2_W,
+                       "BEARISH TOP 10", RED,   "v", bear_df,
+                       SEC_HDR, COL_H, ROW_H)
+    y_after_row1 = min(y1L, y1R) - SEC_GAP
+
+    # Thin divider
+    ax.plot([MARGIN, MARGIN + PANEL_W],
+            [y_after_row1 + SEC_GAP*0.5]*2,
+            color=MGREY, lw=0.4, alpha=0.6)
+
+    # ── Row 2: Neutral | Most Active ──────────────────────────────────────────
+    y2L = draw_section(ax, LX, y_after_row1, COL2_W,
+                       "NEUTRAL TOP 10", BLUE,   "~", neut_df,
+                       SEC_HDR, COL_H, ROW_H)
+    y2R = draw_section(ax, RX, y_after_row1, COL2_W,
+                       "MOST ACTIVE",    ORANGE, "*", active_df,
+                       SEC_HDR, COL_H, ROW_H)
 
     # ── Footer ────────────────────────────────────────────────────────────────
-    y -= 0.30
-    ax.text(5.5, y,
-            f"Generated: {NOW.strftime('%d %b %Y  %I:%M %p IST')}   |   NSE Indicator Engine",
-            ha="center", va="top", fontsize=7.5, color=MUTED, zorder=3)
+    fy = min(y2L, y2R) - 0.06
+    ax.text(FIG_W/2, fy,
+            f"Generated: {NOW.strftime('%d %b %Y  %I:%M %p IST')}"
+            "   |   NSE Indicator Engine   |   Series: EQ",
+            ha="center", va="top", fontsize=5.2, color=MUTED, zorder=3)
 
-    plt.tight_layout(pad=0.2)
-    fig.savefig(out_path, dpi=150, bbox_inches="tight", facecolor=WHITE, edgecolor="none")
+    plt.tight_layout(pad=0)
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight",
+                facecolor=BGPAGE, edgecolor="none")
     plt.close(fig)
-    print(f"[IMAGE] Saved → {out_path}")
+    print(f"[IMAGE] Saved -> {out_path}")
 
 
-# ── Telegram ──────────────────────────────────────────────────────────────────
+# ── Send helpers ──────────────────────────────────────────────────────────────
 def send_telegram(path, caption):
     if not TG_BOT_TOKEN or not TG_CHAT_ID:
         print("[TG] Credentials missing — skipping")
@@ -533,16 +458,12 @@ def send_telegram(path, caption):
         r = requests.post(
             f"https://api.telegram.org/bot{TG_BOT_TOKEN}/sendPhoto",
             data={"chat_id": TG_CHAT_ID, "caption": caption},
-            files={"photo": f},
-            timeout=30,
-        )
+            files={"photo": f}, timeout=30)
     status = "OK" if r.status_code == 200 else f"FAIL {r.status_code}: {r.text[:120]}"
-    print(f"[TG] {status} — {os.path.basename(path)}")
+    print(f"[TG] {status}")
 
 
-# ── WhatsApp via Twilio + ImgBB ───────────────────────────────────────────────
 def _upload_imgbb(path):
-    """Upload image to ImgBB, return public URL or None."""
     if not IMGBB_KEY:
         return None
     with open(path, "rb") as f:
@@ -556,9 +477,8 @@ def _upload_imgbb(path):
 
 
 def send_whatsapp(path, caption):
-    """Send image to WhatsApp via Twilio REST API."""
     if not all([TWILIO_SID, TWILIO_TOKEN, WA_FROM]):
-        print("[WA] Twilio credentials missing (TWILIO_SID / TWILIO_AUTH_TOKEN / WA_FROM_NUMBER) — skipping")
+        print("[WA] Twilio credentials missing — skipping")
         return
     img_url = _upload_imgbb(path)
     if not img_url:
@@ -568,15 +488,67 @@ def send_whatsapp(path, caption):
         f"https://api.twilio.com/2010-04-01/Accounts/{TWILIO_SID}/Messages.json",
         auth=(TWILIO_SID, TWILIO_TOKEN),
         data={"From": WA_FROM, "To": WA_TO, "Body": caption, "MediaUrl": img_url},
-        timeout=30,
-    )
+        timeout=30)
     status = "OK" if r.status_code in (200, 201) else f"FAIL {r.status_code}: {r.text[:120]}"
-    print(f"[WA] {status} — {os.path.basename(path)}")
+    print(f"[WA] {status}")
+
+
+# ── Excel Trend Tracker ───────────────────────────────────────────────────────
+def update_excel_tracker(df, report_date, bull_cnt, bear_cnt, neut_cnt, total_cnt):
+    try:
+        import openpyxl
+        excel_path = "output_data/NSE_Trends_DateWise.xlsx"
+        try:
+            wb = openpyxl.load_workbook(excel_path)
+        except Exception:
+            wb = openpyxl.Workbook()
+            if "Sheet" in wb.sheetnames:
+                del wb["Sheet"]
+
+        if "Daily_Summary" not in wb.sheetnames:
+            ws_sum = wb.create_sheet("Daily_Summary")
+            ws_sum.append(["Date", "Bullish", "Bearish", "Neutral",
+                            "Total", "Top_Bullish", "Top_Bearish"])
+            for col in ["A"]: ws_sum.column_dimensions[col].width = 14
+            for col in ["B","C","D","E"]: ws_sum.column_dimensions[col].width = 10
+            ws_sum.column_dimensions["F"].width = 40
+            ws_sum.column_dimensions["G"].width = 40
+        else:
+            ws_sum = wb["Daily_Summary"]
+
+        existing_dates = {str(row[0]) for row in ws_sum.iter_rows(min_row=2, values_only=True) if row[0]}
+
+        if report_date not in existing_dates:
+            top_bull = (df[df["Trend"].str.lower()=="bullish"]["NSE_SYMBOL"]
+                        .value_counts().head(10).index.tolist()
+                        if "Trend" in df.columns else [])
+            top_bear = (df[df["Trend"].str.lower()=="bearish"]["NSE_SYMBOL"]
+                        .value_counts().head(10).index.tolist()
+                        if "Trend" in df.columns else [])
+            ws_sum.append([report_date, bull_cnt, bear_cnt, neut_cnt, total_cnt,
+                           ", ".join(top_bull), ", ".join(top_bear)])
+            print(f"[EXCEL] Added {report_date} to Daily_Summary")
+
+        sheet_name = report_date.replace("-","_")[:31]
+        if sheet_name not in wb.sheetnames:
+            ws_det = wb.create_sheet(sheet_name)
+            cols = ["NSE_SYMBOL","Trend","Signal","ScannerName",
+                    "CLOSE","PREV_CLOSE","CHANGE_PCT","VOLUME","ConfidenceScore"]
+            cols = [c for c in cols if c in df.columns]
+            ws_det.append(cols)
+            for row in df[cols].fillna("").itertuples(index=False):
+                ws_det.append(list(row))
+            print(f"[EXCEL] Created sheet: {sheet_name} ({len(df)} rows)")
+
+        wb.save(excel_path)
+        print(f"[EXCEL] Saved -> {excel_path}")
+    except Exception as e:
+        print(f"[EXCEL] Error: {e}")
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
-    print("[START] NSE Image Report — 4 images (Bullish / Bearish / Neutral / Market Movers)")
+    print("[START] NSE Image Report — Single Combined Image")
     df, report_date = load_report()
 
     if "Trend" not in df.columns:
@@ -589,137 +561,24 @@ def main():
     total_cnt = bull_cnt + bear_cnt + neut_cnt
     print(f"[DATA] Bullish:{bull_cnt:,} | Bearish:{bear_cnt:,} | Neutral:{neut_cnt:,} | Total:{total_cnt:,}")
 
-    dt = report_date.replace("-", "_")
-    images = []
+    mc_map = load_mc_mapping()
+    dt     = report_date.replace("-", "_")
+    out    = f"/tmp/NSE_DailyReport_{dt}.png"
 
-    # ── Images 1–3: Trend images ──────────────────────────────────────────────
-    for trend, accent, icon in [("Bullish", GREEN, "+"), ("Bearish", RED, "-"), ("Neutral", BLUE, "~")]:
-        top = top10(df, trend)
-        out = f"/tmp/NSE_{trend}_{dt}.png"
-        draw_trend_image(top, trend, accent, icon, report_date,
-                         bull_cnt, bear_cnt, neut_cnt, total_cnt, out)
-        trend_cnt_now = bull_cnt if trend == "Bullish" else (bear_cnt if trend == "Bearish" else neut_cnt)
-        caption = (
-            f"*NSE — {trend} Trend*\n"
-            f"Date: {report_date} | {trend}: {trend_cnt_now:,} / Total EQ: {total_cnt:,}\n"
-            f"Top {len(top)} symbols by signal count"
-        )
-        send_telegram(out, caption)
-        images.append((out, caption))
+    draw_combined_image(df, report_date, mc_map, out)
 
-    # ── Image 4: Market Movers ────────────────────────────────────────────────
-    mc_map   = load_mc_mapping()
-    movers   = load_movers(report_date)
-    gainers  = prep_mover_df(movers.get("gainers.csv",     pd.DataFrame()), mc_map)
-    losers   = prep_mover_df(movers.get("losers.csv",      pd.DataFrame()), mc_map)
-    active   = prep_mover_df(movers.get("most_active.csv", pd.DataFrame()), mc_map)
-
-    out4 = f"/tmp/NSE_MarketMovers_{dt}.png"
-    draw_movers_image(gainers, losers, active, report_date, out4)
-    cap4 = (
-        f"*NSE Market Movers*\n"
+    caption = (
+        f"*NSE Daily Market Report*\n"
         f"Date: {report_date}\n"
-        f"Gainers: {len(gainers)} | Losers: {len(losers)} | Most Active: {len(active)}"
+        f"Bullish: {bull_cnt:,} | Bearish: {bear_cnt:,} | Neutral: {neut_cnt:,}\n"
+        f"Total EQ Signals: {total_cnt:,}"
     )
-    send_telegram(out4, cap4)
-    images.append((out4, cap4))
 
-    # ── Send all 4 to WhatsApp ────────────────────────────────────────────────
-    for path, caption in images:
-        send_whatsapp(path, caption)
+    send_telegram(out, caption)
+    send_whatsapp(out, caption)
+    update_excel_tracker(df, report_date, bull_cnt, bear_cnt, neut_cnt, total_cnt)
 
-    # ── Combined 1920x1080 Wallpaper ─────────────────────────────────────────
-    combined_path = f"/tmp/NSE_Combined_Wallpaper_{dt}.png"
-    try:
-        from PIL import Image
-        imgs = [Image.open(p) for p, _ in images if os.path.exists(p)]
-        if len(imgs) == 4:
-            W, H = 1920, 1080
-            wall = Image.new("RGB", (W, H), "#FFFFFF")
-            # Layout: 2x2 grid
-            cell_w, cell_h = W // 2, H // 2
-            for idx, im in enumerate(imgs):
-                # Resize to fit cell while maintaining aspect
-                im.thumbnail((cell_w - 4, cell_h - 4), Image.LANCZOS)
-                x = (idx % 2) * cell_w + (cell_w - im.width) // 2
-                y = (idx // 2) * cell_h + (cell_h - im.height) // 2
-                wall.paste(im, (x, y))
-            wall.save(combined_path, dpi=(150, 150))
-            print(f"[WALLPAPER] Saved → {combined_path}")
-            cap_wall = (
-                f"*NSE Daily Summary — {report_date}*\n"
-                f"🟢 Bullish: {bull_cnt:,} | 🔴 Bearish: {bear_cnt:,} | 🔵 Neutral: {neut_cnt:,}\n"
-                f"Total EQ Signals: {total_cnt:,} | Gainers: {len(gainers)} | Losers: {len(losers)}"
-            )
-            send_telegram(combined_path, cap_wall)
-            for path_w, _ in [(combined_path, "")]:
-                send_whatsapp(path_w, cap_wall)
-        else:
-            print(f"[WALLPAPER] Need 4 images, got {len(imgs)} — skipping")
-    except ImportError:
-        print("[WALLPAPER] Pillow not installed — skipping (add pillow to requirements)")
-    except Exception as e:
-        print(f"[WALLPAPER] Error: {e}")
-
-    # ── Excel Trend Tracker (date-wise) ──────────────────────────────────────
-    try:
-        import openpyxl
-        from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
-        excel_path = "output_data/NSE_Trends_DateWise.xlsx"
-        try:
-            wb = openpyxl.load_workbook(excel_path)
-        except Exception:
-            wb = openpyxl.Workbook()
-            if "Sheet" in wb.sheetnames:
-                del wb["Sheet"]
-
-        # Summary sheet
-        if "Daily_Summary" not in wb.sheetnames:
-            ws_sum = wb.create_sheet("Daily_Summary")
-            ws_sum.append(["Date", "Bullish", "Bearish", "Neutral", "Total", "Top_Bullish", "Top_Bearish"])
-            ws_sum.column_dimensions["A"].width = 14
-            for col in ["B","C","D","E"]: ws_sum.column_dimensions[col].width = 10
-            ws_sum.column_dimensions["F"].width = 40
-            ws_sum.column_dimensions["G"].width = 40
-        else:
-            ws_sum = wb["Daily_Summary"]
-
-        # Check if today's date already recorded
-        existing_dates = set()
-        for row in ws_sum.iter_rows(min_row=2, values_only=True):
-            if row[0]: existing_dates.add(str(row[0]))
-
-        if report_date not in existing_dates:
-            top_bull_syms = (
-                df[df["Trend"].str.lower()=="bullish"]["NSE_SYMBOL"]
-                .value_counts().head(10).index.tolist()
-            ) if "Trend" in df.columns and "NSE_SYMBOL" in df.columns else []
-            top_bear_syms = (
-                df[df["Trend"].str.lower()=="bearish"]["NSE_SYMBOL"]
-                .value_counts().head(10).index.tolist()
-            ) if "Trend" in df.columns and "NSE_SYMBOL" in df.columns else []
-            ws_sum.append([
-                report_date, bull_cnt, bear_cnt, neut_cnt, total_cnt,
-                ", ".join(top_bull_syms), ", ".join(top_bear_syms)
-            ])
-            print(f"[EXCEL] Added {report_date} to Daily_Summary")
-
-        # Per-date detail sheet
-        sheet_name = report_date.replace("-","_")[:31]
-        if sheet_name not in wb.sheetnames:
-            ws_det = wb.create_sheet(sheet_name)
-            cols = ["NSE_SYMBOL","Trend","Signal","ScannerName","CLOSE","PREV_CLOSE","CHANGE_PCT","ConfidenceScore"]
-            ws_det.append(cols)
-            for row in df[cols].fillna("").itertuples(index=False):
-                ws_det.append(list(row))
-            print(f"[EXCEL] Created sheet: {sheet_name} ({len(df)} rows)")
-
-        wb.save(excel_path)
-        print(f"[EXCEL] Saved → {excel_path}")
-    except Exception as e:
-        print(f"[EXCEL] Error: {e}")
-
-    print(f"[DONE] 4 images + wallpaper + Excel | Telegram: sent | WhatsApp: {'enabled' if TWILIO_SID else 'skipped (no creds)'}")
+    print(f"[DONE] Single image sent | Telegram + WhatsApp | Excel updated")
 
 
 if __name__ == "__main__":
