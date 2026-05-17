@@ -201,6 +201,10 @@ def prep_mover_df(df, mc_map):
     for col in ["CLOSE", "PREV_CLOSE", "CHANGE_PCT", "VOLUME"]:
         df[col] = pd.to_numeric(df.get(col, np.nan), errors="coerce")
 
+    # Compute CHANGE_PCT from CLOSE/PREV_CLOSE when pChange not in source (e.g. most_active.csv)
+    mask = df["CHANGE_PCT"].isna() & df["CLOSE"].notna() & df["PREV_CLOSE"].notna() & (df["PREV_CLOSE"] != 0)
+    df.loc[mask, "CHANGE_PCT"] = ((df.loc[mask, "CLOSE"] - df.loc[mask, "PREV_CLOSE"]) / df.loc[mask, "PREV_CLOSE"]) * 100
+
     df = df[df["NSE_SYMBOL"].astype(str).str.strip() != ""].reset_index(drop=True)
     return df.head(TOP_N)
 
