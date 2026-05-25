@@ -42,8 +42,8 @@ from datetime import datetime
 import pytz
 
 # ─── CONFIG ──────────────────────────────────────────────────────────────────
-BOT_TOKEN  = os.environ["TG_BOT_TOKEN"]
-CHAT_ID    = os.environ["TG_CHAT_ID"]
+BOT_TOKEN  = os.environ.get("TG_BOT_TOKEN", "")
+CHAT_ID    = os.environ.get("TG_CHAT_ID", "")
 MC_TOKEN   = os.environ.get("MC_AUTH_TOKEN", "")
 
 INDICATOR_ROOT  = "indicator_data"
@@ -87,6 +87,9 @@ def fix_encoding(text):
 
 # ─── TELEGRAM ────────────────────────────────────────────────────────────────
 def tg_message(text):
+    if not BOT_TOKEN or not CHAT_ID:
+        print(f"[TG skip] {text[:80]}")
+        return
     try:
         requests.post(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
                       data={"chat_id": CHAT_ID, "text": text, "parse_mode": "Markdown"},
@@ -95,6 +98,9 @@ def tg_message(text):
         print(f"⚠️ tg_message error: {e}")
 
 def tg_file(filepath, caption):
+    if not BOT_TOKEN or not CHAT_ID:
+        print(f"[TG skip file] {filepath}")
+        return
     try:
         with open(filepath, "rb") as f:
             r = requests.post(f"https://api.telegram.org/bot{BOT_TOKEN}/sendDocument",
