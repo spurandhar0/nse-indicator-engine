@@ -130,43 +130,51 @@ print(f"Existing signals: {len(existing)}")
 
 # ── Symbol extraction helpers ─────────────────────────────────────────────────
 def extract_mc_codes(df, stem):
-    """Extract MC codes from a dataframe based on file type."""
-    codes = set()
+    """
+    Extract MC codes from dataframe — returns a LIST (with duplicates).
+    Each row = one count for that symbol. A stock appearing 10 times in
+    bullish.csv (once per index it belongs to) = 10 bullish counts.
+    """
+    codes = []
     cols_upper = {c.upper(): c for c in df.columns}
 
     if stem in ("bullish", "bearish"):
-        # scId column is MC code
         for col in ("scId", "SCID", "scid"):
-            if col in df.columns or col.upper() in cols_upper:
-                real_col = cols_upper.get(col.upper(), col)
+            real_col = cols_upper.get(col.upper())
+            if real_col:
                 for v in df[real_col].dropna():
-                    codes.add(str(v).strip().upper())
+                    s = str(v).strip().upper()
+                    if s and s not in ("NAN", "NONE", ""):
+                        codes.append(s)
         return codes
 
     if stem in ("analysts_choice", "stock_ideas"):
         for col in ("scid", "scId", "SCID"):
-            if col in df.columns or col.upper() in cols_upper:
-                real_col = cols_upper.get(col.upper(), col)
+            real_col = cols_upper.get(col.upper())
+            if real_col:
                 for v in df[real_col].dropna():
-                    codes.add(str(v).strip().upper())
+                    s = str(v).strip().upper()
+                    if s and s not in ("NAN", "NONE", ""):
+                        codes.append(s)
         return codes
 
     if stem == "52wk":
         for col in ("MC_Code", "MC_CODE"):
-            if col in df.columns or col.upper() in cols_upper:
-                real_col = cols_upper.get(col.upper(), col)
+            real_col = cols_upper.get(col.upper())
+            if real_col:
                 for v in df[real_col].dropna():
-                    codes.add(str(v).strip().upper())
+                    s = str(v).strip().upper()
+                    if s and s not in ("NAN", "NONE", ""):
+                        codes.append(s)
         return codes
 
-    # Scanner files: parse scannerDetails JSON
+    # Scanner files: parse scannerDetails JSON (one stkId per row)
     for col in ("scannerDetails", "SCANNERDETAILS"):
-        if col in df.columns or col.upper() in cols_upper:
-            real_col = cols_upper.get(col.upper(), col)
+        real_col = cols_upper.get(col.upper())
+        if real_col:
             for raw in df[real_col].dropna():
                 try:
                     raw_s = str(raw).strip()
-                    # Replace single quotes with double for JSON, or use ast
                     try:
                         d = ast.literal_eval(raw_s)
                         stk_id = d.get("stkId") or d.get("stk_id", "")
@@ -176,17 +184,19 @@ def extract_mc_codes(df, stem):
                             m = re.search(r'"stkId"\s*:\s*"([^"]+)"', raw_s)
                         stk_id = m.group(1) if m else ""
                     if stk_id:
-                        codes.add(str(stk_id).strip().upper())
+                        codes.append(str(stk_id).strip().upper())
                 except Exception:
                     pass
             return codes
 
     # Fallback: try scId
     for col in ("scId", "SCID", "scid"):
-        if col in df.columns or col.upper() in cols_upper:
-            real_col = cols_upper.get(col.upper(), col)
+        real_col = cols_upper.get(col.upper())
+        if real_col:
             for v in df[real_col].dropna():
-                codes.add(str(v).strip().upper())
+                s = str(v).strip().upper()
+                if s and s not in ("NAN", "NONE", ""):
+                    codes.append(s)
 
     return codes
 
@@ -228,13 +238,14 @@ for date_folder in all_date_folders:
             df = pd.read_csv(csv_file, low_memory=False)
             if df.empty:
                 continue
+            # Returns LIST — each row is one count (duplicates = multiple index appearances)
             mc_codes = extract_mc_codes(df, stem)
             for mc in mc_codes:
                 if not mc or mc.lower() in ("nan", "none", ""):
                     continue
                 if mc not in symbol_counts:
                     symbol_counts[mc] = {"bullish": 0, "bearish": 0, "neutral": 0}
-                symbol_counts[mc][category] += 1
+                symbol_counts[mc][category] += 1  # count every row, not just unique
         except Exception as e:
             pass  # skip bad files silently
 
