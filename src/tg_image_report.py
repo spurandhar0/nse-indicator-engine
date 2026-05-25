@@ -32,8 +32,10 @@ MAPPING_FILE  = "src/mc_nse_mapping.csv"
 # WhatsApp via Twilio + ImgBB
 TWILIO_SID    = os.environ.get("TWILIO_SID", "")
 TWILIO_TOKEN  = os.environ.get("TWILIO_AUTH_TOKEN", "")
-WA_FROM       = os.environ.get("WA_FROM_NUMBER", "")
-WA_TO         = "whatsapp:+97450740794"
+_wa_from_raw  = os.environ.get("WA_FROM_NUMBER", "")
+WA_FROM       = _wa_from_raw if _wa_from_raw.startswith("whatsapp:") else f"whatsapp:{_wa_from_raw}" if _wa_from_raw else ""
+_wa_to_raw    = os.environ.get("WA_TO_NUMBER", "+97450740794")
+WA_TO         = _wa_to_raw if _wa_to_raw.startswith("whatsapp:") else f"whatsapp:{_wa_to_raw}"
 IMGBB_KEY     = os.environ.get("IMGBB_API_KEY", "")
 
 IST   = pytz.timezone("Asia/Kolkata")
