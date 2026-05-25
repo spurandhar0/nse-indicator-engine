@@ -2,7 +2,7 @@ name: MC Data Fetch (Daily 6PM IST)
 
 on:
   schedule:
-    - cron: "30 13 * * 1-5"   # 7:00 PM IST = 12:30 UTC, Mon-Fri
+    - cron: "30 12 * * 1-5"   # 6:00 PM IST = 12:30 UTC, Mon-Fri
   workflow_dispatch:           # allow manual trigger
 
 permissions:
@@ -32,11 +32,23 @@ jobs:
           TG_CHAT_ID:    ${{ secrets.TG_CHAT_ID }}
         run: python src/mc_data_fetch.py
 
+      - name: Cleanup old indicator data (keep last 7 days)
+        run: |
+          cd indicator_data
+          COUNT=$(ls -td */ 2>/dev/null | wc -l)
+          if [ "$COUNT" -gt 7 ]; then
+            ls -td */ | tail -n +8 | sed 's|/$||' | xargs rm -rf
+            echo "Removed $(($COUNT - 7)) old indicator folders, kept 7"
+          else
+            echo "Only $COUNT folders, no cleanup needed"
+          fi
+          cd ..
+
       - name: Commit indicator files to repo
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
           git add indicator_data/
           git diff --cached --quiet || git commit -m "auto: MC indicator data $(date +'%d-%b-%Y')"
-          git pull --rebase origin main
           git push
