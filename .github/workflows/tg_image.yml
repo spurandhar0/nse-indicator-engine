@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   send-image:
@@ -15,18 +16,54 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
 
     steps:
+      - name: Check if already sent today
+        id: check_sent
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          REPO="${{ github.repository }}"
+          WORKFLOW_ID="tg_image.yml"
+
+          # Get successful runs of this workflow today (exclude current run)
+          RUNS=$(curl -s -H "Authorization: Bearer $GH_TOKEN"             "https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW_ID}/runs?status=success&per_page=5"             | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+runs = data.get('workflow_runs', [])
+today = '$(date -u +%Y-%m-%d)'
+current_id = '${{ github.run_id }}'
+sent = [r for r in runs if r['created_at'][:10] == today and str(r['id']) != current_id]
+print(len(sent))
+")
+          echo "Already sent today: $RUNS time(s)"
+          if [ "$RUNS" -gt "0" ]; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Skip if already sent today
+        if: steps.check_sent.outputs.skip == 'true'
+        run: |
+          echo "✅ Image report already sent today — skipping to avoid duplicate."
+          exit 0
+
       - name: Checkout repo
+        if: steps.check_sent.outputs.skip != 'true'
         uses: actions/checkout@v4
 
       - name: Set up Python
+        if: steps.check_sent.outputs.skip != 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install dependencies
+        if: steps.check_sent.outputs.skip != 'true'
         run: pip install pandas matplotlib requests pytz pillow openpyxl
 
       - name: Generate images & send to Telegram + WhatsApp
+        if: steps.check_sent.outputs.skip != 'true'
         env:
           TG_BOT_TOKEN:      ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID:        ${{ secrets.TG_CHAT_ID }}
