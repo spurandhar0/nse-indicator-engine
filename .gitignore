@@ -1,3 +1,12 @@
-
 # Consolidated CSV is too large for GitHub (100MB+ limit)
 consolidated_data/*.csv
+
+# Never commit raw Excel/CSV scratch files
+*.xlsx.tmp
+*.csv.tmp
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.env
