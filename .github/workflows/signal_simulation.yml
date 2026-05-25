@@ -2,7 +2,7 @@ name: NSE Signal + Simulation
 
 on:
   workflow_run:
-    workflows: ["NSE Indicator Engine"]
+    workflows: ["NSE Indicator Engine", "MC Data Fetch (Daily 6PM IST)"]
     types: [completed]
   workflow_dispatch:
 
@@ -25,13 +25,16 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pandas pytz
+        run: pip install pandas pytz requests
 
-      - name: Generate signals
+      - name: Generate signals (from indicator_data directly)
         run: python src/06_generate_signals.py
 
       - name: Run simulation
         run: python src/07_run_simulation.py
+
+      - name: Fetch NSE indices
+        run: python src/08_fetch_indices.py
 
       - name: Commit signal data to this repo
         run: |
@@ -47,19 +50,18 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           set -e
-          # Clone dashboard repo
           git clone --depth=1 "https://x-access-token:${GH_PAT}@github.com/spurandhar0/nse-indicator-dashboard.git" /tmp/dashboard
 
-          # Copy data files
           mkdir -p /tmp/dashboard/docs/data
           cp signal_data/signals.json     /tmp/dashboard/docs/data/signals.json
           cp signal_data/sim_results.json /tmp/dashboard/docs/data/sim_results.json
           cp signal_data/sim_meta.json    /tmp/dashboard/docs/data/sim_meta.json
+          cp signal_data/indices.json     /tmp/dashboard/docs/data/indices.json 2>/dev/null || true
 
-          # Commit and push
           cd /tmp/dashboard
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
           git add docs/data/
           git diff --cached --quiet || git commit -m "auto: sim data $(date +'%d-%b-%Y')"
           git push
