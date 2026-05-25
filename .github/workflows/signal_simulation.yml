@@ -2,7 +2,7 @@ name: NSE Signal + Simulation
 
 on:
   workflow_run:
-    workflows: ["NSE Indicator Engine", "MC Data Fetch (Daily 6PM IST)"]
+    workflows: ["NSE Indicator Engine"]
     types: [completed]
   workflow_dispatch:
 
