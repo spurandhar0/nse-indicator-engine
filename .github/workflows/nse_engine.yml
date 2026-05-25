@@ -1,6 +1,9 @@
 name: NSE Indicator Engine
 
 on:
+  workflow_run:
+    workflows: ["NSE Bhavcopy Fetch (Daily 6:15PM IST)"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -9,6 +12,7 @@ permissions:
 jobs:
   engine:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
