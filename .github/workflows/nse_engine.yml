@@ -30,11 +30,40 @@ jobs:
           MC_AUTH_TOKEN: ${{ secrets.MC_AUTH_TOKEN }}
         run: python src/nse_engine.py
 
+      - name: Cleanup old output data (keep last 7)
+        run: |
+          cd output_data
+          COUNT=$(ls -t *.csv 2>/dev/null | wc -l)
+          if [ "$COUNT" -gt 7 ]; then
+            ls -t *.csv | tail -n +8 | xargs rm -f
+            echo "Removed $(($COUNT - 7)) old output CSVs, kept 7"
+          else
+            echo "Only $COUNT CSVs, no cleanup needed"
+          fi
+          cd ..
+
+      - name: Trim consolidated CSV if approaching 85MB
+        run: |
+          FILE="consolidated_data/NSE_Indicator_Report_Consolidated.csv"
+          if [ -f "$FILE" ]; then
+            SIZE=$(stat -c%s "$FILE")
+            LIMIT=$((85 * 1024 * 1024))
+            if [ "$SIZE" -gt "$LIMIT" ]; then
+              echo "CSV is $(($SIZE / 1024 / 1024))MB — trimming to last 400000 lines..."
+              head -1 "$FILE" > /tmp/_csv_header.csv
+              tail -n 400000 "$FILE" > /tmp/_csv_body.csv
+              cat /tmp/_csv_header.csv /tmp/_csv_body.csv > "$FILE"
+              echo "Trimmed to $(stat -c%s $FILE) bytes"
+            else
+              echo "CSV is $(($SIZE / 1024 / 1024))MB — under 85MB limit, no trim needed"
+            fi
+          fi
+
       - name: Commit output report to repo
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
           git add output_data/
           git diff --cached --quiet || git commit -m "auto: NSE report $(date +'%d-%b-%Y')"
-          git pull --rebase --autostash origin main
           git push
