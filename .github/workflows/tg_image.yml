@@ -1,7 +1,10 @@
 name: NSE Telegram Image Report
 
 on:
-  workflow_dispatch:           # triggered by engine after completion, or manually
+  workflow_run:
+    workflows: ["NSE Indicator Engine"]   # auto-trigger after engine completes
+    types: [completed]
+  workflow_dispatch:                       # also allow manual run
 
 permissions:
   contents: read
@@ -9,6 +12,7 @@ permissions:
 jobs:
   send-image:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Checkout repo
