@@ -2,7 +2,7 @@ name: NSE Bhavcopy Fetch (Daily 6:15PM IST)
 
 on:
   schedule:
-    - cron: "35 13 * * 1-5"   # 7:05 PM IST = 12:45 UTC, Mon-Fri
+    - cron: "45 12 * * 1-5"   # 6:15 PM IST = 12:45 UTC, Mon-Fri
   workflow_dispatch:
 
 permissions:
@@ -31,11 +31,23 @@ jobs:
           TG_CHAT_ID:   ${{ secrets.TG_CHAT_ID }}
         run: python src/nse_bhavcopy_fetch.py
 
+      - name: Cleanup old bhav data (keep last 3 months)
+        run: |
+          cd bhav_data
+          COUNT=$(ls -td */ 2>/dev/null | wc -l)
+          if [ "$COUNT" -gt 3 ]; then
+            ls -td */ | tail -n +4 | sed 's|/$||' | xargs rm -rf
+            echo "Removed $(($COUNT - 3)) old bhav folders, kept 3"
+          else
+            echo "Only $COUNT folders, no cleanup needed"
+          fi
+          cd ..
+
       - name: Commit bhav data to repo
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
           git add bhav_data/
           git diff --cached --quiet || git commit -m "auto: NSE bhavcopy $(date +'%d-%b-%Y')"
-          git pull --rebase origin main
           git push
