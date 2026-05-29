@@ -40,10 +40,14 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase --autostash origin main
           git add signal_data/
           git diff --cached --quiet || git commit -m "auto: signals + simulation $(date +'%d-%b-%Y')"
-          git push
+          # Retry push up to 5 times — handles concurrent workflow push conflicts
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin main && git push && break
+            echo "Push attempt $i failed, retrying in $((i*5))s..."
+            sleep $((i*5))
+          done
 
       - name: Push data to nse-indicator-dashboard
         env:
