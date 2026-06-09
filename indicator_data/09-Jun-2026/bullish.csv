@@ -1,0 +1,1007 @@
+Index,scId,StockName,type,currTrend,currPrice,performance,trendChngDate,trendChngPrice,updatedTime
+NIFTY 50,AE01,Adani Enterpris,Stock,Very Bullish,"2,979.90",42.80,"10 Apr, 2026","2,086.80",Jun 09 | 15:59
+NIFTY 50,MPS,Adani Ports,Stock,Very Bullish,"1,826.40",25.67,"08 Apr, 2026","1,453.30",Jun 09 | 15:56
+NIFTY 50,API,Asian Paints,Stock,Very Bullish,"2,708.10",14.72,"10 Apr, 2026","2,360.70",Jun 09 | 15:58
+NIFTY 50,AHE,Apollo Hospital,Stock,Very Bullish,"8,524.00",13.93,"09 Apr, 2026","7,481.50",Jun 09 | 15:58
+NIFTY 50,GI01,Grasim,Stock,Very Bullish,"3,095.50",12.15,"20 Apr, 2026","2,760.10",Jun 09 | 15:57
+NIFTY 50,TEL,TMPV,Stock,Very Bullish,387.80,8.76,"15 May, 2026",356.55,Jun 09 | 15:59
+NIFTY 50,CI29,Coal India,Stock,Very Bullish,466.90,3.61,"23 Apr, 2026",450.65,Jun 09 | 15:59
+NIFTY 50,SBI,SBI,Stock,Bullish,"1,002.70",2.11,"08 Jun, 2026",981.95,Jun 09 | 15:59
+NIFTY 50,EM,Eicher Motors,Stock,Very Bullish,"7,203.00",0.00,"09 Jun, 2026","7,203.00",Jun 09 | 15:57
+NIFTY 50,NI,Nestle,Stock,Bullish,"1,410.40",0.00,"09 Jun, 2026","1,410.40",Jun 09 | 15:57
+NIFTY 50,UTI10,Axis Bank,Stock,Very Bullish,"1,292.40",0.00,"09 Jun, 2026","1,292.40",Jun 09 | 15:59
+NIFTY 50,IA05,Interglobe Avi,Stock,Bullish,"4,537.60",0.00,"09 Jun, 2026","4,537.60",Jun 09 | 15:59
+NIFTY BANK,YB,Yes Bank,Stock,Very Bullish,23.37,17.14,"16 Apr, 2026",19.95,Jun 09 | 15:59
+NIFTY BANK,IIB,IndusInd Bank,Stock,Very Bullish,922.80,9.84,"15 Apr, 2026",840.10,Jun 09 | 15:59
+NIFTY BANK,FB,Federal Bank,Stock,Very Bullish,315.10,8.69,"20 May, 2026",289.90,Jun 09 | 15:58
+NIFTY BANK,IDF01,IDFC First Bank,Stock,Very Bullish,73.69,6.09,"25 May, 2026",69.46,Jun 09 | 15:59
+NIFTY BANK,UBI01,Union Bank,Stock,Bullish,170.44,2.24,"03 Jun, 2026",166.70,Jun 09 | 15:59
+NIFTY BANK,PNB05,PNB,Stock,Bullish,109.65,0.00,"09 Jun, 2026",109.65,Jun 09 | 15:59
+NIFTY BANK,BOB,Bank of Baroda,Stock,Bullish,273.75,0.00,"09 Jun, 2026",273.75,Jun 09 | 15:59
+NIFTY BANK,CB06,Canara Bank,Stock,Bullish,137.51,0.00,"09 Jun, 2026",137.51,Jun 09 | 15:59
+NIFTY MIDCAP100,IC8,Vodafone Idea,Stock,Very Bullish,14.14,48.37,"16 Apr, 2026",9.53,Jun 09 | 15:59
+NIFTY MIDCAP100,S11,Oracle Fin Serv,Stock,Bullish,"9,639.50",37.37,"06 Apr, 2026","7,017.00",Jun 09 | 15:53
+NIFTY MIDCAP100,LL06,Laurus Labs,Stock,Very Bullish,"1,424.40",37.12,"01 Apr, 2026","1,038.80",Jun 09 | 15:52
+NIFTY MIDCAP100,VSN,Tata Comm,Stock,Very Bullish,"1,975.80",30.93,"10 Apr, 2026","1,509.00",Jun 09 | 15:59
+NIFTY MIDCAP100,GEC,GE Vernova T&D,Stock,Very Bullish,"4,931.00",29.50,"18 Mar, 2026","3,807.70",Jun 09 | 15:59
+NIFTY MIDCAP100,PI41,Polycab,Stock,Very Bullish,"9,615.50",26.51,"08 Apr, 2026","7,600.50",Jun 09 | 15:58
+NIFTY MIDCAP100,RK01,Radico Khaitan,Stock,Bullish,"3,500.70",25.35,"10 Apr, 2026","2,792.70",Jun 09 | 15:55
+NIFTY MIDCAP100,ADG01,Adani Total Gas,Stock,Very Bullish,752.15,17.87,"21 May, 2026",638.10,Jun 09 | 15:59
+NIFTY MIDCAP100,KEI,KEI Industries,Stock,Very Bullish,"5,281.00",17.17,"08 Apr, 2026","4,507.20",Jun 09 | 15:56
+NIFTY MIDCAP100,BL03,Biocon,Stock,Bullish,416.35,13.06,"05 May, 2026",368.25,Jun 09 | 15:56
+NIFTY MIDCAP100,EI,Exide Ind,Stock,Very Bullish,392.95,7.29,"26 May, 2026",366.25,Jun 09 | 15:59
+NIFTY MIDCAP100,PEL07,Premier Energie,Stock,Very Bullish,"1,086.70",7.05,"21 May, 2026","1,015.10",Jun 09 | 15:54
+NIFTY MIDCAP100,PI35,Page Industries,Stock,Very Bullish,"38,905.00",5.66,"15 May, 2026","36,820.00",Jun 09 | 15:51
+NIFTY MIDCAP100,GI27,GMR Airports,Stock,Very Bullish,102.61,4.88,"27 May, 2026",97.84,Jun 09 | 15:59
+NIFTY MIDCAP100,TIIND54076,Tube Investment,Stock,Very Bullish,"3,105.50",4.53,"20 May, 2026","2,970.90",Jun 09 | 15:59
+NIFTY MIDCAP100,BFL,MphasiS,Stock,Very Bullish,"2,340.50",4.30,"25 May, 2026","2,244.00",Jun 09 | 15:59
+NIFTY MIDCAP100,JE02,JSW Energy,Stock,Bullish,570.40,4.00,"21 May, 2026",548.45,Jun 09 | 15:58
+NIFTY MIDCAP100,IB04,Indian Bank,Stock,Bullish,874.95,3.91,"05 Jun, 2026",842.05,Jun 09 | 15:59
+NIFTY MIDCAP100,DT07,Dixon Technolog,Stock,Very Bullish,"11,611.00",3.14,"21 May, 2026","11,258.00",Jun 09 | 15:58
+NIFTY MIDCAP100,SE17,Suzlon Energy,Stock,Very Bullish,55.23,2.75,"22 May, 2026",53.75,Jun 09 | 15:59
+NIFTY MIDCAP100,FH,Fortis Health,Stock,Very Bullish,989.75,2.18,"05 Jun, 2026",968.65,Jun 09 | 15:58
+NIFTY MIDCAP100,BFC,Bharat Forge,Stock,Very Bullish,"1,925.40",0.37,"25 May, 2026","1,918.30",Jun 09 | 15:58
+NIFTY MIDCAP100,MOF01,Motilal Oswal,Stock,Bullish,864.30,0.00,"09 Jun, 2026",864.30,Jun 09 | 15:58
+NIFTY MIDCAP100,PM02,Phoenix Mills,Stock,Bullish,"1,754.10",0.00,"09 Jun, 2026","1,754.10",Jun 09 | 15:42
+NIFTY MIDCAP100,BOI,Bank of India,Stock,Bullish,147.72,0.00,"09 Jun, 2026",147.72,Jun 09 | 15:59
+NIFTY MIDCAP100,LEI,LG Electronics ,Stock,Bullish,"1,541.50",0.00,"09 Jun, 2026","1,541.50",Jun 09 | 15:58
+NIFTY MIDCAP100,BGV,Billionbrains G,Stock,Bullish,195.25,-0.43,"05 Jun, 2026",196.09,Jun 09 | 15:59
+NIFTY NEXT 50,ADANI54145,Adani Green Ene,Stock,Very Bullish,"1,534.50",65.83,"07 Apr, 2026",925.35,Jun 09 | 15:59
+NIFTY NEXT 50,AT18,Adani Trans,Stock,Very Bullish,"1,579.20",59.30,"06 Apr, 2026",991.35,Jun 09 | 15:59
+NIFTY NEXT 50,CI02,Cummins,Stock,Bullish,"5,625.50",35.04,"03 Feb, 2026","4,165.80",Jun 09 | 15:54
+NIFTY NEXT 50,SE20,Solar Ind,Stock,Bullish,"18,267.00",31.15,"09 Apr, 2026","13,928.00",Jun 09 | 15:54
+NIFTY NEXT 50,SEI11,Siemens Energy ,Stock,Very Bullish,"3,547.50",26.09,"10 Apr, 2026","2,813.50",Jun 09 | 15:54
+NIFTY NEXT 50,CG,CG Power ,Stock,Very Bullish,911.20,25.46,"08 Apr, 2026",726.30,Jun 09 | 15:59
+NIFTY NEXT 50,MSS01,MOTHERSON,Stock,Very Bullish,144.06,21.97,"08 Apr, 2026",118.11,Jun 09 | 15:59
+NIFTY NEXT 50,VB05,Varun Beverages,Stock,Very Bullish,529.75,18.90,"15 Apr, 2026",445.55,Jun 09 | 15:59
+NIFTY NEXT 50,CHC,Zydus Life,Stock,Very Bullish,"1,105.60",17.77,"06 May, 2026",938.80,Jun 09 | 15:58
+NIFTY NEXT 50,TP06,Torrent Pharma,Stock,Bullish,"4,472.90",6.00,"27 Apr, 2026","4,219.80",Jun 09 | 15:57
+NIFTY NEXT 50,PI11,Pidilite Ind,Stock,Very Bullish,"1,481.80",4.24,"06 May, 2026","1,421.50",Jun 09 | 15:58
+NIFTY NEXT 50,MIC,Bosch,Stock,Very Bullish,"37,820.00",3.26,"29 May, 2026","36,625.00",Jun 09 | 15:59
+NIFTY NEXT 50,ABB,ABB India,Stock,Bullish,"6,931.00",1.87,"26 May, 2026","6,804.00",Jun 09 | 15:58
+NIFTY NEXT 50,HMI01,Hyundai Motor,Stock,Bullish,"1,898.60",0.94,"25 May, 2026","1,880.90",Jun 09 | 15:58
+NIFTY NEXT 50,IHC,Indian Hotels,Stock,Very Bullish,666.70,0.76,"02 Jun, 2026",661.65,Jun 09 | 15:58
+NIFTY NEXT 50,DL03,Divis Labs,Stock,Very Bullish,"6,753.00",0.00,"09 Jun, 2026","6,753.00",Jun 09 | 15:58
+NIFTY NEXT 50,REC02,REC,Stock,Bullish,352.10,0.00,"09 Jun, 2026",352.10,Jun 09 | 15:59
+NIFTY NEXT 50,TCL06,Tata Capital,Stock,Bullish,322.85,0.00,"09 Jun, 2026",322.85,Jun 09 | 15:59
+NIFTY NEXT 50,GAI,GAIL,Stock,Very Bullish,167.59,-0.64,"25 May, 2026",168.67,Jun 09 | 15:59
+NIFTY 500,HFC,HFCL,Stock,Very Bullish,178.01,145.63,"01 Apr, 2026",72.47,Jun 09 | 15:59
+NIFTY 500,AIL10,Aditya Infotech,Stock,Very Bullish,"3,482.20",120.99,"25 Feb, 2026","1,575.70",Jun 09 | 15:59
+NIFTY 500,THC,Cemindia Proj,Stock,Very Bullish,"1,203.80",98.96,"08 Apr, 2026",605.05,Jun 09 | 15:57
+NIFTY 500,AO05,Acutaas Chem,Stock,Very Bullish,"3,198.70",85.11,"27 Jan, 2026","1,728.00",Jun 09 | 15:59
+NIFTY 500,WGS,Welspun Corp,Stock,Very Bullish,"1,411.60",68.94,"25 Mar, 2026",835.55,Jun 09 | 15:58
+NIFTY 500,DPI01,Data Patterns,Stock,Very Bullish,"4,558.50",67.36,"06 Feb, 2026","2,723.70",Jun 09 | 15:59
+NIFTY 500,EPP01,Emmvee Photovol,Stock,Very Bullish,335.20,59.41,"16 Mar, 2026",210.28,Jun 09 | 15:58
+NIFTY 500,SST07,Syrma SGS,Stock,Very Bullish,"1,256.80",58.91,"24 Mar, 2026",790.90,Jun 09 | 15:58
+NIFTY 500,K04,R R Kabel,Stock,Very Bullish,"2,177.00",55.88,"10 Apr, 2026","1,396.60",Jun 09 | 15:58
+NIFTY 500,T,Thermax,Stock,Very Bullish,"4,739.90",55.19,"17 Feb, 2026","3,054.20",Jun 09 | 15:59
+NIFTY 500,AEL10,Ather Energy,Stock,Very Bullish,"1,032.80",47.12,"11 Mar, 2026",702.00,Jun 09 | 15:57
+NIFTY 500,HCI01,Himadri Special,Stock,Very Bullish,679.50,44.87,"08 Apr, 2026",469.05,Jun 09 | 15:59
+NIFTY 500,DFP,Deepak Fert,Stock,Very Bullish,"1,518.60",44.73,"08 Apr, 2026","1,049.30",Jun 09 | 15:59
+NIFTY 500,HCL07,Honasa Consumer,Stock,Very Bullish,407.95,41.50,"24 Mar, 2026",288.30,Jun 09 | 15:54
+NIFTY 500,TT12,Triveni Turbine,Stock,Bullish,673.20,40.90,"16 Apr, 2026",477.80,Jun 09 | 15:56
+NIFTY 500,W05,Wockhardt,Stock,Bullish,"1,887.60",39.84,"08 Apr, 2026","1,349.80",Jun 09 | 16:00
+NIFTY 500,IFC,IFCI,Stock,Very Bullish,77.07,39.22,"08 Apr, 2026",55.36,Jun 09 | 15:59
+NIFTY 500,AI40,Apar Ind,Stock,Very Bullish,"13,609.00",38.80,"23 Mar, 2026","9,805.00",Jun 09 | 15:59
+NIFTY 500,JKB,JK Bank,Stock,Very Bullish,156.98,34.34,"07 Apr, 2026",116.85,Jun 09 | 15:59
+NIFTY 500,NTI03,Netweb,Stock,Very Bullish,"4,428.20",33.73,"08 Apr, 2026","3,311.40",Jun 09 | 15:59
+NIFTY 500,VDC01,Vijaya Diagnost,Stock,Bullish,"1,296.20",32.93,"09 Apr, 2026",975.10,Jun 09 | 15:54
+NIFTY 500,CPL,Caplin Labs,Stock,Bullish,"2,255.20",32.01,"10 Apr, 2026","1,708.40",Jun 09 | 15:54
+NIFTY 500,OEM,Ola Electric,Stock,Very Bullish,47.34,31.46,"22 May, 2026",36.01,Jun 09 | 15:59
+NIFTY 500,KOE03,Kirloskar Oil,Stock,Very Bullish,"1,851.30",30.70,"06 Apr, 2026","1,416.40",Jun 09 | 15:52
+NIFTY 500,GI22,Granules India,Stock,Bullish,765.05,30.30,"18 Mar, 2026",587.15,Jun 09 | 15:58
+NIFTY 500,NL,Neuland Lab,Stock,Very Bullish,"17,188.00",30.00,"06 Apr, 2026","13,222.00",Jun 09 | 15:59
+NIFTY 500,GP14,Gland,Stock,Very Bullish,"2,288.50",28.89,"27 Apr, 2026","1,775.50",Jun 09 | 15:59
+NIFTY 500,TTL01,Tata Tech,Stock,Very Bullish,745.10,27.00,"16 Apr, 2026",586.70,Jun 09 | 15:59
+NIFTY 500,BM05,Bank of Mah,Stock,Very Bullish,83.97,26.19,"07 Apr, 2026",66.54,Jun 09 | 15:59
+NIFTY 500,SP09,Jindal Saw,Stock,Bullish,239.81,25.33,"01 Apr, 2026",191.34,Jun 09 | 15:59
+NIFTY 500,ZT01,Zen Tech,Stock,Very Bullish,"1,782.50",25.15,"07 Apr, 2026","1,424.30",Jun 09 | 15:59
+NIFTY 500,NS16,NMDC Steel,Stock,Very Bullish,49.32,25.11,"07 Apr, 2026",39.42,Jun 09 | 15:58
+NIFTY 500,BB09,Bandhan Bank,Stock,Very Bullish,206.94,24.71,"09 Apr, 2026",165.94,Jun 09 | 15:59
+NIFTY 500,BIL07,Belrise Ind,Stock,Very Bullish,234.73,24.20,"20 Mar, 2026",189.00,Jun 09 | 15:59
+NIFTY 500,CA07,Craftsman,Stock,Very Bullish,"9,126.50",24.14,"08 Apr, 2026","7,351.50",Jun 09 | 15:57
+NIFTY 500,SLS02,Sai Life Sci,Stock,Very Bullish,"1,229.70",22.24,"22 Apr, 2026","1,006.00",Jun 09 | 15:59
+NIFTY 500,CU,Carborundum,Stock,Bullish,"1,040.10",21.79,"02 Apr, 2026",854.00,Jun 09 | 16:00
+NIFTY 500,NWML,Nuvama Wealth,Stock,Very Bullish,"1,556.80",21.53,"08 Apr, 2026","1,281.00",Jun 09 | 15:58
+NIFTY 500,JBM03,JBM Auto,Stock,Very Bullish,676.75,20.61,"01 Apr, 2026",561.10,Jun 09 | 15:57
+NIFTY 500,MC22,Minda Corp,Stock,Very Bullish,647.15,20.55,"21 May, 2026",536.85,Jun 09 | 15:55
+NIFTY 500,ASH02,ACME Solar,Stock,Very Bullish,348.70,20.16,"22 May, 2026",290.20,Jun 09 | 15:59
+NIFTY 500,CNA,Zydus Wellness,Stock,Very Bullish,509.25,19.63,"16 Mar, 2026",425.70,Jun 09 | 15:58
+NIFTY 500,ADH,Aster DM Health,Stock,Very Bullish,790.35,18.32,"27 Mar, 2026",668.00,Jun 09 | 15:58
+NIFTY 500,SBP04,Sona BLW,Stock,Very Bullish,601.85,18.15,"06 Apr, 2026",509.40,Jun 09 | 15:57
+NIFTY 500,ZT,Zee Entertain,Stock,Very Bullish,107.62,17.67,"27 May, 2026",91.46,Jun 09 | 15:59
+NIFTY 500,IHF01,Sammaan Capital,Stock,Very Bullish,180.65,17.11,"21 May, 2026",154.26,Jun 09 | 15:58
+NIFTY 500,UB01,Usha Martin,Stock,Very Bullish,496.05,17.10,"08 Apr, 2026",423.60,Jun 09 | 15:59
+NIFTY 500,GCI,Saregama India,Stock,Very Bullish,449.30,16.84,"14 May, 2026",384.55,Jun 09 | 15:59
+NIFTY 500,MR,Chennai Petro,Stock,Very Bullish,"1,226.40",16.46,"27 May, 2026","1,053.10",Jun 09 | 15:59
+NIFTY 500,TN,Tejas Networks,Stock,Very Bullish,540.55,15.90,"20 May, 2026",466.40,Jun 09 | 15:59
+NIFTY 500,EPL,Emcure Pharmace,Stock,Very Bullish,"1,744.60",15.89,"17 Mar, 2026","1,505.40",Jun 09 | 15:55
+NIFTY 500,KIO01,Krishna Institu,Stock,Very Bullish,781.60,15.89,"27 Apr, 2026",674.45,Jun 09 | 15:56
+NIFTY 500,MSM,Vardhman Text,Stock,Very Bullish,620.85,15.70,"02 Apr, 2026",536.60,Jun 09 | 15:55
+NIFTY 500,AIE01,AIA Engineering,Stock,Very Bullish,"4,489.10",15.60,"18 May, 2026","3,883.30",Jun 09 | 15:57
+NIFTY 500,WI03,Welspun India,Stock,Very Bullish,142.44,14.17,"15 Apr, 2026",124.76,Jun 09 | 15:58
+NIFTY 500,IKS,Inventurus Know,Stock,Very Bullish,"1,683.50",13.96,"09 Apr, 2026","1,477.30",Jun 09 | 15:58
+NIFTY 500,SHA,Star Health,Stock,Bullish,521.40,13.56,"25 Mar, 2026",459.15,Jun 09 | 15:57
+NIFTY 500,RB02,RBL Bank,Stock,Very Bullish,361.00,13.47,"06 Apr, 2026",318.15,Jun 09 | 15:59
+NIFTY 500,NBH,Niva Bupa Healt,Stock,Very Bullish,83.27,13.03,"10 Apr, 2026",73.67,Jun 09 | 15:50
+NIFTY 500,CT09,Cartrade,Stock,Bullish,"2,187.60",11.52,"03 Jun, 2026","1,961.70",Jun 09 | 15:59
+NIFTY 500,BCM,Balrampur Chini,Stock,Very Bullish,536.95,10.63,"15 Apr, 2026",485.35,Jun 09 | 15:56
+NIFTY 500,AC02,Aegis Logistics,Stock,Very Bullish,782.65,10.24,"20 May, 2026",709.95,Jun 09 | 15:58
+NIFTY 500,NH,Narayana Hruda,Stock,Very Bullish,"1,934.30",10.22,"10 Apr, 2026","1,754.90",Jun 09 | 15:57
+NIFTY 500,II15,IIFL Finance,Stock,Very Bullish,508.05,9.94,"21 May, 2026",462.10,Jun 09 | 15:59
+NIFTY 500,SME05,Shyam Metalics,Stock,Very Bullish,973.30,9.83,"27 Apr, 2026",886.15,Jun 09 | 15:51
+NIFTY 500,NBC,NBCC (India),Stock,Very Bullish,105.83,9.34,"25 May, 2026",96.79,Jun 09 | 15:59
+NIFTY 500,CB09,Concord Biotech,Stock,Very Bullish,"1,272.20",9.09,"02 Jun, 2026","1,166.20",Jun 09 | 15:57
+NIFTY 500,RI37,Redington,Stock,Very Bullish,240.30,8.71,"22 May, 2026",221.05,Jun 09 | 15:59
+NIFTY 500,PFL06,Piramal Finance,Stock,Very Bullish,"1,993.70",8.44,"22 Apr, 2026","1,838.50",Jun 09 | 15:59
+NIFTY 500,IL06,Indegene,Stock,Very Bullish,523.40,8.33,"08 Apr, 2026",483.15,Jun 09 | 15:55
+NIFTY 500,JBC,JB Chemicals,Stock,Very Bullish,"2,210.20",7.95,"27 Apr, 2026","2,047.50",Jun 09 | 15:49
+NIFTY 500,M09,KPR Mill,Stock,Very Bullish,"1,029.75",7.64,"19 May, 2026",956.65,Jun 09 | 15:57
+NIFTY 500,HTL03,Hexaware Tech,Stock,Bullish,521.60,7.39,"08 May, 2026",485.70,Jun 09 | 15:55
+NIFTY 500,EE01,Elgi Equipments,Stock,Very Bullish,604.70,6.98,"20 May, 2026",565.25,Jun 09 | 15:57
+NIFTY 500,DSL01,Capri Global,Stock,Very Bullish,203.20,6.58,"22 May, 2026",190.65,Jun 09 | 15:59
+NIFTY 500,EEC,Elecon Eng,Stock,Very Bullish,532.85,5.69,"21 May, 2026",504.15,Jun 09 | 15:56
+NIFTY 500,IGIIL,IGIL,Stock,Very Bullish,372.05,5.61,"20 May, 2026",352.30,Jun 09 | 15:59
+NIFTY 500,ARI,Anant Raj,Stock,Very Bullish,540.75,5.17,"29 May, 2026",514.15,Jun 09 | 15:59
+NIFTY 500,ABD,Allied Blenders,Stock,Very Bullish,583.10,4.44,"29 May, 2026",558.30,Jun 09 | 15:58
+NIFTY 500,ABL03,Angel One,Stock,Very Bullish,337.55,2.91,"19 May, 2026",328.00,Jun 09 | 15:59
+NIFTY 500,MMT,MMTC,Stock,Very Bullish,66.88,2.83,"26 May, 2026",65.04,Jun 09 | 15:59
+NIFTY 500,KPT,KPIL,Stock,Very Bullish,"1,306.50",2.33,"21 May, 2026","1,276.80",Jun 09 | 15:59
+NIFTY 500,ABL07,Anthem Bioscien,Stock,Very Bullish,778.25,2.20,"05 Jun, 2026",761.50,Jun 09 | 15:58
+NIFTY 500,TI30,Tega Industries,Stock,Very Bullish,"1,799.30",1.89,"29 May, 2026","1,766.00",Jun 09 | 15:58
+NIFTY 500,JIL05,JSW Infra,Stock,Very Bullish,282.80,1.85,"25 May, 2026",277.65,Jun 09 | 15:59
+NIFTY 500,TW04,TITAGARH,Stock,Very Bullish,846.20,1.69,"25 May, 2026",832.10,Jun 09 | 15:59
+NIFTY 500,IL,Ipca Labs,Stock,Very Bullish,"1,634.00",1.24,"04 Jun, 2026","1,614.00",Jun 09 | 15:48
+NIFTY 500,PTC02,PTC Industries,Stock,Very Bullish,"18,692.00",1.10,"01 Jun, 2026","18,489.00",Jun 09 | 15:59
+NIFTY 500,GH03,Global Health,Stock,Very Bullish,"1,242.10",0.84,"04 Jun, 2026","1,231.80",Jun 09 | 15:56
+NIFTY 500,EI14,Engineers India,Stock,Very Bullish,239.37,0.67,"05 Jun, 2026",237.78,Jun 09 | 15:56
+NIFTY 500,IDA,Intellect Desig,Stock,Bullish,751.90,0.49,"02 Jun, 2026",748.25,Jun 09 | 15:57
+NIFTY 500,TH,Honeywell Autom,Stock,Very Bullish,"35,125.00",0.46,"21 May, 2026","34,965.00",Jun 09 | 15:52
+NIFTY 500,AI72,AFFLE 3I,Stock,Bullish,"1,502.20",0.22,"02 Jun, 2026","1,498.90",Jun 09 | 15:52
+NIFTY 500,CUB,City Union Bank,Stock,Bullish,256.40,0.00,"09 Jun, 2026",256.40,Jun 09 | 15:57
+NIFTY 500,CHL02,Canara HSBC,Stock,Bullish,140.33,0.00,"09 Jun, 2026",140.33,Jun 09 | 15:57
+NIFTY 500,MRP,MRPL,Stock,Bullish,160.34,0.00,"09 Jun, 2026",160.34,Jun 09 | 15:59
+NIFTY 500,IDB,IDBI Bank,Stock,Bullish,75.37,0.00,"09 Jun, 2026",75.37,Jun 09 | 15:59
+NIFTY 500,GIC12,General Insuran,Stock,Bullish,388.00,0.00,"09 Jun, 2026",388.00,Jun 09 | 15:52
+NIFTY 500,GT06,Olectra Greente,Stock,Very Bullish,"1,300.00",0.00,"09 Jun, 2026","1,300.00",Jun 09 | 15:55
+NIFTY 500,GRS01,Garden Reach Sh,Stock,Bullish,"2,672.60",0.00,"09 Jun, 2026","2,672.60",Jun 09 | 15:59
+NIFTY 500,ITI,ITI,Stock,Very Bullish,300.20,-0.03,"26 May, 2026",300.30,Jun 09 | 15:59
+NIFTY 500,ABS,ABSL AMC,Stock,Very Bullish,"1,062.40",-0.15,"29 May, 2026","1,064.00",Jun 09 | 15:59
+NIFTY 500,TRI,Transformers,Stock,Very Bullish,319.50,-0.47,"26 May, 2026",321.00,Jun 09 | 15:58
+NIFTY 500,ICI,JSW Dulux,Stock,Very Bullish,"3,116.80",-1.11,"29 May, 2026","3,151.80",Jun 09 | 15:54
+NIFTY 500,AEI01,Amber Enterpris,Stock,Bullish,"7,726.00",-1.23,"05 Jun, 2026","7,822.00",Jun 09 | 15:57
+NIFTY 500,BJH,Blue Jet Health,Stock,Bullish,467.90,-1.62,"04 Jun, 2026",475.60,Jun 09 | 15:59
+NIFTY 500,PP36,Paradeep Phosph,Stock,Bullish,126.26,-1.83,"25 May, 2026",128.61,Jun 09 | 15:57
+NIFTY 500,CC10,CCL Products,Stock,Very Bullish,"1,149.10",-2.04,"08 Jun, 2026","1,173.00",Jun 09 | 15:58
+NIFTY 500,RP,Reliance Power,Stock,Bullish,27.78,-2.83,"05 Jun, 2026",28.59,Jun 09 | 15:59
+ALL NSE,PHH,Viceroy Hotels,Stock,Very Bullish,138.12,"5,655.00","29 Aug, 2023",2.40,Jun 09 | 15:42
+ALL NSE,SO03,Sterlite Techno,Stock,Very Bullish,613.00,492.39,"28 Jan, 2026",103.48,Jun 09 | 15:59
+ALL NSE,AHW,Asian Hotel (W),Stock,Bullish,574.05,197.84,"15 Apr, 2026",192.74,Jun 09 | 15:31
+ALL NSE,KP15,Kshitij Polylin,Stock,Very Bullish,6.54,163.71,"08 Apr, 2026",2.48,Jun 09 | 15:59
+ALL NSE,AS29,Accord Synergy,Stock,Very Bullish,74.40,159.69,"06 Apr, 2026",28.65,Jun 09 | 15:52
+ALL NSE,M08,SIGMA ADVANCED,Stock,Very Bullish,437.45,157.72,"08 Apr, 2026",169.74,Jun 09 | 15:57
+ALL NSE,MM05,Modison,Stock,Very Bullish,327.40,143.46,"07 Apr, 2026",134.48,Jun 09 | 15:59
+ALL NSE,DDEL,DEE Development,Stock,Very Bullish,688.70,138.14,"01 Apr, 2026",289.20,Jun 09 | 15:55
+ALL NSE,AEL11,Atlanta Electri,Stock,Bullish,"1,890.70",132.37,"06 Feb, 2026",813.65,Jun 09 | 15:51
+ALL NSE,AI77,Aeroflex Ind.,Stock,Very Bullish,425.70,129.23,"03 Feb, 2026",185.71,Jun 09 | 15:59
+ALL NSE,IT07,Ideaforge Tech,Stock,Very Bullish,964.90,120.98,"10 Apr, 2026",436.65,Jun 09 | 15:59
+ALL NSE,KIL12,KSH Intl,Stock,Very Bullish,819.90,120.94,"06 Mar, 2026",371.10,Jun 09 | 15:58
+ALL NSE,BNH,United Food,Stock,Very Bullish,549.95,114.99,"08 Apr, 2026",255.80,Jun 09 | 15:59
+ALL NSE,VR01,Venus Remedies,Stock,Very Bullish,"1,610.70",113.04,"09 Mar, 2026",756.05,Jun 09 | 15:59
+ALL NSE,BA05,Balaji Amines,Stock,Very Bullish,"2,242.10",107.14,"13 Apr, 2026","1,082.40",Jun 09 | 15:57
+ALL NSE,DG01,CP,Stock,Very Bullish,75.50,106.28,"18 Mar, 2026",36.60,Jun 09 | 15:57
+ALL NSE,MT14,MTAR,Stock,Very Bullish,"7,458.00",105.71,"17 Mar, 2026","3,625.50",Jun 09 | 15:59
+ALL NSE,NSL04,NINtec SYSTEMS ,Stock,Very Bullish,718.90,105.58,"27 Mar, 2026",349.70,Jun 09 | 15:48
+ALL NSE,BWL02,Blue Water Logi,Stock,Very Bullish,313.00,104.58,"01 Apr, 2026",153.00,Jun 09 | 15:50
+ALL NSE,ABB01,GE Power India,Stock,Very Bullish,905.50,103.67,"08 Apr, 2026",444.60,Jun 09 | 15:55
+ALL NSE,VI20,V-Marc,Stock,Very Bullish,"1,396.85",103.59,"06 Apr, 2026",686.10,Jun 09 | 15:31
+ALL NSE,PEE01,Parth Elec,Stock,Very Bullish,434.00,99.54,"21 Jan, 2026",217.50,Jun 09 | 15:41
+ALL NSE,JIL06,JNK India,Stock,Very Bullish,484.05,95.42,"02 Apr, 2026",247.70,Jun 09 | 15:59
+ALL NSE,SCT01,Sasken Tech,Stock,Very Bullish,"2,314.40",93.37,"06 Apr, 2026","1,196.90",Jun 09 | 15:59
+ALL NSE,R03,Rollatainers,Stock,Very Bullish,2.43,92.86,"10 Apr, 2026",1.26,Jun 09 | 15:43
+ALL NSE,APL07,Accretion Pharm,Stock,Very Bullish,134.30,91.86,"02 Apr, 2026",70.00,Jun 09 | 15:47
+ALL NSE,TEL07,Tankup Engineer,Stock,Very Bullish,"1,020.40",90.73,"09 Apr, 2026",535.00,Jun 09 | 15:31
+ALL NSE,PMWL,Park Medi World,Stock,Very Bullish,292.50,90.39,"30 Jan, 2026",153.63,Jun 09 | 15:57
+ALL NSE,BM01,Bhagyanagar Ind,Stock,Very Bullish,307.80,90.31,"08 Apr, 2026",161.74,Jun 09 | 15:46
+ALL NSE,BCP01,Bliss GVS,Stock,Very Bullish,421.60,88.15,"25 Mar, 2026",224.08,Jun 09 | 15:58
+ALL NSE,VT03,Vindhya Telelin,Stock,Very Bullish,"2,134.70",86.75,"08 Apr, 2026","1,143.10",Jun 09 | 15:55
+ALL NSE,STL13,Shadowfax Tech,Stock,Bullish,216.90,85.40,"25 Mar, 2026",116.99,Jun 09 | 15:58
+ALL NSE,TT03,BLACK BOX,Stock,Very Bullish,970.10,85.22,"10 Apr, 2026",523.75,Jun 09 | 15:58
+ALL NSE,WI11,Wheels,Stock,Bullish,"1,507.60",83.73,"03 Feb, 2026",820.55,Jun 09 | 15:58
+ALL NSE,HTP,Hitech Corp,Stock,Very Bullish,309.32,82.98,"21 May, 2026",169.05,Jun 09 | 15:47
+ALL NSE,ITT02,Indo Tech Trans,Stock,Bullish,"2,595.50",81.40,"13 Apr, 2026","1,430.80",Jun 09 | 15:53
+ALL NSE,HFI02,HOAC Foods,Stock,Very Bullish,649.95,79.94,"20 Mar, 2026",361.20,Jun 09 | 15:31
+ALL NSE,PC01,Paramount Comm,Stock,Very Bullish,66.75,79.39,"08 Apr, 2026",37.21,Jun 09 | 15:59
+ALL NSE,JIL07,Jinkushal Indus,Stock,Very Bullish,99.09,79.19,"07 Apr, 2026",55.30,Jun 09 | 15:31
+ALL NSE,AMS,Apollo Micro Sy,Stock,Very Bullish,413.05,77.64,"09 Apr, 2026",232.52,Jun 09 | 15:59
+ALL NSE,SSF09,Srivari Spices,Stock,Very Bullish,212.60,75.70,"15 May, 2026",121.00,Jun 09 | 15:42
+ALL NSE,UC,Universal Cable,Stock,Very Bullish,"1,223.40",75.60,"07 Apr, 2026",696.70,Jun 09 | 15:57
+ALL NSE,YIL01,Yasho Ind.,Stock,Very Bullish,"2,543.60",75.24,"07 Apr, 2026","1,451.50",Jun 09 | 15:52
+ALL NSE,PB,Panacea Biotec,Stock,Very Bullish,607.75,75.17,"15 Apr, 2026",346.95,Jun 09 | 15:59
+ALL NSE,SML08,SEDEMAC Mechatr,Stock,Bullish,"2,624.90",74.55,"24 Mar, 2026","1,503.80",Jun 09 | 15:59
+ALL NSE,ATS01,Anlon Technolog,Stock,Very Bullish,691.10,74.41,"06 Apr, 2026",396.25,Jun 09 | 15:59
+ALL NSE,OCA,Onelife Capital,Stock,Very Bullish,26.49,73.48,"16 Apr, 2026",15.27,Jun 09 | 15:55
+ALL NSE,FC06,Fineotex Chem,Stock,Very Bullish,39.86,73.38,"08 Apr, 2026",22.99,Jun 09 | 15:59
+ALL NSE,CR02,Cupid,Stock,Very Bullish,145.86,72.31,"27 Mar, 2026",84.65,Jun 09 | 15:59
+ALL NSE,TAC01,IOL Chemicals,Stock,Very Bullish,132.84,71.56,"01 Apr, 2026",77.43,Jun 09 | 15:55
+ALL NSE,SAL07,Speb Adhesives,Stock,Bullish,93.90,70.73,"08 Apr, 2026",55.00,Jun 09 | 15:47
+ALL NSE,AT23,Avalon Technolo,Stock,Very Bullish,"1,639.50",70.34,"06 Apr, 2026",962.50,Jun 09 | 15:55
+ALL NSE,AFIL,Akme Fintrade I,Stock,Very Bullish,10.01,70.24,"20 Feb, 2026",5.88,Jun 09 | 15:56
+ALL NSE,SEI03,Paisalo Digital,Stock,Very Bullish,60.18,70.19,"01 Apr, 2026",35.36,Jun 09 | 15:57
+ALL NSE,PC13,Rain Industries,Stock,Very Bullish,203.97,69.24,"09 Apr, 2026",120.52,Jun 09 | 15:59
+ALL NSE,SA04,Shilpa,Stock,Very Bullish,569.15,68.39,"24 Mar, 2026",338.00,Jun 09 | 15:59
+ALL NSE,VF08,Viji Finance,Stock,Very Bullish,4.03,67.92,"10 Mar, 2026",2.40,Jun 09 | 15:48
+ALL NSE,SP24,Suven Life Sci,Stock,Very Bullish,264.45,67.42,"02 Apr, 2026",157.96,Jun 09 | 15:59
+ALL NSE,RRM01,Raghav Producti,Stock,Very Bullish,"1,170.50",66.93,"10 Apr, 2026",701.20,Jun 09 | 15:54
+ALL NSE,RM04,Ruby Mills,Stock,Very Bullish,344.70,66.36,"02 Apr, 2026",207.20,Jun 09 | 15:49
+ALL NSE,MIL21,Monolithisch,Stock,Very Bullish,698.35,66.04,"07 Apr, 2026",420.60,Jun 09 | 15:41
+ALL NSE,EN,E2E Networks,Stock,Very Bullish,408.80,65.96,"08 Apr, 2026",246.33,Jun 09 | 15:59
+ALL NSE,PWI,Precision Wires,Stock,Bullish,410.85,65.73,"28 Jan, 2026",247.90,Jun 09 | 15:54
+ALL NSE,KMI,Kernex Micro,Stock,Very Bullish,"1,889.90",65.59,"08 Apr, 2026","1,141.30",Jun 09 | 15:57
+ALL NSE,NRB,NRB Bearings,Stock,Very Bullish,438.95,65.12,"15 Apr, 2026",265.84,Jun 09 | 15:58
+ALL NSE,MC25,Mahickra Chemic,Stock,Very Bullish,252.00,63.11,"24 Dec, 2025",154.50,Jun 09 | 15:31
+ALL NSE,BC14,Bajaj Consumer ,Stock,Very Bullish,582.20,60.96,"01 Apr, 2026",361.70,Jun 09 | 15:59
+ALL NSE,CUDML,Cash Ur Drive,Stock,Bullish,174.00,60.15,"09 Apr, 2026",108.65,Jun 09 | 15:31
+ALL NSE,ALF02,Apollo Pipes,Stock,Bullish,501.75,60.10,"06 Feb, 2026",313.40,Jun 09 | 15:51
+ALL NSE,SC04,Savita Oil Tech,Stock,Very Bullish,568.05,59.48,"15 Apr, 2026",356.20,Jun 09 | 15:58
+ALL NSE,ZIMLA54140,ZIM Lab,Stock,Very Bullish,113.05,59.27,"08 Apr, 2026",70.98,Jun 09 | 15:40
+ALL NSE,ML08,Maheshwari Logi,Stock,Very Bullish,69.39,58.24,"25 Mar, 2026",43.85,Jun 09 | 15:54
+ALL NSE,UHTL,United Heat,Stock,Very Bullish,89.65,57.97,"08 May, 2026",56.75,Jun 09 | 15:48
+ALL NSE,LSI01,Lloyds Steels,Stock,Very Bullish,71.78,57.07,"07 Apr, 2026",45.70,Jun 09 | 15:55
+ALL NSE,SI91,Sportking India,Stock,Very Bullish,177.84,57.01,"17 Mar, 2026",113.27,Jun 09 | 15:56
+ALL NSE,SBC,Shivalik Bimeta,Stock,Very Bullish,731.30,56.58,"08 Apr, 2026",467.05,Jun 09 | 15:58
+ALL NSE,OPL01,OBSC Perfection,Stock,Very Bullish,495.40,56.20,"08 Apr, 2026",317.15,Jun 09 | 15:55
+ALL NSE,CMPDIL,Central Mine,Stock,Bullish,244.18,56.20,"08 Apr, 2026",156.33,Jun 09 | 15:58
+ALL NSE,NGO,Nakoda Group,Stock,Very Bullish,40.50,55.77,"01 Apr, 2026",26.00,Jun 09 | 15:52
+ALL NSE,RPL04,Rashi Periphera,Stock,Very Bullish,552.65,55.70,"01 Apr, 2026",354.95,Jun 09 | 15:56
+ALL NSE,FPS01,Fujiyama Power ,Stock,Bullish,314.25,55.56,"20 Mar, 2026",202.01,Jun 09 | 15:59
+ALL NSE,SCN,Satin Credit,Stock,Very Bullish,242.10,55.20,"08 Apr, 2026",155.99,Jun 09 | 15:58
+ALL NSE,BEL02,Bluspring Ent,Stock,Very Bullish,90.01,54.66,"02 Apr, 2026",58.20,Jun 09 | 15:52
+ALL NSE,MU,Mayur Uniquoter,Stock,Very Bullish,798.85,54.13,"01 Apr, 2026",518.30,Jun 09 | 15:55
+ALL NSE,PDS01,Paras Defence,Stock,Very Bullish,"1,039.15",53.95,"09 Apr, 2026",675.00,Jun 09 | 15:59
+ALL NSE,SPA,Sun Pharma Adv,Stock,Very Bullish,209.19,53.64,"08 Apr, 2026",136.16,Jun 09 | 15:58
+ALL NSE,SPEL,Supreme Power,Stock,Very Bullish,253.80,53.03,"02 Apr, 2026",165.85,Jun 09 | 15:48
+ALL NSE,WI01,Walchandnagar,Stock,Very Bullish,254.70,52.94,"08 Apr, 2026",166.54,Jun 09 | 15:59
+ALL NSE,SG14,Sky Gold,Stock,Bullish,513.05,51.90,"01 Apr, 2026",337.75,Jun 09 | 15:59
+ALL NSE,KKS,G-Tec Jainx,Stock,Very Bullish,36.44,51.71,"02 Jun, 2026",24.02,Jun 09 | 15:53
+ALL NSE,OCP,Orchid Pharma,Stock,Very Bullish,859.80,51.68,"24 Apr, 2026",566.85,Jun 09 | 15:59
+ALL NSE,PE02,Premier Explo,Stock,Very Bullish,721.95,51.48,"15 Apr, 2026",476.60,Jun 09 | 15:59
+ALL NSE,DC05,Diamond Power,Stock,Very Bullish,202.47,51.44,"08 Apr, 2026",133.70,Jun 09 | 15:59
+ALL NSE,SL19,Supriya Lifesci,Stock,Very Bullish,962.90,51.17,"08 Apr, 2026",636.95,Jun 09 | 15:58
+ALL NSE,SET,ANTELOPUS,Stock,Very Bullish,853.85,49.88,"30 Mar, 2026",569.70,Jun 09 | 15:54
+ALL NSE,LMS,Lokesh Machines,Stock,Very Bullish,265.15,49.87,"02 Feb, 2026",176.92,Jun 09 | 15:51
+ALL NSE,RRL04,Rubicon Researc,Stock,Very Bullish,"1,170.50",49.50,"20 Mar, 2026",782.95,Jun 09 | 15:56
+ALL NSE,IFT,Impex FerroTech,Stock,Bullish,2.54,48.54,"14 May, 2026",1.71,Jun 09 | 15:31
+ALL NSE,NS12,Nitin Spinners,Stock,Very Bullish,539.00,48.48,"01 Apr, 2026",363.00,Jun 09 | 15:58
+ALL NSE,RTL04,Rossell Techsys,Stock,Very Bullish,"1,050.30",48.22,"01 Apr, 2026",708.60,Jun 09 | 15:54
+ALL NSE,VSC01,Veto Switch,Stock,Very Bullish,148.45,48.09,"10 Apr, 2026",100.24,Jun 09 | 15:58
+ALL NSE,WY,Winsome Yarns,Stock,Very Bullish,2.55,47.40,"15 Apr, 2026",1.73,Jun 09 | 15:42
+ALL NSE,U02,Utssav CZ Gold ,Stock,Very Bullish,322.30,47.24,"08 Apr, 2026",218.90,Jun 09 | 15:48
+ALL NSE,MS26,SG FINSERVE,Stock,Very Bullish,606.15,46.79,"24 Mar, 2026",412.95,Jun 09 | 15:57
+ALL NSE,AEL04,Aimtron Electro,Stock,Very Bullish,"1,212.20",46.72,"25 Mar, 2026",826.20,Jun 09 | 15:31
+ALL NSE,EIRL,Effwa Infra & R,Stock,Very Bullish,316.30,46.54,"07 Apr, 2026",215.85,Jun 09 | 15:52
+ALL NSE,SANL,Shri Ahimsa,Stock,Very Bullish,364.00,46.48,"08 Apr, 2026",248.50,Jun 09 | 15:40
+ALL NSE,AMP01,Astra Microwave,Stock,Very Bullish,"1,457.70",46.22,"07 Apr, 2026",996.90,Jun 09 | 15:58
+ALL NSE,GPI06,Global Pet,Stock,Very Bullish,158.50,45.48,"17 Apr, 2026",108.95,Jun 09 | 15:31
+ALL NSE,ADF01,ADF Foods,Stock,Very Bullish,286.45,45.36,"16 Apr, 2026",197.06,Jun 09 | 15:50
+ALL NSE,KF11,NIBE,Stock,Very Bullish,"1,541.30",44.97,"18 May, 2026","1,063.20",Jun 09 | 15:53
+ALL NSE,TP01,Marksans Pharma,Stock,Very Bullish,252.75,44.76,"08 Apr, 2026",174.60,Jun 09 | 15:59
+ALL NSE,TCI01,TCI Finance,Stock,Bullish,20.91,43.91,"05 Jun, 2026",14.53,Jun 09 | 15:58
+ALL NSE,SEP01,Shaily Engg,Stock,Very Bullish,"3,132.60",43.29,"23 Apr, 2026","2,186.20",Jun 09 | 15:57
+ALL NSE,TJ,Thangamayil,Stock,Very Bullish,"5,469.50",43.28,"22 May, 2026","3,817.30",Jun 09 | 15:53
+ALL NSE,DDR,DRS Dilip Roadl,Stock,Very Bullish,110.00,42.86,"12 Feb, 2026",77.00,Jun 09 | 15:31
+ALL NSE,SAL03,SAL Steel,Stock,Bullish,59.52,42.77,"08 Apr, 2026",41.69,Jun 09 | 15:56
+ALL NSE,AM,Arvind,Stock,Very Bullish,500.10,42.62,"01 Apr, 2026",350.65,Jun 09 | 15:57
+ALL NSE,BEL,BLS E-Services,Stock,Very Bullish,231.23,42.36,"25 Mar, 2026",162.43,Jun 09 | 15:59
+ALL NSE,WIC01,Welspun Invest,Stock,Very Bullish,"1,851.80",42.29,"02 Apr, 2026","1,301.40",Jun 09 | 15:31
+ALL NSE,MDL,Marvel Decor Lt,Stock,Bullish,73.95,42.21,"26 May, 2026",52.00,Jun 09 | 15:31
+ALL NSE,MW01,Mangalam Worldw,Stock,Very Bullish,377.50,42.10,"09 Apr, 2026",265.65,Jun 09 | 15:31
+ALL NSE,ZL,Zee Learn,Stock,Very Bullish,7.43,42.07,"24 Apr, 2026",5.23,Jun 09 | 15:57
+ALL NSE,AEL03,Azad Eng,Stock,Very Bullish,"2,230.00",41.88,"07 Apr, 2026","1,571.70",Jun 09 | 15:59
+ALL NSE,IIL04,Inox India,Stock,Very Bullish,"1,686.70",41.83,"18 Mar, 2026","1,189.20",Jun 09 | 15:59
+ALL NSE,TAC,Talbros Auto,Stock,Very Bullish,360.05,41.80,"08 Apr, 2026",253.91,Jun 09 | 15:59
+ALL NSE,HFC01,NDL Ventures,Stock,Very Bullish,130.03,41.68,"01 Feb, 2026",91.78,Jun 09 | 15:54
+ALL NSE,HGG,Haldyn Glass,Stock,Bullish,123.89,41.38,"09 Apr, 2026",87.63,Jun 09 | 15:58
+ALL NSE,AL05,Apcotex Ind,Stock,Very Bullish,539.00,41.21,"08 Apr, 2026",381.70,Jun 09 | 15:58
+ALL NSE,MCE01,Mitcon Cons,Stock,Very Bullish,82.38,40.89,"01 Apr, 2026",58.47,Jun 09 | 15:31
+ALL NSE,SEP,SKM Egg Product,Stock,Very Bullish,247.57,40.70,"13 May, 2026",175.96,Jun 09 | 15:46
+ALL NSE,STL05,Sandhar Technol,Stock,Very Bullish,708.90,40.54,"27 Apr, 2026",504.40,Jun 09 | 15:58
+ALL NSE,PM,Precot,Stock,Bullish,686.10,40.46,"12 Mar, 2026",488.45,Jun 09 | 15:50
+ALL NSE,TT14,Thyrocare Techn,Stock,Very Bullish,547.95,40.34,"08 Apr, 2026",390.45,Jun 09 | 15:59
+ALL NSE,SPL12,Senores Pharmac,Stock,Very Bullish,"1,094.50",40.18,"25 Mar, 2026",780.80,Jun 09 | 15:59
+ALL NSE,SCP02,Sheetal Cool Pr,Stock,Very Bullish,445.55,40.15,"23 Apr, 2026",317.90,Jun 09 | 15:54
+ALL NSE,GL02,Stylam Ind,Stock,Very Bullish,"3,103.50",40.04,"06 Apr, 2026","2,216.10",Jun 09 | 15:41
+ALL NSE,AML06,Accent Micro,Stock,Very Bullish,475.85,39.98,"18 Feb, 2026",339.95,Jun 09 | 15:55
+ALL NSE,RRL02,Raymond Realty,Stock,Bullish,589.50,39.91,"06 Apr, 2026",421.35,Jun 09 | 15:59
+ALL NSE,CD06,Cyient DLM,Stock,Very Bullish,443.65,39.86,"13 Apr, 2026",317.20,Jun 09 | 15:57
+ALL NSE,SIS07,SIS,Stock,Very Bullish,421.20,39.77,"09 Apr, 2026",301.35,Jun 09 | 15:59
+ALL NSE,DHJ,Divine Hira Jew,Stock,Bullish,323.50,39.74,"10 Feb, 2026",231.50,Jun 09 | 15:40
+ALL NSE,NC12,Neogen,Stock,Very Bullish,"1,938.80",39.64,"13 Apr, 2026","1,388.40",Jun 09 | 15:54
+ALL NSE,UI19,Uniparts India,Stock,Very Bullish,640.30,39.56,"01 Apr, 2026",458.80,Jun 09 | 15:59
+ALL NSE,MON,MO Nasdaq Q50,ETF,Very Bullish,139.21,39.35,"25 Mar, 2026",99.90,Jun 09 | 15:59
+ALL NSE,KB04,Karnataka Bank,Stock,Very Bullish,270.60,39.20,"03 Feb, 2026",194.40,Jun 09 | 15:58
+ALL NSE,BEO,Birla Cable,Stock,Very Bullish,203.70,39.19,"13 Apr, 2026",146.35,Jun 09 | 15:54
+ALL NSE,GL04,Glottis,Stock,Very Bullish,66.89,39.01,"08 Apr, 2026",48.12,Jun 09 | 15:51
+ALL NSE,R,Raymond,Stock,Very Bullish,536.00,38.75,"10 Apr, 2026",386.30,Jun 09 | 15:59
+ALL NSE,DNT,De Neers,Stock,Very Bullish,225.95,38.62,"27 Apr, 2026",163.00,Jun 09 | 15:31
+ALL NSE,DCMNV54272,DNL,Stock,Very Bullish,166.00,38.62,"20 Apr, 2026",119.75,Jun 09 | 15:57
+ALL NSE,GRC02,Gayatri Rubbers,Stock,Bullish,540.00,38.48,"28 Apr, 2026",389.95,Jun 09 | 15:40
+ALL NSE,VTI04,N R Vandana Tex,Stock,Very Bullish,74.30,38.10,"29 Apr, 2026",53.80,Jun 09 | 15:31
+ALL NSE,RR05,Refex Ind,Stock,Very Bullish,309.25,37.94,"08 Apr, 2026",224.19,Jun 09 | 15:58
+ALL NSE,DPL02,Danish Power,Stock,Very Bullish,906.20,37.79,"08 Apr, 2026",657.65,Jun 09 | 15:47
+ALL NSE,OTS,OnEMI Technolog,Stock,Bullish,284.10,37.35,"18 May, 2026",206.85,Jun 09 | 15:57
+ALL NSE,GB01,Ganesh Benzo,Stock,Very Bullish,110.61,37.00,"06 Apr, 2026",80.74,Jun 09 | 15:48
+ALL NSE,DB01,Dhanlaxmi Bank,Stock,Very Bullish,33.08,36.64,"07 Apr, 2026",24.21,Jun 09 | 15:58
+ALL NSE,VEL01,Vivid Electrome,Stock,Bullish,"1,000.10",36.28,"04 May, 2026",733.85,Jun 09 | 15:47
+ALL NSE,KP14,Krishana Phosch,Stock,Bullish,677.65,35.99,"01 Apr, 2026",498.30,Jun 09 | 15:51
+ALL NSE,RTT,Rategain Travel,Stock,Very Bullish,750.50,35.97,"08 Apr, 2026",551.95,Jun 09 | 15:58
+ALL NSE,AF29,Inspirisys Solu,Stock,Bullish,115.73,35.96,"04 May, 2026",85.12,Jun 09 | 15:56
+ALL NSE,SH15,Sakar Healthcar,Stock,Very Bullish,813.60,35.72,"13 May, 2026",599.45,Jun 09 | 15:57
+ALL NSE,SGF04,Shreeji Global ,Stock,Bullish,160.00,34.57,"20 Mar, 2026",118.90,Jun 09 | 15:31
+ALL NSE,JBM,Jay BharatMarut,Stock,Very Bullish,138.82,34.42,"20 May, 2026",103.27,Jun 09 | 15:56
+ALL NSE,AM11,Alkali Metals,Stock,Very Bullish,89.85,34.06,"20 May, 2026",67.02,Jun 09 | 15:59
+ALL NSE,MO,Maral Overseas,Stock,Very Bullish,57.00,33.71,"08 Apr, 2026",42.63,Jun 09 | 15:59
+ALL NSE,SEI02,Steel Exchange ,Stock,Very Bullish,11.96,33.48,"08 Apr, 2026",8.96,Jun 09 | 15:57
+ALL NSE,GP9,Gulshan Poly,Stock,Very Bullish,214.95,33.26,"06 Apr, 2026",161.30,Jun 09 | 15:59
+ALL NSE,MB01,Menon Bearings,Stock,Very Bullish,169.81,32.97,"15 Apr, 2026",127.71,Jun 09 | 15:59
+ALL NSE,SSF08,Suryoday Small,Stock,Very Bullish,174.97,32.60,"06 Apr, 2026",131.95,Jun 09 | 15:59
+ALL NSE,SL22,Sanstar,Stock,Very Bullish,113.61,32.55,"16 Apr, 2026",85.71,Jun 09 | 15:46
+ALL NSE,RIS,Richa Info,Stock,Very Bullish,91.45,32.25,"29 Apr, 2026",69.15,Jun 09 | 15:31
+ALL NSE,LM02,IZMO,Stock,Very Bullish,992.90,32.23,"29 May, 2026",750.90,Jun 09 | 15:55
+ALL NSE,DRPL,Dhara Rail Proj,Stock,Bullish,169.00,32.08,"22 May, 2026",127.95,Jun 09 | 15:31
+ALL NSE,RI46,Rishabh Instru.,Stock,Very Bullish,525.20,31.70,"06 Apr, 2026",398.80,Jun 09 | 15:55
+ALL NSE,OE,Orbit Exports,Stock,Bullish,216.85,31.38,"22 May, 2026",165.06,Jun 09 | 15:47
+ALL NSE,NR03,Nupur,Stock,Very Bullish,76.19,31.18,"26 May, 2026",58.08,Jun 09 | 15:31
+ALL NSE,DLI,Smartlink Net,Stock,Very Bullish,162.30,31.11,"09 Apr, 2026",123.79,Jun 09 | 15:50
+ALL NSE,HP03,Hester Bio,Stock,Bullish,"1,942.40",31.00,"16 Apr, 2026","1,482.80",Jun 09 | 15:41
+ALL NSE,NPS02,Network People,Stock,Bullish,"1,572.80",30.74,"01 Jun, 2026","1,203.00",Jun 09 | 15:55
+ALL NSE,HR01,Hind Rectifiers,Stock,Very Bullish,"1,098.20",30.68,"10 Apr, 2026",840.40,Jun 09 | 15:59
+ALL NSE,BGT,Bikewo Green,Stock,Bullish,26.05,30.58,"07 Apr, 2026",19.95,Jun 09 | 15:47
+ALL NSE,VA08,Vardhman Acryli,Stock,Very Bullish,45.06,30.34,"08 Apr, 2026",34.57,Jun 09 | 15:55
+ALL NSE,VPI04,Vigor Plast Ind,Stock,Very Bullish,85.15,30.20,"29 May, 2026",65.40,Jun 09 | 15:31
+ALL NSE,BS15,Borosil Sci,Stock,Very Bullish,153.69,29.77,"15 May, 2026",118.43,Jun 09 | 15:53
+ALL NSE,SMPL,Saakshi Medtech,Stock,Very Bullish,252.95,29.72,"01 Apr, 2026",195.00,Jun 09 | 15:31
+ALL NSE,GFI04,Go Fashion,Stock,Very Bullish,391.00,29.71,"21 May, 2026",301.45,Jun 09 | 15:59
+ALL NSE,TC05,Themis Medicare,Stock,Bullish,105.93,29.45,"08 Apr, 2026",81.83,Jun 09 | 15:52
+ALL NSE,DCM,DCM,Stock,Very Bullish,93.25,29.23,"17 Apr, 2026",72.16,Jun 09 | 15:58
+ALL NSE,MDN,Mishra Dhatu Ni,Stock,Very Bullish,450.35,29.17,"15 Apr, 2026",348.65,Jun 09 | 15:59
+ALL NSE,SSG02,Shreeji Shippin,Stock,Very Bullish,461.90,28.43,"16 Apr, 2026",359.65,Jun 09 | 15:58
+ALL NSE,KDA,Krishna Defence,Stock,Very Bullish,"1,240.80",28.37,"15 Apr, 2026",966.55,Jun 09 | 15:58
+ALL NSE,IWS,Indiabulls,Stock,Very Bullish,24.47,28.32,"22 May, 2026",19.07,Jun 09 | 15:59
+ALL NSE,HPI02,Hariom Pipe,Stock,Very Bullish,427.55,28.09,"21 May, 2026",333.80,Jun 09 | 15:55
+ALL NSE,PUS,Purple United,Stock,Very Bullish,395.75,27.99,"06 May, 2026",309.20,Jun 09 | 15:31
+ALL NSE,IBC,Indo Borax,Stock,Very Bullish,359.10,27.75,"29 Apr, 2026",281.10,Jun 09 | 15:55
+ALL NSE,ME21,Marine Electric,Stock,Bullish,243.95,27.13,"08 Apr, 2026",191.89,Jun 09 | 15:56
+ALL NSE,IA,Indo Amines,Stock,Very Bullish,134.08,26.98,"08 Apr, 2026",105.59,Jun 09 | 15:53
+ALL NSE,AI04,Carysil,Stock,Very Bullish,"1,123.60",26.96,"15 Apr, 2026",885.00,Jun 09 | 15:44
+ALL NSE,SUL01,Sheetal Univers,Stock,Very Bullish,294.60,26.93,"01 Apr, 2026",232.10,Jun 09 | 15:31
+ALL NSE,TCIL,Tejas Cargo Ind,Stock,Very Bullish,390.00,26.81,"24 Apr, 2026",307.55,Jun 09 | 15:31
+ALL NSE,PP02,Panama Petro,Stock,Very Bullish,351.85,26.63,"22 Apr, 2026",277.86,Jun 09 | 15:56
+ALL NSE,J01,Jocil,Stock,Very Bullish,154.00,26.48,"17 Apr, 2026",121.76,Jun 09 | 15:51
+ALL NSE,BP11,Bafna Pharma,Stock,Very Bullish,174.58,26.06,"01 Jun, 2026",138.49,Jun 09 | 15:59
+ALL NSE,GT09,GHCL Textiles,Stock,Very Bullish,96.88,26.06,"07 Apr, 2026",76.85,Jun 09 | 15:55
+ALL NSE,RSW,RSWM,Stock,Very Bullish,213.40,25.82,"21 May, 2026",169.61,Jun 09 | 15:58
+ALL NSE,EEL02,Ecoline Exim,Stock,Very Bullish,178.45,25.45,"07 May, 2026",142.25,Jun 09 | 15:41
+ALL NSE,VIT02,Vinyas Innovati,Stock,Very Bullish,"1,388.60",25.44,"27 May, 2026","1,106.95",Jun 09 | 15:31
+ALL NSE,TS14,Tera Software,Stock,Very Bullish,448.45,25.32,"26 May, 2026",357.85,Jun 09 | 15:58
+ALL NSE,PR,Patel Integrate,Stock,Bullish,13.15,25.12,"08 Apr, 2026",10.51,Jun 09 | 15:52
+ALL NSE,SF30,Sheela Foam,Stock,Very Bullish,680.90,25.11,"06 May, 2026",544.25,Jun 09 | 15:59
+ALL NSE,DML03,DJ Mediaprint,Stock,Very Bullish,107.25,25.09,"13 Apr, 2026",85.74,Jun 09 | 15:41
+ALL NSE,NHSL,Nephrocare Heal,Stock,Very Bullish,709.25,25.01,"11 May, 2026",567.35,Jun 09 | 15:50
+ALL NSE,MTP02,Mold-Tek Pack,Stock,Bullish,693.70,25.01,"07 Apr, 2026",554.90,Jun 09 | 15:55
+ALL NSE,ICI07,Indo Count,Stock,Very Bullish,336.50,24.83,"16 Apr, 2026",269.56,Jun 09 | 15:53
+ALL NSE,ICL01,Innova Captab,Stock,Very Bullish,914.70,24.51,"15 Apr, 2026",734.65,Jun 09 | 15:54
+ALL NSE,HMV,Hindustan Media,Stock,Very Bullish,84.86,24.46,"29 May, 2026",68.18,Jun 09 | 15:44
+ALL NSE,TI25,Tips Music,Stock,Very Bullish,673.25,24.33,"07 Apr, 2026",541.50,Jun 09 | 15:59
+ALL NSE,GES02,GP Eco Solution,Stock,Very Bullish,466.00,24.32,"21 May, 2026",374.85,Jun 09 | 15:44
+ALL NSE,EC07,Krishival Foods,Stock,Very Bullish,403.70,24.23,"15 Apr, 2026",324.95,Jun 09 | 15:31
+ALL NSE,AML07,Anondita Medi,Stock,Very Bullish,"1,183.45",24.11,"18 May, 2026",953.55,Jun 09 | 15:41
+ALL NSE,YHT,Yatharth HOSP,Stock,Very Bullish,839.10,24.08,"06 Apr, 2026",676.25,Jun 09 | 15:57
+ALL NSE,NACL,Northern Arc,Stock,Very Bullish,299.95,23.94,"16 Apr, 2026",242.02,Jun 09 | 15:55
+ALL NSE,GN,Grindwell Norto,Stock,Very Bullish,"1,933.20",23.90,"15 Apr, 2026","1,560.30",Jun 09 | 15:41
+ALL NSE,AP07,Amines Plast,Stock,Very Bullish,197.68,23.73,"10 Apr, 2026",159.77,Jun 09 | 15:44
+ALL NSE,M14,MSTC,Stock,Very Bullish,544.95,23.71,"29 May, 2026",440.50,Jun 09 | 15:59
+ALL NSE,TC16,Tamboli Ind.,Stock,Bullish,184.07,23.50,"08 Apr, 2026",149.05,Jun 09 | 15:40
+ALL NSE,JFL04,Jet Freight Log,Stock,Bullish,21.88,23.34,"09 Apr, 2026",17.74,Jun 09 | 15:56
+ALL NSE,PA09,Proventus Agro,Stock,Bullish,"1,480.00",23.33,"07 Apr, 2026","1,200.00",Jun 09 | 15:40
+ALL NSE,SVL01,Shree Vasu,Stock,Very Bullish,758.80,23.32,"29 May, 2026",615.30,Jun 09 | 15:59
+ALL NSE,GTL01,GTL Infra,Stock,Very Bullish,1.54,23.20,"08 Apr, 2026",1.25,Jun 09 | 15:59
+ALL NSE,GCH01,Grand Continent,Stock,Very Bullish,130.70,22.84,"25 May, 2026",106.40,Jun 09 | 15:41
+ALL NSE,ESF,Equitas Bank,Stock,Very Bullish,74.98,22.84,"08 Apr, 2026",61.04,Jun 09 | 15:59
+ALL NSE,DEL05,Diffusion Engin,Stock,Very Bullish,330.80,22.71,"01 Apr, 2026",269.57,Jun 09 | 15:57
+ALL NSE,AOS,Asian Energy,Stock,Very Bullish,383.80,22.44,"15 May, 2026",313.45,Jun 09 | 15:56
+ALL NSE,SM10,Sanghvi Movers,Stock,Very Bullish,391.70,22.25,"19 May, 2026",320.40,Jun 09 | 15:58
+ALL NSE,DLI01,D-Link India,Stock,Very Bullish,493.25,22.12,"07 Apr, 2026",403.90,Jun 09 | 15:55
+ALL NSE,IVP,IVP,Stock,Bullish,170.70,21.98,"10 Apr, 2026",139.94,Jun 09 | 15:40
+ALL NSE,STT01,Silver Touch Te,Stock,Very Bullish,185.98,21.76,"26 May, 2026",152.74,Jun 09 | 15:53
+ALL NSE,MGF,Motor and Gen F,Stock,Very Bullish,30.00,21.65,"20 May, 2026",24.66,Jun 09 | 15:55
+ALL NSE,GC10,Munjal Auto Ind,Stock,Very Bullish,96.99,21.45,"10 Apr, 2026",79.86,Jun 09 | 15:59
+ALL NSE,IDL,GOCL Corp,Stock,Very Bullish,398.85,21.43,"22 May, 2026",328.45,Jun 09 | 15:55
+ALL NSE,RM07,Rane Madras,Stock,Very Bullish,927.50,21.26,"15 Apr, 2026",764.90,Jun 09 | 15:52
+ALL NSE,UI18,Univastu India,Stock,Very Bullish,80.57,21.18,"08 Apr, 2026",66.49,Jun 09 | 15:56
+ALL NSE,VR02,V2 Retail,Stock,Bullish,238.89,20.90,"21 Apr, 2026",197.59,Jun 09 | 15:54
+ALL NSE,OL03,OCCL,Stock,Very Bullish,139.92,20.48,"22 May, 2026",116.14,Jun 09 | 15:58
+ALL NSE,NII,NIIT,Stock,Very Bullish,98.09,20.30,"01 Jun, 2026",81.54,Jun 09 | 15:55
+ALL NSE,IT04,Intrasoft Tech,Stock,Very Bullish,85.06,20.28,"10 Apr, 2026",70.72,Jun 09 | 15:47
+ALL NSE,SI03,Sangam India,Stock,Very Bullish,531.45,20.25,"06 Apr, 2026",441.95,Jun 09 | 15:55
+ALL NSE,EIE,Eurotex,Stock,Very Bullish,18.62,20.05,"03 Jun, 2026",15.51,Jun 09 | 15:58
+ALL NSE,NGL,NGL Fine Chem,Stock,Very Bullish,"2,820.70",20.00,"15 May, 2026","2,350.50",Jun 09 | 15:51
+ALL NSE,SEI06,Spectrum Electr,Stock,Very Bullish,"1,683.30",19.94,"11 May, 2026","1,403.40",Jun 09 | 15:51
+ALL NSE,SP07,Sarla Performan,Stock,Very Bullish,100.46,19.94,"08 Apr, 2026",83.76,Jun 09 | 15:59
+ALL NSE,E09,SJS Enterprises,Stock,Very Bullish,"2,078.20",19.92,"29 Apr, 2026","1,733.00",Jun 09 | 15:56
+ALL NSE,CDE,Coffee Day,Stock,Very Bullish,34.76,19.90,"27 May, 2026",28.99,Jun 09 | 15:57
+ALL NSE,BD02,Bhageria Indu,Stock,Bullish,216.40,19.88,"04 Jun, 2026",180.52,Jun 09 | 15:51
+ALL NSE,UPG,United Polyfab ,Stock,Very Bullish,33.99,19.81,"08 Apr, 2026",28.37,Jun 09 | 15:43
+ALL NSE,EI02,Electrotherm,Stock,Very Bullish,"1,018.85",19.78,"21 May, 2026",850.60,Jun 09 | 15:55
+ALL NSE,OL02,Ortin Global,Stock,Very Bullish,17.93,19.53,"20 May, 2026",15.00,Jun 09 | 15:58
+ALL NSE,UDT,United Drilling,Stock,Very Bullish,243.10,19.50,"07 Apr, 2026",203.43,Jun 09 | 15:59
+ALL NSE,SK02,Stove,Stock,Very Bullish,664.50,19.26,"22 May, 2026",557.20,Jun 09 | 15:55
+ALL NSE,CMC01,Centum Electron,Stock,Very Bullish,"3,355.20",19.17,"10 Apr, 2026","2,815.40",Jun 09 | 15:51
+ALL NSE,KDI,Kilitch Drugs,Stock,Very Bullish,187.01,19.13,"13 May, 2026",156.98,Jun 09 | 15:58
+ALL NSE,SE30,Sansera,Stock,Very Bullish,"2,961.40",19.11,"20 May, 2026","2,486.20",Jun 09 | 15:53
+ALL NSE,MBA,Madhya Bharat A,Stock,Very Bullish,553.90,19.05,"25 Mar, 2026",465.25,Jun 09 | 15:58
+ALL NSE,GLOST54235,Gloster,Stock,Very Bullish,670.75,19.05,"06 Apr, 2026",563.40,Jun 09 | 15:47
+ALL NSE,EMI,Procter&Gamble,Stock,Very Bullish,"6,212.50",19.01,"13 May, 2026","5,220.00",Jun 09 | 15:59
+ALL NSE,CF02,Gufic Bio,Stock,Very Bullish,386.80,19.00,"25 May, 2026",325.05,Jun 09 | 15:59
+ALL NSE,PC26,Party,Stock,Very Bullish,102.50,18.91,"01 Apr, 2026",86.20,Jun 09 | 15:31
+ALL NSE,VI01,Vadilal Ind,Stock,Very Bullish,"5,757.60",18.88,"29 May, 2026","4,843.00",Jun 09 | 15:55
+ALL NSE,N06,Nelcast,Stock,Very Bullish,143.63,18.69,"10 Mar, 2026",121.01,Jun 09 | 15:57
+ALL NSE,CE,Century Enka,Stock,Very Bullish,507.85,18.67,"10 Apr, 2026",427.95,Jun 09 | 15:55
+ALL NSE,LIL04,S J Logistics,Stock,Very Bullish,373.25,18.51,"22 May, 2026",314.95,Jun 09 | 15:40
+ALL NSE,HOE01,HOEC,Stock,Very Bullish,183.03,18.19,"10 Apr, 2026",154.86,Jun 09 | 15:57
+ALL NSE,GHF,Ganesh Housing,Stock,Very Bullish,769.80,18.14,"16 Apr, 2026",651.60,Jun 09 | 15:54
+ALL NSE,ICF01,Indostar Capita,Stock,Very Bullish,253.59,18.10,"22 May, 2026",214.73,Jun 09 | 15:57
+ALL NSE,AIL05,ADVAIT ENERGY,Stock,Bullish,"2,346.20",17.77,"20 May, 2026","1,992.20",Jun 09 | 15:58
+ALL NSE,MI08,Manugraph Ind,Stock,Very Bullish,17.42,17.54,"20 May, 2026",14.82,Jun 09 | 15:50
+ALL NSE,PNB04,PNB Gilts,Stock,Very Bullish,93.13,17.48,"20 May, 2026",79.27,Jun 09 | 15:59
+ALL NSE,PSE03,Ponni Sugars(E),Stock,Very Bullish,322.60,17.31,"30 Mar, 2026",275.00,Jun 09 | 15:55
+ALL NSE,VTF,Viyash Scientif,Stock,Very Bullish,257.40,17.19,"06 May, 2026",219.65,Jun 09 | 15:59
+ALL NSE,ACM04,Ambika Cotton,Stock,Bullish,"1,611.80",17.14,"08 Apr, 2026","1,376.00",Jun 09 | 15:40
+ALL NSE,USL02,Updater Service,Stock,Bullish,182.92,17.08,"08 Apr, 2026",156.23,Jun 09 | 15:54
+ALL NSE,SE29,SBC Exports,Stock,Very Bullish,37.04,17.07,"07 Apr, 2026",31.64,Jun 09 | 15:58
+ALL NSE,OEL,Omnitech Engine,Stock,Very Bullish,494.45,16.91,"21 May, 2026",422.95,Jun 09 | 15:58
+ALL NSE,AEL09,Ajax Eng,Stock,Very Bullish,581.90,16.79,"15 Apr, 2026",498.25,Jun 09 | 15:54
+ALL NSE,GCS03,Gretex Corporat,Stock,Very Bullish,414.65,16.75,"28 Apr, 2026",355.15,Jun 09 | 15:44
+ALL NSE,AHF01,Ashiana Housing,Stock,Bullish,362.20,16.74,"07 Apr, 2026",310.25,Jun 09 | 15:53
+ALL NSE,MAN,Mirae NYSEFANG,ETF,Bullish,190.84,16.70,"15 Apr, 2026",163.53,Jun 09 | 15:59
+ALL NSE,S19,Skipper,Stock,Very Bullish,544.55,16.68,"19 May, 2026",466.70,Jun 09 | 15:56
+ALL NSE,BES,BGR Energy,Stock,Very Bullish,349.45,16.66,"25 May, 2026",299.55,Jun 09 | 15:57
+ALL NSE,IGT,Integra Essenti,Stock,Very Bullish,1.69,16.55,"06 May, 2026",1.45,Jun 09 | 15:48
+ALL NSE,SBL,Sundaram Brake,Stock,Very Bullish,732.35,16.46,"09 Apr, 2026",628.85,Jun 09 | 15:52
+ALL NSE,NA04,Narmada Agrobas,Stock,Very Bullish,37.77,16.32,"01 Apr, 2026",32.47,Jun 09 | 15:40
+ALL NSE,KWI,Kwality Walls,Stock,Very Bullish,32.81,16.31,"01 Jun, 2026",28.21,Jun 09 | 15:58
+ALL NSE,DBI,DB (Int) Stock,Stock,Bullish,30.17,16.22,"01 Apr, 2026",25.96,Jun 09 | 15:57
+ALL NSE,IIFLS54277,IIFL Capital ,Stock,Bullish,344.85,16.18,"16 Apr, 2026",296.82,Jun 09 | 15:59
+ALL NSE,BP02,Bal Pharma,Stock,Very Bullish,87.79,15.92,"08 Apr, 2026",75.73,Jun 09 | 15:48
+ALL NSE,UAM,Unimech Aerospa,Stock,Very Bullish,"1,149.75",15.77,"02 Jun, 2026",993.15,Jun 09 | 15:59
+ALL NSE,SA05,Sical Logistics,Stock,Bullish,79.57,15.65,"04 Jun, 2026",68.80,Jun 09 | 15:54
+ALL NSE,KD05,KDDL,Stock,Very Bullish,"3,014.10",15.30,"20 May, 2026","2,614.20",Jun 09 | 15:59
+ALL NSE,GPEL,Gala Precision ,Stock,Very Bullish,903.70,15.29,"04 May, 2026",783.85,Jun 09 | 15:51
+ALL NSE,BL04,Brooks Labs,Stock,Bullish,68.23,15.20,"26 May, 2026",59.23,Jun 09 | 15:48
+ALL NSE,GP10,Gayatri Project,Stock,Very Bullish,21.33,15.17,"26 May, 2026",18.52,Jun 09 | 15:54
+ALL NSE,GCI07,Auri Grow India,Stock,Bullish,0.38,15.15,"05 Jun, 2026",0.33,Jun 09 | 15:58
+ALL NSE,GS12,Geojit Fin,Stock,Very Bullish,73.89,15.08,"10 Apr, 2026",64.21,Jun 09 | 15:48
+ALL NSE,RS17,Ramco System,Stock,Very Bullish,540.55,15.04,"22 May, 2026",469.90,Jun 09 | 15:58
+ALL NSE,PPL54268,PPL,Stock,Bullish,239.43,15.02,"04 Jun, 2026",208.16,Jun 09 | 15:57
+ALL NSE,RF07,Relaxo Footwear,Stock,Very Bullish,347.10,14.93,"27 May, 2026",302.00,Jun 09 | 15:58
+ALL NSE,CSC02,Chemcon Special,Stock,Very Bullish,205.94,14.84,"19 May, 2026",179.32,Jun 09 | 15:43
+ALL NSE,KTL,Kody Technolab,Stock,Very Bullish,884.85,14.75,"08 May, 2026",771.10,Jun 09 | 15:40
+ALL NSE,GHL02,GPT Healthcare,Stock,Very Bullish,149.98,14.59,"07 Apr, 2026",130.88,Jun 09 | 15:56
+ALL NSE,ESS01,Emkay Global,Stock,Very Bullish,283.74,14.58,"02 Jun, 2026",247.63,Jun 09 | 15:45
+ALL NSE,MAB01,MA Defence ETF,ETF,Very Bullish,76.21,14.50,"08 Apr, 2026",66.56,Jun 09 | 15:55
+ALL NSE,SERFL,Safe Enterprise,Stock,Bullish,267.40,14.35,"08 Apr, 2026",233.85,Jun 09 | 15:58
+ALL NSE,MAC04,Manaksia Alumin,Stock,Very Bullish,40.12,14.30,"25 May, 2026",35.10,Jun 09 | 15:58
+ALL NSE,MAS02,Mirae SP 500,ETF,Bullish,79.75,14.03,"06 Apr, 2026",69.94,Jun 09 | 15:59
+ALL NSE,FS05,Palred Tech,Stock,Bullish,44.75,13.67,"19 May, 2026",39.37,Jun 09 | 15:52
+ALL NSE,AO,Ador Welding,Stock,Very Bullish,"1,138.40",13.57,"17 Apr, 2026","1,002.35",Jun 09 | 15:55
+ALL NSE,GROWW25758,Groww Defence,ETF,Very Bullish,91.42,13.55,"08 Apr, 2026",80.51,Jun 09 | 15:40
+ALL NSE,DCI,Dredging Corp,Stock,Very Bullish,"1,140.40",13.51,"19 May, 2026","1,004.70",Jun 09 | 15:58
+ALL NSE,BCCL,Bharat Coking,Stock,Very Bullish,40.40,13.42,"14 May, 2026",35.62,Jun 09 | 15:59
+ALL NSE,ACP,Arrow Greentech,Stock,Very Bullish,600.60,13.20,"29 May, 2026",530.55,Jun 09 | 15:59
+ALL NSE,WIML,WeWork India,Stock,Very Bullish,647.50,12.82,"21 May, 2026",573.90,Jun 09 | 15:55
+ALL NSE,INE,India Nippon,Stock,Very Bullish,895.60,12.79,"21 May, 2026",794.05,Jun 09 | 15:50
+ALL NSE,SIFL,Stallion India ,Stock,Very Bullish,186.84,12.72,"19 May, 2026",165.75,Jun 09 | 15:59
+ALL NSE,TMB,TMB,Stock,Very Bullish,780.55,12.67,"20 May, 2026",692.75,Jun 09 | 15:57
+ALL NSE,RM,Rane Holdings,Stock,Bullish,"1,415.30",12.59,"13 May, 2026","1,257.00",Jun 09 | 15:50
+ALL NSE,SGL01,Standard Eng,Stock,Very Bullish,156.54,12.34,"01 Jun, 2026",139.35,Jun 09 | 15:56
+ALL NSE,RT11,Rhetan TMT,Stock,Very Bullish,30.44,12.28,"18 May, 2026",27.11,Jun 09 | 15:41
+ALL NSE,AES01,Aakash Explorat,Stock,Very Bullish,9.88,12.27,"13 May, 2026",8.80,Jun 09 | 15:31
+ALL NSE,SCP,Simplex Infra,Stock,Very Bullish,267.30,12.25,"25 May, 2026",238.12,Jun 09 | 15:54
+ALL NSE,ADE,Varvee Global,Stock,Very Bullish,72.95,12.23,"21 May, 2026",65.00,Jun 09 | 15:59
+ALL NSE,FI06,Filatex India,Stock,Very Bullish,52.38,12.04,"27 May, 2026",46.75,Jun 09 | 15:57
+ALL NSE,SSW01,Steel Str Wheel,Stock,Very Bullish,234.60,11.93,"02 Jun, 2026",209.59,Jun 09 | 15:55
+ALL NSE,G,Greaves Cotton,Stock,Very Bullish,190.23,11.83,"19 May, 2026",170.10,Jun 09 | 15:59
+ALL NSE,ML06,Morepen Lab,Stock,Very Bullish,48.65,11.28,"25 May, 2026",43.72,Jun 09 | 15:59
+ALL NSE,QC,Quess Corp,Stock,Very Bullish,237.17,11.26,"27 May, 2026",213.16,Jun 09 | 15:54
+ALL NSE,TBL01,TruAlt Bioenerg,Stock,Very Bullish,531.95,11.24,"20 May, 2026",478.20,Jun 09 | 15:59
+ALL NSE,FLF03,Focus Lighting ,Stock,Very Bullish,93.28,11.18,"01 Jun, 2026",83.90,Jun 09 | 15:55
+ALL NSE,K01,Kopran,Stock,Bullish,183.65,11.18,"18 May, 2026",165.19,Jun 09 | 15:58
+ALL NSE,SBL05,Sheel Biotech,Stock,Bullish,51.90,11.13,"04 Jun, 2026",46.70,Jun 09 | 15:31
+ALL NSE,BAS01,Bannari A Spg,Stock,Very Bullish,26.84,11.05,"22 May, 2026",24.17,Jun 09 | 15:57
+ALL NSE,DTS,Divgi Torqtrans,Stock,Very Bullish,788.75,11.01,"22 May, 2026",710.50,Jun 09 | 15:59
+ALL NSE,SWP,South West Pinn,Stock,Very Bullish,260.15,11.00,"13 May, 2026",234.37,Jun 09 | 15:52
+ALL NSE,BPI,Banco Products,Stock,Very Bullish,681.45,10.86,"22 May, 2026",614.70,Jun 09 | 15:58
+ALL NSE,SII06,SKFINDUS,Stock,Very Bullish,"2,379.20",10.84,"01 Jun, 2026","2,146.50",Jun 09 | 15:50
+ALL NSE,KOTAK13950,Kotak Nifty 1D,ETF,Very Bullish,"1,108.05",10.79,"29 Jul, 2024","1,000.18",Jun 09 | 15:57
+ALL NSE,CIL07,Ceigall India,Stock,Very Bullish,366.40,10.66,"21 May, 2026",331.10,Jun 09 | 15:59
+ALL NSE,PF14,Parin Enter,Stock,Very Bullish,718.55,10.65,"11 May, 2026",649.40,Jun 09 | 15:53
+ALL NSE,MP02,Manali Petro,Stock,Very Bullish,62.52,10.65,"14 May, 2026",56.50,Jun 09 | 15:57
+ALL NSE,BD04,Beta Drugs,Stock,Very Bullish,"1,522.90",10.62,"22 May, 2026","1,376.70",Jun 09 | 15:59
+ALL NSE,ME16,MT Educare,Stock,Very Bullish,1.88,10.59,"04 Jun, 2026",1.70,Jun 09 | 15:42
+ALL NSE,TFC,Tourism Finance,Stock,Bullish,74.48,10.54,"08 Apr, 2026",67.38,Jun 09 | 15:59
+ALL NSE,PT01,Pix Transmis,Stock,Very Bullish,"1,603.20",10.50,"25 Mar, 2026","1,450.80",Jun 09 | 15:53
+ALL NSE,SIB,South Ind Bk,Stock,Very Bullish,45.74,10.48,"20 May, 2026",41.40,Jun 09 | 15:59
+ALL NSE,GEL02,GK Energy,Stock,Very Bullish,141.27,10.20,"03 Jun, 2026",128.19,Jun 09 | 15:58
+ALL NSE,LL02,Lyka Labs,Stock,Very Bullish,70.05,10.19,"05 Jun, 2026",63.57,Jun 09 | 15:58
+ALL NSE,TS15,TeamLease Ser.,Stock,Bullish,"1,391.80",10.17,"20 Apr, 2026","1,263.30",Jun 09 | 15:51
+ALL NSE,SPL13,Sudeep Pharma,Stock,Very Bullish,741.60,10.14,"22 May, 2026",673.35,Jun 09 | 15:58
+ALL NSE,BP06,Bajel Projects,Stock,Very Bullish,200.50,10.03,"21 May, 2026",182.22,Jun 09 | 15:55
+ALL NSE,SL21,R K Swamy,Stock,Very Bullish,101.39,10.00,"19 May, 2026",92.17,Jun 09 | 15:41
+ALL NSE,SP36,GP Petroleums,Stock,Very Bullish,40.26,9.94,"27 May, 2026",36.62,Jun 09 | 15:53
+ALL NSE,SPS05,Servotech Renew,Stock,Very Bullish,103.51,9.93,"21 May, 2026",94.16,Jun 09 | 15:57
+ALL NSE,KFM,Kapston Service,Stock,Bullish,337.50,9.90,"02 Jan, 2026",307.10,Jun 09 | 15:53
+ALL NSE,AHL01,Anlon Healthcar,Stock,Bullish,15.14,9.87,"25 May, 2026",13.78,Jun 09 | 15:59
+ALL NSE,AFL04,Aye Finance,Stock,Very Bullish,152.03,9.82,"19 May, 2026",138.43,Jun 09 | 15:59
+ALL NSE,BTC02,B&B Triplewall ,Stock,Very Bullish,228.49,9.78,"27 May, 2026",208.13,Jun 09 | 15:48
+ALL NSE,PP33,PSP Projects,Stock,Very Bullish,917.70,9.77,"26 May, 2026",836.05,Jun 09 | 15:59
+ALL NSE,MOHEA10508,MOHEALTH,ETF,Very Bullish,48.18,9.75,"15 Apr, 2026",43.90,Jun 09 | 15:44
+ALL NSE,MON03,MO Nifty Small,ETF,Very Bullish,17.06,9.64,"08 Apr, 2026",15.56,Jun 09 | 15:46
+ALL NSE,SP40,Vintage Coffee,Stock,Very Bullish,152.79,9.64,"25 May, 2026",139.36,Jun 09 | 15:58
+ALL NSE,BKI01,Restaurant Bran,Stock,Very Bullish,68.71,9.59,"10 Apr, 2026",62.70,Jun 09 | 15:59
+ALL NSE,DI22,Deep Ind,Stock,Very Bullish,519.30,9.55,"19 May, 2026",474.05,Jun 09 | 15:59
+ALL NSE,HNS,HDFC Nifty 250,ETF,Very Bullish,170.86,9.48,"08 Apr, 2026",156.07,Jun 09 | 15:56
+ALL NSE,MTC03,Markolines,Stock,Bullish,166.54,9.36,"04 May, 2026",152.29,Jun 09 | 15:48
+ALL NSE,GI19,Greenply Ind,Stock,Very Bullish,288.68,9.34,"03 Jun, 2026",264.03,Jun 09 | 15:53
+ALL NSE,SPL14,Sai Parenterals,Stock,Bullish,560.05,9.33,"01 Jun, 2026",512.25,Jun 09 | 15:44
+ALL NSE,DSS04,Dynamic Service,Stock,Very Bullish,144.00,9.30,"22 May, 2026",131.75,Jun 09 | 15:58
+ALL NSE,RML04,C K K Retail,Stock,Bullish,140.45,9.21,"21 May, 2026",128.60,Jun 09 | 15:52
+ALL NSE,VTW,Va Tech Wabag,Stock,Very Bullish,"1,586.30",9.19,"25 May, 2026","1,452.80",Jun 09 | 15:59
+ALL NSE,FAE,Freshara Agro,Stock,Very Bullish,228.85,9.18,"03 Jun, 2026",209.60,Jun 09 | 15:48
+ALL NSE,SSI,PVP Ventures,Stock,Very Bullish,32.80,8.97,"03 Jun, 2026",30.10,Jun 09 | 15:53
+ALL NSE,MC07,Mazda,Stock,Very Bullish,229.94,8.89,"25 May, 2026",211.16,Jun 09 | 15:57
+ALL NSE,MEL02,Max Estates,Stock,Very Bullish,441.50,8.77,"19 May, 2026",405.90,Jun 09 | 15:55
+ALL NSE,ASH,Apollo Sindoori,Stock,Very Bullish,"1,301.70",8.47,"25 May, 2026","1,200.10",Jun 09 | 15:52
+ALL NSE,KB03,Krebs Biochem,Stock,Very Bullish,67.02,8.43,"25 May, 2026",61.81,Jun 09 | 15:52
+ALL NSE,LIQUI23915,LIQUIDBETF,ETF,Very Bullish,"1,085.07",8.40,"18 Nov, 2024","1,000.96",Jun 09 | 15:49
+ALL NSE,TFS03,Teamtech Form,Stock,Bullish,78.95,8.37,"03 Jun, 2026",72.85,Jun 09 | 15:40
+ALL NSE,PMF01,Parag Milk Food,Stock,Very Bullish,243.41,8.36,"01 Jun, 2026",224.64,Jun 09 | 15:59
+ALL NSE,LIL03,Likhitha,Stock,Very Bullish,227.11,8.23,"04 Jun, 2026",209.84,Jun 09 | 15:49
+ALL NSE,NIN,Nipp NiftyPhar,ETF,Very Bullish,24.98,8.23,"16 Apr, 2026",23.08,Jun 09 | 15:58
+ALL NSE,STE01,STEL Holdings,Stock,Very Bullish,524.85,8.13,"02 Jun, 2026",485.40,Jun 09 | 15:56
+ALL NSE,GP15,Goldstar Power,Stock,Very Bullish,8.00,8.11,"22 May, 2026",7.40,Jun 09 | 15:31
+ALL NSE,IFB02,IFB Industries,Stock,Very Bullish,"1,286.00",7.89,"27 May, 2026","1,192.00",Jun 09 | 15:59
+ALL NSE,CAP,ORIENTAL AROMAT,Stock,Very Bullish,331.70,7.87,"20 May, 2026",307.50,Jun 09 | 15:59
+ALL NSE,PS14,Swan Defence,Stock,Very Bullish,"1,996.80",7.86,"10 Apr, 2026","1,851.30",Jun 09 | 15:57
+ALL NSE,GCI05,GeeCee Ventures,Stock,Bullish,324.75,7.85,"13 May, 2026",301.10,Jun 09 | 15:58
+ALL NSE,GIC10,Genesys Int,Stock,Bullish,283.10,7.79,"29 May, 2026",262.65,Jun 09 | 15:55
+ALL NSE,BFU,BF Utilities,Stock,Very Bullish,612.05,7.76,"26 May, 2026",568.00,Jun 09 | 15:59
+ALL NSE,KJL,Kabra Jewels,Stock,Very Bullish,116.65,7.76,"22 May, 2026",108.25,Jun 09 | 15:58
+ALL NSE,CBML,Credo Brands Ma,Stock,Very Bullish,88.33,7.75,"21 May, 2026",81.98,Jun 09 | 15:56
+ALL NSE,CL10,J G Chemicals,Stock,Very Bullish,438.10,7.73,"25 May, 2026",406.65,Jun 09 | 15:55
+ALL NSE,OBL,Onyx Biotec,Stock,Very Bullish,42.00,7.69,"29 May, 2026",39.00,Jun 09 | 15:48
+ALL NSE,TCI,Thomas Cook,Stock,Bullish,112.84,7.65,"08 Jun, 2026",104.82,Jun 09 | 15:59
+ALL NSE,IPH,Ipru Nifty Hea,ETF,Very Bullish,159.31,7.58,"16 Apr, 2026",148.08,Jun 09 | 15:58
+ALL NSE,VE08,Varroc Engineer,Stock,Very Bullish,580.05,7.51,"15 Apr, 2026",539.55,Jun 09 | 15:55
+ALL NSE,HEALT22592,HEALTHADD,ETF,Bullish,156.76,7.30,"17 Apr, 2026",146.09,Jun 09 | 15:31
+ALL NSE,EPM01,EPM,Stock,Very Bullish,85.53,7.27,"20 May, 2026",79.73,Jun 09 | 15:40
+ALL NSE,AHE02,Axis NiftyHeal,ETF,Very Bullish,158.24,7.24,"17 Apr, 2026",147.56,Jun 09 | 15:31
+ALL NSE,SSL16,Sadhav Shipping,Stock,Very Bullish,121.00,7.13,"25 May, 2026",112.95,Jun 09 | 15:42
+ALL NSE,ABS02,ABSL NiftyHeal,ETF,Very Bullish,15.99,7.10,"21 Apr, 2026",14.93,Jun 09 | 15:53
+ALL NSE,ETL01,Exicom Tele-Sys,Stock,Very Bullish,147.37,6.86,"21 May, 2026",137.91,Jun 09 | 15:59
+ALL NSE,RDS01,Reliable Data S,Stock,Very Bullish,141.41,6.72,"18 May, 2026",132.50,Jun 09 | 15:46
+ALL NSE,XI,Xpro India,Stock,Very Bullish,"1,188.70",6.72,"06 May, 2026","1,113.80",Jun 09 | 15:58
+ALL NSE,NF03,Monarch Net,Stock,Very Bullish,336.10,6.65,"18 May, 2026",315.15,Jun 09 | 15:55
+ALL NSE,SIP,Sadbhav Infra,Stock,Very Bullish,3.09,6.55,"01 Jun, 2026",2.90,Jun 09 | 15:53
+ALL NSE,SAS,Shiv Aum Steels,Stock,Bullish,355.75,6.51,"05 Jun, 2026",334.00,Jun 09 | 15:31
+ALL NSE,GI10,Goldiam Inter,Stock,Very Bullish,434.45,6.50,"25 May, 2026",407.95,Jun 09 | 15:58
+ALL NSE,SE15,Suprajit Eng,Stock,Very Bullish,465.95,6.47,"22 May, 2026",437.65,Jun 09 | 15:55
+ALL NSE,BJL,Bluestone Jewel,Stock,Very Bullish,528.10,6.45,"01 Jun, 2026",496.10,Jun 09 | 15:57
+ALL NSE,AVT,AVT Natural,Stock,Very Bullish,72.41,6.45,"22 May, 2026",68.02,Jun 09 | 15:52
+ALL NSE,ISL,Ind-Swift Labs,Stock,Very Bullish,161.87,6.42,"29 May, 2026",152.11,Jun 09 | 15:57
+ALL NSE,QMA,QMS Medical,Stock,Very Bullish,93.35,6.32,"04 Jun, 2026",87.80,Jun 09 | 15:40
+ALL NSE,GIP,Guj Ind Power,Stock,Very Bullish,166.28,6.26,"25 May, 2026",156.48,Jun 09 | 15:59
+ALL NSE,GOR,Gandhar Oil,Stock,Very Bullish,159.34,6.24,"15 May, 2026",149.98,Jun 09 | 15:59
+ALL NSE,MI35,ILandFS Engg,Stock,Very Bullish,29.00,6.23,"21 May, 2026",27.30,Jun 09 | 15:57
+ALL NSE,KHERL,KRN Heat Ex,Stock,Very Bullish,"1,232.00",6.23,"03 Jun, 2026","1,159.80",Jun 09 | 15:59
+ALL NSE,QFT,Quadrant Future,Stock,Very Bullish,343.05,6.17,"01 Jun, 2026",323.10,Jun 09 | 15:57
+ALL NSE,MSK,Welspun Enter,Stock,Very Bullish,540.60,6.16,"26 May, 2026",509.25,Jun 09 | 15:58
+ALL NSE,KI24,Kamdhenu,Stock,Very Bullish,27.28,6.07,"04 Jun, 2026",25.72,Jun 09 | 15:56
+ALL NSE,SE22,Shemaroo Ent,Stock,Very Bullish,109.53,6.06,"22 May, 2026",103.27,Jun 09 | 15:57
+ALL NSE,GWR,Garware Technic,Stock,Very Bullish,688.30,5.97,"27 May, 2026",649.55,Jun 09 | 15:59
+ALL NSE,RFP01,RFBL Flexi,Stock,Bullish,72.30,5.93,"03 Jun, 2026",68.25,Jun 09 | 15:31
+ALL NSE,GTS,GTL,Stock,Very Bullish,8.62,5.90,"05 Jun, 2026",8.14,Jun 09 | 15:58
+ALL NSE,ATI02,Agri-Tech,Stock,Very Bullish,136.95,5.88,"05 Jun, 2026",129.34,Jun 09 | 15:58
+ALL NSE,IIP,Rattanindia Ent,Stock,Very Bullish,37.37,5.80,"03 Jun, 2026",35.32,Jun 09 | 15:58
+ALL NSE,JKS,Jaykay Ent,Stock,Bullish,179.90,5.69,"21 May, 2026",170.21,Jun 09 | 15:57
+ALL NSE,VT9,Voltamp Trans,Stock,Very Bullish,"10,004.00",5.66,"04 Jun, 2026","9,468.50",Jun 09 | 15:54
+ALL NSE,AF08,Vipul,Stock,Bullish,10.12,5.64,"05 Jun, 2026",9.58,Jun 09 | 15:55
+ALL NSE,VI17,Vaswani Ind,Stock,Very Bullish,62.25,5.60,"03 Jun, 2026",58.95,Jun 09 | 15:50
+ALL NSE,IRS,Indo Rama Synth,Stock,Very Bullish,46.96,5.60,"26 May, 2026",44.47,Jun 09 | 15:59
+ALL NSE,LMW,LMW,Stock,Very Bullish,"15,712.00",5.59,"25 May, 2026","14,880.00",Jun 09 | 15:54
+ALL NSE,JE04,Jash Engineerin,Stock,Very Bullish,446.85,5.58,"27 May, 2026",423.25,Jun 09 | 15:59
+ALL NSE,BS03,Bharat Seats,Stock,Bullish,186.54,5.56,"08 Apr, 2026",176.72,Jun 09 | 15:59
+ALL NSE,FDC,FDC,Stock,Bullish,393.50,5.43,"22 May, 2026",373.25,Jun 09 | 15:59
+ALL NSE,AL13,Astec Life,Stock,Very Bullish,794.75,5.30,"18 May, 2026",754.75,Jun 09 | 15:57
+ALL NSE,RP26,Rajshree Polypa,Stock,Bullish,17.78,5.14,"29 May, 2026",16.91,Jun 09 | 15:47
+ALL NSE,JMA01,Jullundur Motor,Stock,Very Bullish,93.90,5.08,"26 May, 2026",89.36,Jun 09 | 15:42
+ALL NSE,MFL08,Manba Finance,Stock,Very Bullish,118.22,5.01,"01 Jun, 2026",112.58,Jun 09 | 15:55
+ALL NSE,SPL09,Silkflex Poly,Stock,Very Bullish,199.50,5.00,"08 Jun, 2026",190.00,Jun 09 | 15:43
+ALL NSE,LNP,ACS TECHNOLOGIE,Stock,Bullish,37.90,4.99,"08 Jun, 2026",36.10,Jun 09 | 15:51
+ALL NSE,SJA01,SHUBHLAXMI,Stock,Very Bullish,24.25,4.98,"08 Jun, 2026",23.10,Jun 09 | 15:31
+ALL NSE,VR03,V-Mart Retail,Stock,Very Bullish,690.95,4.88,"25 May, 2026",658.80,Jun 09 | 15:57
+ALL NSE,JT03,Jalan Transolut,Stock,Bullish,2.15,4.88,"29 May, 2026",2.05,Jun 09 | 15:31
+ALL NSE,B04,Beardsell,Stock,Very Bullish,29.30,4.83,"29 May, 2026",27.95,Jun 09 | 15:40
+ALL NSE,JTL01,JTL Ind.,Stock,Very Bullish,74.38,4.78,"04 Jun, 2026",70.99,Jun 09 | 15:58
+ALL NSE,TSC03,TVS Supply,Stock,Very Bullish,128.47,4.75,"04 Jun, 2026",122.65,Jun 09 | 15:58
+ALL NSE,KS20,Aarnav Fashions,Stock,Very Bullish,24.98,4.74,"21 May, 2026",23.85,Jun 09 | 15:48
+ALL NSE,DRI02,Divyadhan Recyc,Stock,Bullish,35.35,4.74,"08 Jun, 2026",33.75,Jun 09 | 15:31
+ALL NSE,2M,20 Microns,Stock,Bullish,187.83,4.72,"20 May, 2026",179.36,Jun 09 | 15:49
+ALL NSE,KM05,Kovai Medical,Stock,Very Bullish,"5,746.00",4.70,"20 Apr, 2026","5,487.90",Jun 09 | 15:58
+ALL NSE,HCC,Hind Constr,Stock,Very Bullish,23.42,4.65,"25 May, 2026",22.38,Jun 09 | 15:58
+ALL NSE,SSM05,Siyaram Silk,Stock,Very Bullish,628.85,4.46,"18 May, 2026",602.00,Jun 09 | 15:59
+ALL NSE,VPT01,Venus Pipes,Stock,Very Bullish,"1,411.10",4.42,"19 May, 2026","1,351.40",Jun 09 | 15:46
+ALL NSE,ZNM,Zero Nifty Mid,ETF,Bullish,11.14,4.40,"10 Apr, 2026",10.67,Jun 09 | 15:52
+ALL NSE,PS,Prime Sec,Stock,Very Bullish,293.85,4.37,"04 Jun, 2026",281.55,Jun 09 | 15:57
+ALL NSE,RP17,Roto Pumps,Stock,Very Bullish,61.40,4.14,"04 Jun, 2026",58.96,Jun 09 | 15:58
+ALL NSE,SS51,Shoppers Stop,Stock,Bullish,353.05,4.10,"06 May, 2026",339.15,Jun 09 | 15:55
+ALL NSE,AAC,Alkyl Amines,Stock,Very Bullish,"1,851.40",4.09,"02 Jun, 2026","1,778.70",Jun 09 | 15:57
+ALL NSE,RGW,Rajratan Global,Stock,Very Bullish,445.60,4.08,"04 Jun, 2026",428.15,Jun 09 | 15:50
+ALL NSE,MRIL,Mahendra Realto,Stock,Bullish,41.50,4.01,"29 May, 2026",39.90,Jun 09 | 15:40
+ALL NSE,GNP02,Groww PSU Bk,ETF,Bullish,85.45,3.88,"03 Jun, 2026",82.26,Jun 09 | 15:31
+ALL NSE,DT9,Ducon Infratech,Stock,Very Bullish,3.49,3.87,"22 May, 2026",3.36,Jun 09 | 15:50
+ALL NSE,UI20,Udayshivakumar,Stock,Very Bullish,24.35,3.84,"02 Jun, 2026",23.45,Jun 09 | 15:52
+ALL NSE,PPF,Prince Pipes,Stock,Very Bullish,283.20,3.83,"02 Jun, 2026",272.75,Jun 09 | 15:55
+ALL NSE,S18,Sreeleathers,Stock,Bullish,196.96,3.66,"15 May, 2026",190.00,Jun 09 | 15:59
+ALL NSE,M12,Aurum Proptech,Stock,Very Bullish,185.92,3.58,"22 May, 2026",179.49,Jun 09 | 15:50
+ALL NSE,FIE,FIEM Ind,Stock,Very Bullish,"2,297.80",3.54,"21 May, 2026","2,219.30",Jun 09 | 15:54
+ALL NSE,MTL07,Macobs Technolo,Stock,Bullish,224.00,3.49,"29 Apr, 2026",216.45,Jun 09 | 15:31
+ALL NSE,RM06,Rajapalayam,Stock,Very Bullish,821.45,3.39,"20 Apr, 2026",794.50,Jun 09 | 15:44
+ALL NSE,SL,Superhouse,Stock,Very Bullish,159.63,3.34,"05 Jun, 2026",154.47,Jun 09 | 15:57
+ALL NSE,TBE,Tasty Bite,Stock,Very Bullish,"7,972.00",3.31,"03 Jun, 2026","7,716.50",Jun 09 | 15:50
+ALL NSE,PSO,Seamec,Stock,Very Bullish,"1,612.80",3.28,"19 May, 2026","1,561.60",Jun 09 | 15:43
+ALL NSE,VIESL,Vision Infra,Stock,Very Bullish,312.75,3.22,"08 Jun, 2026",303.00,Jun 09 | 15:41
+ALL NSE,PFT,Pattech Fitwell,Stock,Bullish,114.85,3.19,"30 Apr, 2026",111.30,Jun 09 | 15:31
+ALL NSE,NIE,Nahar Ent,Stock,Bullish,117.08,3.19,"22 May, 2026",113.46,Jun 09 | 15:48
+ALL NSE,EPTL,Epack Prefab,Stock,Very Bullish,211.62,3.18,"03 Jun, 2026",205.09,Jun 09 | 15:59
+ALL NSE,ASC01,Asahi Songwon,Stock,Very Bullish,262.80,3.18,"26 May, 2026",254.69,Jun 09 | 15:51
+ALL NSE,ROM01,Raj Oil Mills,Stock,Bullish,46.42,3.04,"10 Apr, 2026",45.05,Jun 09 | 15:50
+ALL NSE,BC06,BCL Industries,Stock,Very Bullish,38.14,3.03,"08 Jun, 2026",37.02,Jun 09 | 15:58
+ALL NSE,GTB01,Guj Themis,Stock,Very Bullish,401.15,3.03,"25 May, 2026",389.35,Jun 09 | 15:55
+ALL NSE,ADP03,Akums Drugs & P,Stock,Very Bullish,548.25,3.02,"26 May, 2026",532.20,Jun 09 | 15:59
+ALL NSE,SG16,Senco Gold,Stock,Very Bullish,345.70,3.02,"14 May, 2026",335.55,Jun 09 | 15:59
+ALL NSE,TLI01,Tiger Logistics,Stock,Bullish,35.50,3.02,"05 Jun, 2026",34.46,Jun 09 | 15:59
+ALL NSE,PDS,PDS,Stock,Bullish,306.00,3.01,"18 May, 2026",297.05,Jun 09 | 15:55
+ALL NSE,BANKP25725,BANKPSU,ETF,Very Bullish,85.85,3.01,"05 Jun, 2026",83.34,Jun 09 | 15:55
+ALL NSE,EIL05,EPW India,Stock,Bullish,144.00,3.00,"28 Apr, 2026",139.80,Jun 09 | 15:31
+ALL NSE,JPF,Consol Finvest,Stock,Bullish,226.44,2.97,"10 Apr, 2026",219.91,Jun 09 | 15:42
+ALL NSE,DSPPS17616,DSP PSBank ETF,ETF,Very Bullish,85.94,2.96,"05 Jun, 2026",83.47,Jun 09 | 15:31
+ALL NSE,SBIBP30290,SBIBPB,ETF,Very Bullish,49.41,2.92,"05 Jun, 2026",48.01,Jun 09 | 15:50
+ALL NSE,SE28,Supreme Enginee,Stock,Bullish,1.08,2.86,"08 Jun, 2026",1.05,Jun 09 | 15:31
+ALL NSE,VL04,Vimta Labs,Stock,Very Bullish,527.85,2.84,"03 Jun, 2026",513.25,Jun 09 | 15:56
+ALL NSE,SGE02,HLE Glascoat,Stock,Very Bullish,371.85,2.82,"02 Jun, 2026",361.65,Jun 09 | 15:57
+ALL NSE,HDFCP22595,HDFCPSUBK,Stock,Bullish,86.21,2.78,"05 Jun, 2026",83.88,Jun 09 | 15:31
+ALL NSE,RS03,Mahamaya Steel,Stock,Bullish,895.95,2.68,"25 May, 2026",872.60,Jun 09 | 15:46
+ALL NSE,WB01,Windlas,Stock,Bullish,835.40,2.60,"08 Jun, 2026",814.20,Jun 09 | 15:44
+ALL NSE,PD09,Panache Digilif,Stock,Very Bullish,364.45,2.60,"01 Jun, 2026",355.20,Jun 09 | 15:58
+ALL NSE,AE18,Aarvi Encon,Stock,Bullish,131.39,2.56,"21 May, 2026",128.11,Jun 09 | 15:48
+ALL NSE,MA02,Mukta Arts,Stock,Bullish,61.02,2.52,"21 May, 2026",59.52,Jun 09 | 15:47
+ALL NSE,RI26,Ramcoind,Stock,Bullish,299.25,2.52,"25 May, 2026",291.90,Jun 09 | 15:57
+ALL NSE,TBZ,Tribhovandas,Stock,Very Bullish,169.63,2.50,"29 May, 2026",165.49,Jun 09 | 15:59
+ALL NSE,AHL02,Amanta Health,Stock,Very Bullish,135.46,2.42,"04 Jun, 2026",132.26,Jun 09 | 15:52
+ALL NSE,PSUBA14584,Ipru Nifty PSU,ETF,Bullish,86.20,2.38,"05 Jun, 2026",84.20,Jun 09 | 15:57
+ALL NSE,NT02,EQUIPPP,Stock,Very Bullish,17.15,2.27,"27 May, 2026",16.77,Jun 09 | 15:44
+ALL NSE,VP,Vardhman Poly,Stock,Bullish,7.27,2.25,"04 Jun, 2026",7.11,Jun 09 | 15:44
+ALL NSE,FOI,Fine Organics,Stock,Very Bullish,"4,737.40",2.24,"03 Jun, 2026","4,633.80",Jun 09 | 15:58
+ALL NSE,TCL03,TBI Corn,Stock,Very Bullish,73.25,2.23,"03 Jun, 2026",71.65,Jun 09 | 15:31
+ALL NSE,PIF02,PTC India Fin,Stock,Very Bullish,31.42,2.21,"02 Jun, 2026",30.74,Jun 09 | 15:48
+ALL NSE,A09,S P Apparels,Stock,Very Bullish,824.95,2.21,"02 Jun, 2026",807.10,Jun 09 | 15:43
+ALL NSE,GBH,Gr Hospitals,ETF,Bullish,52.05,2.18,"05 Jun, 2026",50.94,Jun 09 | 15:50
+ALL NSE,ICC01,Indian Card,Stock,Bullish,215.25,2.13,"22 May, 2026",210.77,Jun 09 | 15:49
+ALL NSE,ASE,Ambalal Sarabha,Stock,Bullish,34.06,2.13,"22 Apr, 2026",33.35,Jun 09 | 15:49
+ALL NSE,DPI02,DDEVPLASTIK,Stock,Very Bullish,253.16,2.12,"29 May, 2026",247.90,Jun 09 | 15:58
+ALL NSE,MML07,Muthoot Microfi,Stock,Bullish,183.40,2.12,"02 Jun, 2026",179.60,Jun 09 | 15:51
+ALL NSE,BB,Bharat Bijlee,Stock,Very Bullish,"2,851.50",2.07,"26 May, 2026","2,793.60",Jun 09 | 15:57
+ALL NSE,VG02,Vaibhav Global,Stock,Bullish,228.39,2.06,"19 May, 2026",223.79,Jun 09 | 15:57
+ALL NSE,MI43,Manorama Indust,Stock,Very Bullish,"1,490.80",2.03,"26 May, 2026","1,461.20",Jun 09 | 15:45
+ALL NSE,TPP,Texmo Pipes,Stock,Bullish,47.79,2.03,"08 Jun, 2026",46.84,Jun 09 | 15:54
+ALL NSE,MLS,Mittal Life Sty,Stock,Bullish,1.01,2.02,"20 May, 2026",0.99,Jun 09 | 15:55
+ALL NSE,VEV,Victory Electri,Stock,Bullish,18.20,1.96,"22 May, 2026",17.85,Jun 09 | 15:31
+ALL NSE,SPCL01,Srinibas Pradha,Stock,Bullish,142.95,1.96,"20 May, 2026",140.20,Jun 09 | 15:40
+ALL NSE,CC25,Cinevista,Stock,Very Bullish,16.20,1.95,"04 Jun, 2026",15.89,Jun 09 | 15:44
+ALL NSE,PS20,Prataap Snacks ,Stock,Very Bullish,"1,132.30",1.94,"26 May, 2026","1,110.70",Jun 09 | 15:40
+ALL NSE,IFG,IFGL Refractory,Stock,Very Bullish,198.20,1.92,"02 Jun, 2026",194.46,Jun 09 | 15:47
+ALL NSE,OH,Oriental Hotels,Stock,Very Bullish,103.00,1.90,"03 Jun, 2026",101.08,Jun 09 | 15:59
+ALL NSE,WCP,West Coast Pap,Stock,Bullish,507.25,1.89,"25 May, 2026",497.85,Jun 09 | 15:57
+ALL NSE,UFS02,Usha Financial ,Stock,Very Bullish,36.25,1.83,"21 May, 2026",35.60,Jun 09 | 15:41
+ALL NSE,JPI02,Jindal Poly Inv,Stock,Very Bullish,"1,115.00",1.77,"05 Jun, 2026","1,095.60",Jun 09 | 15:58
+ALL NSE,HTI,HP Telecom Ind,Stock,Bullish,271.00,1.76,"25 May, 2026",266.30,Jun 09 | 15:31
+ALL NSE,CRL02,Corona Remedies,Stock,Very Bullish,"1,770.90",1.74,"08 Jun, 2026","1,740.60",Jun 09 | 15:44
+ALL NSE,RCDL,Rajgor Castor,Stock,Very Bullish,26.85,1.70,"22 May, 2026",26.40,Jun 09 | 15:40
+ALL NSE,RA04,Rico Auto,Stock,Very Bullish,133.58,1.68,"04 Jun, 2026",131.37,Jun 09 | 15:59
+ALL NSE,SIE,Mawana Sugars,Stock,Bullish,103.35,1.57,"05 Jun, 2026",101.75,Jun 09 | 15:52
+ALL NSE,BEP,Bhansali Eng,Stock,Very Bullish,97.22,1.55,"02 Jun, 2026",95.74,Jun 09 | 15:57
+ALL NSE,SS12,Transworld Ship,Stock,Very Bullish,166.96,1.54,"01 Jun, 2026",164.42,Jun 09 | 15:46
+ALL NSE,MAGS814938,Mirae Nifty8-13,ETF,Very Bullish,30.15,1.52,"29 May, 2026",29.70,Jun 09 | 15:45
+ALL NSE,NIE05,Nipp Nifty 5yr,ETF,Very Bullish,65.31,1.44,"02 Jun, 2026",64.38,Jun 09 | 15:48
+ALL NSE,KIO,KIOCL,Stock,Very Bullish,411.25,1.43,"05 Jun, 2026",405.45,Jun 09 | 15:55
+ALL NSE,DSI01,Dwarikesh Sugar,Stock,Very Bullish,45.44,1.43,"05 Jun, 2026",44.80,Jun 09 | 15:59
+ALL NSE,LC08,Landmark Cars,Stock,Bullish,418.80,1.43,"04 Jun, 2026",412.90,Jun 09 | 15:57
+ALL NSE,BH,Bajaj Hindustha,Stock,Very Bullish,19.31,1.42,"01 Jun, 2026",19.04,Jun 09 | 15:59
+ALL NSE,S06,Steelcast,Stock,Very Bullish,288.60,1.41,"04 Jun, 2026",284.60,Jun 09 | 15:44
+ALL NSE,PT03,PTL Enterprises,Stock,Very Bullish,40.38,1.38,"03 Jun, 2026",39.83,Jun 09 | 15:55
+ALL NSE,MO02,Digispice Tech,Stock,Very Bullish,20.46,1.34,"03 Jun, 2026",20.19,Jun 09 | 15:31
+ALL NSE,EVIND24461,Mirae EV ETF,ETF,Bullish,30.59,1.29,"22 May, 2026",30.20,Jun 09 | 15:58
+ALL NSE,NEML,Namo Ewaste Man,Stock,Bullish,225.80,1.28,"25 May, 2026",222.95,Jun 09 | 15:40
+ALL NSE,CMEESL,Clean Max Envir,Stock,Bullish,"1,232.40",1.27,"05 Jun, 2026","1,217.00",Jun 09 | 15:46
+ALL NSE,NA,Nacl Industries,Stock,Very Bullish,171.42,1.22,"08 Jun, 2026",169.36,Jun 09 | 15:49
+ALL NSE,NMA,Starteck Financ,Stock,Very Bullish,265.95,1.21,"27 May, 2026",262.77,Jun 09 | 15:43
+ALL NSE,ZN,Zee Media,Stock,Very Bullish,8.47,1.19,"04 Jun, 2026",8.37,Jun 09 | 15:57
+ALL NSE,TTI01,E to E Transpor,Stock,Bullish,278.90,1.18,"03 Jun, 2026",275.65,Jun 09 | 15:31
+ALL NSE,HSI,AGI Greenpac,Stock,Very Bullish,618.50,1.17,"02 Jun, 2026",611.35,Jun 09 | 15:58
+ALL NSE,JP11,Jindal Photo,Stock,Bullish,"1,146.90",1.17,"08 Jun, 2026","1,133.60",Jun 09 | 15:51
+ALL NSE,IPN01,Ipru Nifty5yr,ETF,Very Bullish,65.41,1.16,"04 Jun, 2026",64.66,Jun 09 | 15:31
+ALL NSE,RSL06,Nipp Nifty8-13,ETF,Very Bullish,29.49,1.03,"25 May, 2026",29.19,Jun 09 | 15:51
+ALL NSE,JS03,Jyoti Structure,Stock,Bullish,12.89,1.02,"03 Jun, 2026",12.76,Jun 09 | 15:57
+ALL NSE,EBBET16253,BB Apr 30 ETF,ETF,Very Bullish,"1,586.65",1.01,"01 Jun, 2026","1,570.71",Jun 09 | 15:43
+ALL NSE,BBE,BB ETF-April 31,ETF,Very Bullish,"1,414.13",1.00,"02 Jun, 2026","1,400.08",Jun 09 | 15:41
+ALL NSE,SHREM5718,Shrem Invit,Stock,Very Bullish,102.00,0.99,"29 May, 2026",101.00,Jun 09 | 15:31
+ALL NSE,BBE03,BB Apr 33 ETF,ETF,Very Bullish,"1,283.95",0.97,"02 Jun, 2026","1,271.57",Jun 09 | 15:44
+ALL NSE,JLLHL,Jupiter Life,Stock,Very Bullish,"1,336.60",0.95,"14 May, 2026","1,324.00",Jun 09 | 15:42
+ALL NSE,HT,HT Media,Stock,Bullish,22.52,0.90,"26 May, 2026",22.32,Jun 09 | 15:44
+ALL NSE,CTI03,Citius TransNet,Stock,Bullish,106.33,0.88,"27 May, 2026",105.40,Jun 09 | 15:49
+ALL NSE,HPF01,Pearl Global In,Stock,Very Bullish,"1,685.50",0.83,"15 May, 2026","1,671.60",Jun 09 | 15:58
+ALL NSE,ZN8,LTGILTCASE,ETF,Very Bullish,30.03,0.81,"27 May, 2026",29.79,Jun 09 | 15:31
+ALL NSE,ITD02,India Tourism D,Stock,Very Bullish,593.90,0.81,"04 Jun, 2026",589.15,Jun 09 | 15:59
+ALL NSE,FFS05,Finbud Financia,Stock,Bullish,125.00,0.81,"09 Jun, 2026",124.00,Jun 09 | 15:31
+ALL NSE,NCL,NCL Industries,Stock,Very Bullish,184.97,0.79,"29 May, 2026",183.52,Jun 09 | 15:58
+ALL NSE,SGEL,Saatvik Green,Stock,Bullish,468.40,0.76,"03 Jun, 2026",464.85,Jun 09 | 15:56
+ALL NSE,SFP02,Sawaliya Food,Stock,Bullish,289.90,0.76,"02 Jun, 2026",287.70,Jun 09 | 15:44
+ALL NSE,LIC05,LIC G-sec LT,ETF,Very Bullish,29.00,0.73,"27 May, 2026",28.79,Jun 09 | 15:31
+ALL NSE,QPEEL,Quality Power,Stock,Bullish,"1,133.70",0.72,"08 Jun, 2026","1,125.60",Jun 09 | 15:58
+ALL NSE,BBE02,BB Apr 32 ETF,ETF,Very Bullish,"1,321.60",0.71,"05 Jun, 2026","1,312.27",Jun 09 | 15:43
+ALL NSE,SR,Crest Ventures,Stock,Very Bullish,362.40,0.69,"08 Jun, 2026",359.90,Jun 09 | 15:55
+ALL NSE,SCS10,Smartworks Cowo,Stock,Very Bullish,453.90,0.67,"03 Jun, 2026",450.90,Jun 09 | 15:43
+ALL NSE,KET,Kabra Extrusion,Stock,Very Bullish,237.73,0.65,"03 Jun, 2026",236.20,Jun 09 | 15:48
+ALL NSE,UC06,Unihealth Hospi,Stock,Very Bullish,460.70,0.63,"05 Jun, 2026",457.80,Jun 09 | 15:44
+ALL NSE,MOGSE1507,MOGSEC,ETF,Very Bullish,64.39,0.61,"05 Jun, 2026",64.00,Jun 09 | 15:31
+ALL NSE,VSL04,Vikram Solar,Stock,Bullish,215.84,0.61,"04 Jun, 2026",214.54,Jun 09 | 15:59
+ALL NSE,VST,VST,Stock,Very Bullish,259.45,0.54,"05 Jun, 2026",258.05,Jun 09 | 15:59
+ALL NSE,MI31,MPS,Stock,Very Bullish,"1,842.30",0.52,"15 May, 2026","1,832.80",Jun 09 | 15:49
+ALL NSE,ABGSE24404,ABGSEC,Stock,Very Bullish,112.53,0.47,"04 Jun, 2026",112.00,Jun 09 | 15:31
+ALL NSE,TF14,Tirupati Forge,Stock,Bullish,43.99,0.46,"26 May, 2026",43.79,Jun 09 | 15:51
+ALL NSE,MAN10,HEALTHCARE,ETF,Bullish,20.05,0.45,"08 Jun, 2026",19.96,Jun 09 | 15:31
+ALL NSE,ICI14,MIDS ELIET ETF,ETF,Bullish,18.32,0.44,"20 May, 2026",18.24,Jun 09 | 15:40
+ALL NSE,ATI03,Goyal Aluminium,Stock,Very Bullish,6.98,0.43,"08 Jun, 2026",6.95,Jun 09 | 15:43
+ALL NSE,VI11,Visaka Ind,Stock,Bullish,73.28,0.42,"05 Jun, 2026",72.97,Jun 09 | 15:56
+ALL NSE,RIIT,Raajmarg Infra ,Stock,Very Bullish,111.29,0.42,"21 May, 2026",110.83,Jun 09 | 15:55
+ALL NSE,PII04,Powergrid,Stock,Very Bullish,93.57,0.41,"05 Jun, 2026",93.19,Jun 09 | 15:59
+ALL NSE,SBI28,SBI ETF,ETF,Very Bullish,260.13,0.39,"29 May, 2026",259.12,Jun 09 | 15:40
+ALL NSE,HCL,HCL Info,Stock,Very Bullish,12.79,0.39,"27 May, 2026",12.74,Jun 09 | 15:59
+ALL NSE,WTIL,Wise Travel,Stock,Bullish,104.40,0.38,"09 Jun, 2026",104.00,Jun 09 | 15:31
+ALL NSE,DNS,DSP SMALLADD,ETF,Bullish,17.04,0.35,"25 May, 2026",16.98,Jun 09 | 15:53
+ALL NSE,DSIL,DCM Shriram Int,Stock,Bullish,68.83,0.34,"08 Jun, 2026",68.60,Jun 09 | 15:57
+ALL NSE,GKW,GKW,Stock,Very Bullish,"1,828.70",0.33,"05 Jun, 2026","1,822.70",Jun 09 | 15:42
+ALL NSE,KB02,Kirloskar Bros,Stock,Very Bullish,"1,716.80",0.33,"05 Jun, 2026","1,711.10",Jun 09 | 15:50
+ALL NSE,PMP,Power Mech,Stock,Very Bullish,"2,553.20",0.33,"22 May, 2026","2,544.70",Jun 09 | 15:59
+ALL NSE,BFI,BF Investment,Stock,Very Bullish,432.45,0.30,"29 May, 2026",431.15,Jun 09 | 15:55
+ALL NSE,NR,NELCO,Stock,Very Bullish,699.80,0.30,"27 May, 2026",697.70,Jun 09 | 15:55
+ALL NSE,AV02,Aditya Vision,Stock,Very Bullish,538.10,0.25,"04 Jun, 2026",536.75,Jun 09 | 15:56
+ALL NSE,TC08,De Nora India,Stock,Very Bullish,767.10,0.21,"05 Jun, 2026",765.50,Jun 09 | 15:44
+ALL NSE,BHI,Indus Infra Tru,Stock,Bullish,124.99,0.15,"03 Jun, 2026",124.80,Jun 09 | 15:57
+ALL NSE,GNENAA,GROW Nifty EV,ETF,Very Bullish,30.60,0.13,"25 May, 2026",30.56,Jun 09 | 15:56
+ALL NSE,IIF01,IndiGrid Infra,Stock,Very Bullish,172.19,0.11,"02 Jun, 2026",172.00,Jun 09 | 15:49
+ALL NSE,DSPPV17576,DSP Priv Bank,ETF,Bullish,26.85,0.11,"09 Jun, 2026",26.82,Jun 09 | 15:31
+ALL NSE,PP15,Poddar Pigments,Stock,Very Bullish,258.40,0.00,"09 Jun, 2026",258.40,Jun 09 | 15:54
+ALL NSE,HDFCB14230,HDFC BSE 500,ETF,Bullish,36.98,0.00,"09 Jun, 2026",36.98,Jun 09 | 15:52
+ALL NSE,KI17,3B BlackBio Dx,Stock,Bullish,"1,201.50",0.00,"09 Jun, 2026","1,201.50",Jun 09 | 15:44
+ALL NSE,DGP,Windsor,Stock,Very Bullish,313.70,0.00,"09 Jun, 2026",313.70,Jun 09 | 15:59
+ALL NSE,JTL,SG MART,Stock,Very Bullish,619.40,0.00,"09 Jun, 2026",619.40,Jun 09 | 15:57
+ALL NSE,BDM,BOMDYEING,Stock,Very Bullish,128.19,0.00,"09 Jun, 2026",128.19,Jun 09 | 15:59
+ALL NSE,ITT01,Axiscades Tech,Stock,Very Bullish,"1,935.50",0.00,"09 Jun, 2026","1,935.50",Jun 09 | 15:56
+ALL NSE,CT,Capital Trust,Stock,Bullish,13.78,0.00,"09 Jun, 2026",13.78,Jun 09 | 15:40
+ALL NSE,RCI02,Reliance Chemo,Stock,Very Bullish,122.90,0.00,"09 Jun, 2026",122.90,Jun 09 | 15:42
+ALL NSE,SHIVA54096,Shiva Mills Lim,Stock,Bullish,66.88,0.00,"09 Jun, 2026",66.88,Jun 09 | 15:40
+ALL NSE,E11,eMudhra,Stock,Bullish,483.35,0.00,"09 Jun, 2026",483.35,Jun 09 | 15:59
+ALL NSE,E10,Ethos,Stock,Bullish,"2,416.70",0.00,"09 Jun, 2026","2,416.70",Jun 09 | 15:46
+ALL NSE,ATGIL,Agarwal Toughen,Stock,Very Bullish,125.05,0.00,"09 Jun, 2026",125.05,Jun 09 | 15:40
+ALL NSE,ABSLB13987,ABSL NiftyBank,ETF,Bullish,56.37,0.00,"09 Jun, 2026",56.37,Jun 09 | 15:40
+ALL NSE,BMF,Nipp Nifty PSU,ETF,Very Bullish,94.91,0.00,"09 Jun, 2026",94.91,Jun 09 | 15:58
+ALL NSE,WWI,Siti Networks,Stock,Bullish,0.36,0.00,"03 Jun, 2026",0.36,Jun 09 | 15:53
+ALL NSE,RCV02,Reliance Comm,Stock,Bullish,0.97,0.00,"05 Jun, 2026",0.97,Jun 09 | 15:59
+ALL NSE,BAM02,Nipp NiftyBank,ETF,Bullish,569.30,0.00,"09 Jun, 2026",569.30,Jun 09 | 15:56
+ALL NSE,TTK02,TTK Prestige,Stock,Bullish,544.05,0.00,"09 Jun, 2026",544.05,Jun 09 | 15:55
+ALL NSE,HBE02,HDFC NiftyBank,ETF,Bullish,56.58,0.00,"09 Jun, 2026",56.58,Jun 09 | 15:40
+ALL NSE,MCM02,Manaksia Coated,Stock,Bullish,105.63,0.00,"09 Jun, 2026",105.63,Jun 09 | 15:40
+ALL NSE,IAM,Innomet Advance,Stock,Bullish,96.10,0.00,"09 Jun, 2026",96.10,Jun 09 | 15:31
+ALL NSE,SM,SML Mahindra,Stock,Bullish,"3,789.40",0.00,"09 Jun, 2026","3,789.40",Jun 09 | 15:58
+ALL NSE,RLL01,Raymond Lifesty,Stock,Bullish,780.60,0.00,"09 Jun, 2026",780.60,Jun 09 | 15:56
+ALL NSE,CS14,Compucom Soft,Stock,Bullish,13.91,0.00,"09 Jun, 2026",13.91,Jun 09 | 15:42
+ALL NSE,GAE,Guj Amb Exports,Stock,Bullish,160.27,0.00,"09 Jun, 2026",160.27,Jun 09 | 15:51
+ALL NSE,GAL,Gem Aromatics,Stock,Bullish,165.25,0.00,"09 Jun, 2026",165.25,Jun 09 | 15:53
+ALL NSE,MOF,Cera Sanitary,Stock,Bullish,"5,835.00",0.00,"09 Jun, 2026","5,835.00",Jun 09 | 15:56
+ALL NSE,SAL06,Studds Access,Stock,Bullish,520.95,0.00,"09 Jun, 2026",520.95,Jun 09 | 15:59
+ALL NSE,KLS,Kronox Lab Scie,Stock,Very Bullish,138.32,0.00,"09 Jun, 2026",138.32,Jun 09 | 15:58
+ALL NSE,NSL05,Newmalayalam,Stock,Very Bullish,25.50,0.00,"09 Jun, 2026",25.50,Jun 09 | 15:54
+ALL NSE,KMM,Kotak NiftyPSU,ETF,Bullish,853.45,0.00,"09 Jun, 2026",853.45,Jun 09 | 15:52
+ALL NSE,SBI25,SBI BankingETF,ETF,Bullish,564.76,0.00,"09 Jun, 2026",564.76,Jun 09 | 15:59
+ALL NSE,KNC,Kotak CHEMICAL,ETF,Bullish,29.28,0.00,"09 Jun, 2026",29.28,Jun 09 | 15:50
+ALL NSE,FPB01,Fino Payments,Stock,Bullish,139.88,0.00,"09 Jun, 2026",139.88,Jun 09 | 15:59
+ALL NSE,CUBEI15078,CUBEINVIT,Stock,Bullish,148.50,0.00,"08 Jun, 2026",148.50,Jun 09 | 15:46
+ALL NSE,BANKE17419,MA Nif BANKETF,ETF,Bullish,560.94,0.00,"09 Jun, 2026",560.94,Jun 09 | 15:41
+ALL NSE,GD01,Gateway Distri,Stock,Bullish,57.97,0.00,"09 Jun, 2026",57.97,Jun 09 | 15:59
+ALL NSE,SE18,Sakuma Exports,Stock,Bullish,1.92,0.00,"27 May, 2026",1.92,Jun 09 | 15:47
+ALL NSE,SFI06,Sabar Flex ,Stock,Very Bullish,5.60,0.00,"22 May, 2026",5.60,Jun 09 | 15:31
+ALL NSE,CEL02,Chetana Edu,Stock,Very Bullish,49.00,0.00,"09 Jun, 2026",49.00,Jun 09 | 15:40
+ALL NSE,CSB01,Commercial Syn ,Stock,Very Bullish,161.89,0.00,"09 Jun, 2026",161.89,Jun 09 | 15:53
+ALL NSE,SR01,Surya Roshni,Stock,Bullish,249.95,0.00,"02 Jun, 2026",249.94,Jun 09 | 15:57
+ALL NSE,MAN09,SMALL250,ETF,Bullish,17.01,0.00,"09 Jun, 2026",17.01,Jun 09 | 15:43
+ALL NSE,SDI01,Shyam Dhani Ind,Stock,Bullish,68.00,0.00,"09 Jun, 2026",68.00,Jun 09 | 15:31
+ALL NSE,ETP01,Easy Trip,Stock,Very Bullish,7.87,0.00,"09 Jun, 2026",7.87,Jun 09 | 15:59
+ALL NSE,PEC,Patel Eng,Stock,Bullish,27.70,0.00,"09 Jun, 2026",27.70,Jun 09 | 15:59
+ALL NSE,RII,Rel Ind Infra,Stock,Very Bullish,778.10,0.00,"09 Jun, 2026",778.10,Jun 09 | 15:59
+ALL NSE,PM10,Precision,Stock,Bullish,8.15,0.00,"09 Jun, 2026",8.15,Jun 09 | 15:58
+ALL NSE,EPS,Euro Pratik,Stock,Bullish,263.65,0.00,"09 Jun, 2026",263.65,Jun 09 | 15:49
+ALL NSE,RJL,RBZ Jewellers,Stock,Bullish,135.68,0.00,"09 Jun, 2026",135.68,Jun 09 | 15:51
+ALL NSE,CI28,Compuage Info,Stock,Bullish,1.37,0.00,"09 Jun, 2026",1.37,Jun 09 | 15:45
+ALL NSE,SSK01,Sai Silks,Stock,Bullish,108.82,0.00,"09 Jun, 2026",108.82,Jun 09 | 15:59
+ALL NSE,NIF1022524,UTI NIF10GETF,ETF,Bullish,26.04,0.00,"09 Jun, 2026",26.04,Jun 09 | 15:31
+ALL NSE,ANB,Axis NiftyBank,ETF,Bullish,567.33,0.00,"09 Jun, 2026",567.33,Jun 09 | 15:40
+ALL NSE,GBF01,Ganga Bath Fitt,Stock,Bullish,23.75,0.00,"09 Jun, 2026",23.75,Jun 09 | 15:40
+ALL NSE,BS01,Banswara Syntex,Stock,Very Bullish,130.12,0.00,"09 Jun, 2026",130.12,Jun 09 | 15:54
+ALL NSE,KMM03,Kotak Niftyban,ETF,Bullish,57.09,0.00,"09 Jun, 2026",57.09,Jun 09 | 15:43
+ALL NSE,ARA,Affordable Robo,Stock,Very Bullish,178.82,0.00,"09 Jun, 2026",178.82,Jun 09 | 15:40
+ALL NSE,NC09,Navkar Corp,Stock,Bullish,97.67,0.00,"09 Jun, 2026",97.67,Jun 09 | 15:44
+ALL NSE,NT01,Nitco,Stock,Bullish,97.04,0.00,"09 Jun, 2026",97.04,Jun 09 | 15:54
+ALL NSE,SGS01,SMC Global Secu,Stock,Bullish,66.00,0.00,"09 Jun, 2026",66.00,Jun 09 | 15:51
+ALL NSE,SL24,Sacheerome,Stock,Bullish,349.00,0.00,"09 Jun, 2026",349.00,Jun 09 | 15:31
+ALL NSE,PRL02,Patel Retail,Stock,Bullish,210.11,0.00,"09 Jun, 2026",210.11,Jun 09 | 15:57
+ALL NSE,GI28,Greenlam Ind,Stock,Bullish,234.47,0.00,"09 Jun, 2026",234.47,Jun 09 | 15:48
+ALL NSE,OBC01,Orissa Bengal C,Stock,Bullish,58.71,0.00,"09 Jun, 2026",58.71,Jun 09 | 15:45
+ALL NSE,HEP,HPL Electric & ,Stock,Bullish,362.80,0.00,"09 Jun, 2026",362.80,Jun 09 | 15:56
+ALL NSE,UL02,Unichem Labs,Stock,Very Bullish,379.65,0.00,"09 Jun, 2026",379.65,Jun 09 | 15:57
+ALL NSE,BO02,Bang Overseas,Stock,Very Bullish,39.06,0.00,"09 Jun, 2026",39.06,Jun 09 | 15:56
+ALL NSE,EBANK25258,EBANKNIFTY,ETF,Bullish,55.52,0.00,"09 Jun, 2026",55.52,Jun 09 | 15:40
+ALL NSE,WFP,Wealth First Po,Stock,Bullish,940.20,0.00,"09 Jun, 2026",940.20,Jun 09 | 15:48
+ALL NSE,TCI04,Transport Corp,Stock,Bullish,974.90,0.00,"09 Jun, 2026",974.90,Jun 09 | 15:43
+ALL NSE,RML02,Route,Stock,Very Bullish,533.05,0.00,"09 Jun, 2026",533.05,Jun 09 | 15:57
+ALL NSE,DCW,DCW,Stock,Bullish,47.37,0.00,"09 Jun, 2026",47.37,Jun 09 | 15:59
+ALL NSE,SOLAR54154,SOLARA ACTIVE P,Stock,Very Bullish,580.00,0.00,"09 Jun, 2026",580.00,Jun 09 | 15:58
+ALL NSE,GC04,Goa Carbon,Stock,Bullish,396.00,0.00,"09 Jun, 2026",396.00,Jun 09 | 15:55
+ALL NSE,SGBNO6355,SGBNOV26,Stock,Bullish,"15,409.96",0.00,"09 Jun, 2026","15,409.96",Jun 09 | 15:40
+ALL NSE,EP09,Emmbi Ind,Stock,Very Bullish,84.80,0.00,"09 Jun, 2026",84.80,Jun 09 | 15:40
+ALL NSE,BCI01,Bhagiradh Chem,Stock,Very Bullish,257.89,0.00,"09 Jun, 2026",257.89,Jun 09 | 15:55
+ALL NSE,TCI08,TCI Express,Stock,Bullish,530.95,0.00,"09 Jun, 2026",530.95,Jun 09 | 15:55
+ALL NSE,NPBET12978,NPBET,ETF,Bullish,274.44,-0.01,"09 Jun, 2026",274.46,Jun 09 | 15:31
+ALL NSE,BBNPN24117,BBNPNBETF,ETF,Bullish,55.63,-0.02,"09 Jun, 2026",55.64,Jun 09 | 15:31
+ALL NSE,NIF5G22521,UTI NIF5GETF,ETF,Bullish,65.26,-0.02,"04 Jun, 2026",65.27,Jun 09 | 15:31
+ALL NSE,NPS,Swelect Energy,Stock,Bullish,649.70,-0.09,"27 May, 2026",650.30,Jun 09 | 15:55
+ALL NSE,EVIET75588,ICICI EVIETF,ETF,Bullish,30.59,-0.10,"25 May, 2026",30.62,Jun 09 | 15:42
+ALL NSE,ALL01,Alldigi Tech,Stock,Very Bullish,827.25,-0.10,"25 May, 2026",828.05,Jun 09 | 15:48
+ALL NSE,DC11,Moneyboxx Finan,Stock,Bullish,72.45,-0.11,"08 Jun, 2026",72.53,Jun 09 | 15:44
+ALL NSE,ILF,ILandFS,Stock,Very Bullish,8.11,-0.12,"01 Jun, 2026",8.12,Jun 09 | 15:47
+ALL NSE,MII02,Manilam Industr,Stock,Bullish,61.90,-0.16,"08 Jun, 2026",62.00,Jun 09 | 15:31
+ALL NSE,AI74,Aether Ind.,Stock,Bullish,"1,135.00",-0.28,"05 Jun, 2026","1,138.20",Jun 09 | 15:48
+ALL NSE,BHV,Brigade Hotel,Stock,Bullish,63.13,-0.30,"08 Jun, 2026",63.32,Jun 09 | 15:48
+ALL NSE,GNP04,Groww Pri. Bank,ETF,Bullish,26.53,-0.38,"09 Jun, 2026",26.63,Jun 09 | 15:31
+ALL NSE,MCL05,Master Compo.,Stock,Very Bullish,349.00,-0.44,"05 Jun, 2026",350.55,Jun 09 | 15:31
+ALL NSE,ENI,Ent Network Ind,Stock,Bullish,115.12,-0.48,"08 Jun, 2026",115.68,Jun 09 | 15:43
+ALL NSE,UCCL,Unilex Colours ,Stock,Bullish,28.00,-0.53,"03 Jun, 2026",28.15,Jun 09 | 15:40
+ALL NSE,PP19,Premier Polyfil,Stock,Bullish,55.51,-0.64,"20 May, 2026",55.87,Jun 09 | 15:40
+ALL NSE,GAR,Gokul Agro,Stock,Very Bullish,233.90,-0.65,"27 May, 2026",235.44,Jun 09 | 15:58
+ALL NSE,JSFBL,Jana SFB,Stock,Bullish,475.15,-0.71,"25 May, 2026",478.55,Jun 09 | 15:55
+ALL NSE,MRO,Umiya Buildcon,Stock,Bullish,86.50,-0.76,"01 Jun, 2026",87.16,Jun 09 | 15:44
+ALL NSE,SPL02,Somany Ceramics,Stock,Bullish,498.30,-0.76,"19 May, 2026",502.10,Jun 09 | 15:57
+ALL NSE,MI02,Mafatlal Ind,Stock,Very Bullish,127.86,-0.97,"04 Jun, 2026",129.11,Jun 09 | 15:58
+ALL NSE,IGP,IG Petro,Stock,Bullish,435.60,-0.99,"03 Jun, 2026",439.95,Jun 09 | 15:55
+ALL NSE,HNSL,HRH Next,Stock,Bullish,29.70,-1.00,"05 Jun, 2026",30.00,Jun 09 | 15:31
+ALL NSE,MMG,Madhav Marbles,Stock,Very Bullish,37.05,-1.12,"09 Jun, 2026",37.47,Jun 09 | 15:31
+ALL NSE,SH17,Samhi Hotels,Stock,Bullish,160.66,-1.14,"25 May, 2026",162.51,Jun 09 | 15:59
+ALL NSE,T02,Texmaco Infra,Stock,Bullish,99.37,-1.17,"04 Jun, 2026",100.55,Jun 09 | 15:52
+ALL NSE,MONEX75716,MONEXT50,ETF,Bullish,69.77,-1.18,"25 May, 2026",70.60,Jun 09 | 15:31
+ALL NSE,SCH,Sanofi Consumer,Stock,Bullish,"4,713.30",-1.18,"03 Jun, 2026","4,769.80",Jun 09 | 15:52
+ALL NSE,HNN,HDFC NiftyNext,ETF,Bullish,71.44,-1.19,"25 May, 2026",72.30,Jun 09 | 15:31
+ALL NSE,MOS,MO S&P BSE Enh,ETF,Very Bullish,116.93,-1.31,"25 May, 2026",118.48,Jun 09 | 15:50
+ALL NSE,TVS03,TVS Srichakra,Stock,Very Bullish,"3,976.90",-1.32,"27 May, 2026","4,030.30",Jun 09 | 15:58
+ALL NSE,SWS,Sterling Wilson,Stock,Bullish,200.94,-1.34,"05 Jun, 2026",203.67,Jun 09 | 15:59
+ALL NSE,SBI24,SBI Nifty Nt50,ETF,Bullish,747.76,-1.35,"25 May, 2026",757.99,Jun 09 | 15:31
+ALL NSE,KIL07,Karnika Industr,Stock,Bullish,135.00,-1.39,"21 May, 2026",136.90,Jun 09 | 15:31
+ALL NSE,KIC02,Kalyani Invest,Stock,Bullish,"4,995.50",-1.40,"20 May, 2026","5,066.60",Jun 09 | 15:41
+ALL NSE,STI9,Sutlej Textiles,Stock,Very Bullish,36.81,-1.47,"21 May, 2026",37.36,Jun 09 | 15:55
+ALL NSE,CFC03,Camlin Fine,Stock,Very Bullish,133.05,-1.50,"05 Jun, 2026",135.08,Jun 09 | 15:58
+ALL NSE,STC,STC India,Stock,Very Bullish,121.22,-1.51,"27 May, 2026",123.08,Jun 09 | 15:49
+ALL NSE,LA01,Lorenzini Appar,Stock,Very Bullish,7.46,-1.58,"01 Jun, 2026",7.58,Jun 09 | 15:46
+ALL NSE,AT14,Aptech,Stock,Very Bullish,110.18,-1.62,"25 May, 2026",112.00,Jun 09 | 15:59
+ALL NSE,DCCL,Dar Credit,Stock,Very Bullish,41.80,-1.65,"05 Jun, 2026",42.50,Jun 09 | 15:31
+ALL NSE,LEC02,Lotus Eye Care,Stock,Very Bullish,122.39,-1.79,"05 Jun, 2026",124.62,Jun 09 | 15:51
+ALL NSE,JJT,Jay Jalaram,Stock,Bullish,134.00,-1.83,"08 Jun, 2026",136.50,Jun 09 | 15:31
+ALL NSE,BCP,Biofil Chem,Stock,Very Bullish,36.21,-1.92,"26 May, 2026",36.92,Jun 09 | 15:51
+ALL NSE,NBG,Nath Bio-Genes,Stock,Bullish,169.37,-2.00,"22 May, 2026",172.83,Jun 09 | 15:46
+ALL NSE,IT05,InfoBeans Tech,Stock,Very Bullish,174.56,-2.13,"02 Jun, 2026",178.35,Jun 09 | 15:58
+ALL NSE,VSI01,Vishwaraj Sugar,Stock,Very Bullish,5.74,-2.21,"01 Jun, 2026",5.87,Jun 09 | 15:49
+ALL NSE,GGC,Gujarat Gas,Stock,Bullish,392.15,-2.24,"29 May, 2026",401.15,Jun 09 | 15:55
+ALL NSE,IC07,Iris Clothings ,Stock,Bullish,36.03,-2.25,"03 Jun, 2026",36.86,Jun 09 | 15:45
+ALL NSE,HCD,Hathway Cable,Stock,Bullish,10.82,-2.35,"05 Jun, 2026",11.08,Jun 09 | 15:57
+ALL NSE,U,Unitech,Stock,Bullish,4.94,-2.37,"04 Jun, 2026",5.06,Jun 09 | 15:59
+ALL NSE,TGT,The Grob Tea,Stock,Bullish,893.50,-2.56,"09 Jun, 2026",917.00,Jun 09 | 15:31
+ALL NSE,OPL02,Oswal Pumps,Stock,Very Bullish,401.60,-2.69,"05 Jun, 2026",412.70,Jun 09 | 15:58
+ALL NSE,ARVIN54248,AFL,Stock,Bullish,453.05,-2.70,"25 May, 2026",465.60,Jun 09 | 15:55
+ALL NSE,VGI03,Virtual Galaxy ,Stock,Very Bullish,153.40,-2.79,"05 Jun, 2026",157.80,Jun 09 | 15:53
+ALL NSE,GWI,Grauer and Weil,Stock,Bullish,74.42,-2.96,"05 Jun, 2026",76.69,Jun 09 | 15:58
+ALL NSE,KHF01,KHFM HOSPITALIT,Stock,Very Bullish,60.90,-3.03,"20 May, 2026",62.80,Jun 09 | 15:31
+ALL NSE,MS24,Manaksia Steels,Stock,Bullish,66.81,-3.06,"25 May, 2026",68.92,Jun 09 | 15:40
+ALL NSE,AFH,Arihant Found,Stock,Very Bullish,828.75,-3.07,"09 Jun, 2026",855.00,Jun 09 | 15:31
+ALL NSE,CPD,Creative New,Stock,Very Bullish,696.45,-3.16,"08 Jun, 2026",719.20,Jun 09 | 15:55
+ALL NSE,DP12,Dynemic Product,Stock,Bullish,249.05,-3.19,"29 May, 2026",257.25,Jun 09 | 15:44
+ALL NSE,MI55,Mask Investment,Stock,Bullish,148.02,-3.25,"09 Jun, 2026",153.00,Jun 09 | 15:31
+ALL NSE,MMEL,Moving Media,Stock,Very Bullish,35.35,-3.81,"04 Jun, 2026",36.75,Jun 09 | 15:31
+ALL NSE,IMP02,Ind Motor Parts,Stock,Bullish,"1,073.00",-3.97,"21 May, 2026","1,117.40",Jun 09 | 15:53
+ALL NSE,MF23,Megastar Foods,Stock,Bullish,296.65,-3.97,"02 Jun, 2026",308.90,Jun 09 | 15:46
+ALL NSE,JLS,JFL Life Scienc,Stock,Bullish,9.90,-4.35,"03 Jun, 2026",10.35,Jun 09 | 15:43
+ALL NSE,OC13,Ortel Comm,Stock,Bullish,1.67,-4.57,"08 Jun, 2026",1.75,Jun 09 | 15:45
+ALL NSE,BBR,Agarwal Ind,Stock,Very Bullish,479.30,-4.76,"04 Jun, 2026",503.25,Jun 09 | 15:55
+ALL NSE,VIP,VIP Industries,Stock,Bullish,316.25,-4.83,"01 Jun, 2026",332.30,Jun 09 | 15:55
+ALL NSE,MRI03,MCON Rasayan,Stock,Bullish,49.80,-4.96,"08 Jun, 2026",52.40,Jun 09 | 15:40
+ALL NSE,UMI02,Usha Martin Edu,Stock,Bullish,5.47,-5.36,"29 May, 2026",5.78,Jun 09 | 15:43
+ALL NSE,PAC01,Primo Chemicals,Stock,Very Bullish,24.67,-5.52,"05 Jun, 2026",26.11,Jun 09 | 15:57
+ALL NSE,SGI01,Synergy Green I,Stock,Bullish,556.65,-5.96,"02 Jun, 2026",591.90,Jun 09 | 15:42
+ALL NSE,SA15,Sagardeep Alloy,Stock,Bullish,25.26,-6.20,"25 May, 2026",26.93,Jun 09 | 15:54
+ALL NSE,LIL05,Lamosaic India,Stock,Bullish,27.85,-6.23,"03 Jun, 2026",29.70,Jun 09 | 15:47
+ALL NSE,PETL,Protean eGov,Stock,Bullish,611.00,-6.60,"21 May, 2026",654.20,Jun 09 | 15:53
+ALL NSE,BCF03,SINDHUTRAD,Stock,Bullish,25.06,-6.60,"20 May, 2026",26.83,Jun 09 | 15:55
+ALL NSE,AI29,AksharChem,Stock,Bullish,211.94,-7.10,"03 Jun, 2026",228.15,Jun 09 | 15:48
+ALL NSE,VCL03,Voler Car,Stock,Bullish,236.90,-8.78,"08 Jun, 2026",259.70,Jun 09 | 15:51
+ALL NSE,KCP02,Nitta Gelatin,Stock,Very Bullish,"1,471.00",-10.41,"02 Jun, 2026","1,642.00",Jun 09 | 15:59
+FNO,AT18,Adani Energy,Stock,Very Bullish,"1,579.20",59.30,"06 Apr, 2026",991.35,Jun 09 | 15:59
+FNO,GEC,GE Vernova TD,Stock,Very Bullish,"4,931.00",29.50,"18 Mar, 2026","3,807.70",Jun 09 | 15:59
+SMALLCAP,DG01,ConfidencePetro,Stock,Very Bullish,75.50,106.28,"18 Mar, 2026",36.60,Jun 09 | 15:57
+SMALLCAP,MT14,MTAR Tech,Stock,Very Bullish,"7,458.00",105.71,"17 Mar, 2026","3,625.50",Jun 09 | 15:59
+SMALLCAP,ATS01,Anlon Tech,Stock,Very Bullish,691.10,74.41,"06 Apr, 2026",396.25,Jun 09 | 15:59
+SMALLCAP,AT23,Avalon Tech,Stock,Very Bullish,"1,639.50",70.34,"06 Apr, 2026",962.50,Jun 09 | 15:55
+SMALLCAP,RRM01,Raghav Product,Stock,Very Bullish,"1,170.50",66.93,"10 Apr, 2026",701.20,Jun 09 | 15:54
+SMALLCAP,LSI01,Lloyds Engineer,Stock,Very Bullish,71.78,57.07,"07 Apr, 2026",45.70,Jun 09 | 15:55
+SMALLCAP,RRL04,Rubicon Res,Stock,Very Bullish,"1,170.50",49.50,"20 Mar, 2026",782.95,Jun 09 | 15:56
+SMALLCAP,EIRL,Effwa Infra R,Stock,Very Bullish,316.30,46.54,"07 Apr, 2026",215.85,Jun 09 | 15:52
+SMALLCAP,GPI06,Global Pet Ind,Stock,Very Bullish,158.50,45.48,"17 Apr, 2026",108.95,Jun 09 | 15:31
+SMALLCAP,MDL,Marvel Decor,Stock,Bullish,73.95,42.21,"26 May, 2026",52.00,Jun 09 | 15:31
+SMALLCAP,MW01,Mangalam World,Stock,Very Bullish,377.50,42.10,"09 Apr, 2026",265.65,Jun 09 | 15:31
+SMALLCAP,SPL12,Senores Pharma,Stock,Very Bullish,"1,094.50",40.18,"25 Mar, 2026",780.80,Jun 09 | 15:59
+SMALLCAP,DNT,De Neers Tools,Stock,Very Bullish,225.95,38.62,"27 Apr, 2026",163.00,Jun 09 | 15:31
+SMALLCAP,VEL01,Vivid Electro,Stock,Bullish,"1,000.10",36.28,"04 May, 2026",733.85,Jun 09 | 15:47
+SMALLCAP,RI46,Rishabh Instru,Stock,Very Bullish,525.20,31.70,"06 Apr, 2026",398.80,Jun 09 | 15:55
+SMALLCAP,NR03,Nupur Rec,Stock,Very Bullish,76.19,31.18,"26 May, 2026",58.08,Jun 09 | 15:31
+SMALLCAP,MDN,Mishra Dhatu,Stock,Very Bullish,450.35,29.17,"15 Apr, 2026",348.65,Jun 09 | 15:59
+SMALLCAP,VIT02,Vinyas,Stock,Very Bullish,"1,388.60",25.44,"27 May, 2026","1,106.95",Jun 09 | 15:31
+SMALLCAP,PA09,Proventus,Stock,Bullish,"1,480.00",23.33,"07 Apr, 2026","1,200.00",Jun 09 | 15:40
+SMALLCAP,DEL05,Diffusion Eng,Stock,Very Bullish,330.80,22.71,"01 Apr, 2026",269.57,Jun 09 | 15:57
+SMALLCAP,SK02,Stove Kraft,Stock,Very Bullish,664.50,19.26,"22 May, 2026",557.20,Jun 09 | 15:55
+SMALLCAP,SE30,Sansera Eng,Stock,Very Bullish,"2,961.40",19.11,"20 May, 2026","2,486.20",Jun 09 | 15:53
+SMALLCAP,EMI,Procter Gamble,Stock,Very Bullish,"6,212.50",19.01,"13 May, 2026","5,220.00",Jun 09 | 15:59
+SMALLCAP,PC26,Party Cruisers,Stock,Very Bullish,102.50,18.91,"01 Apr, 2026",86.20,Jun 09 | 15:31
+SMALLCAP,KIO01,Krishna Inst.,Stock,Very Bullish,781.60,15.89,"27 Apr, 2026",674.45,Jun 09 | 15:56
+SMALLCAP,MAB01,Mirae Defence,ETF,Very Bullish,76.21,14.50,"08 Apr, 2026",66.56,Jun 09 | 15:55
+SMALLCAP,WI03,Welspun Living,Stock,Very Bullish,142.44,14.17,"15 Apr, 2026",124.76,Jun 09 | 15:58
+SMALLCAP,CT09,CarTrade Tech,Stock,Bullish,"2,187.60",11.52,"03 Jun, 2026","1,961.70",Jun 09 | 15:59
+SMALLCAP,BTC02,BB Triplewall ,Stock,Very Bullish,228.49,9.78,"27 May, 2026",208.13,Jun 09 | 15:48
+SMALLCAP,EPM01,Emami Paper,Stock,Very Bullish,85.53,7.27,"20 May, 2026",79.73,Jun 09 | 15:40
+SMALLCAP,ETL01,Exicom Tele,Stock,Very Bullish,147.37,6.86,"21 May, 2026",137.91,Jun 09 | 15:59
+SMALLCAP,GNP02,Gr PSU Bank,ETF,Bullish,85.45,3.88,"03 Jun, 2026",82.26,Jun 09 | 15:31
+SMALLCAP,MTL07,Macobs Tech,Stock,Bullish,224.00,3.49,"29 Apr, 2026",216.45,Jun 09 | 15:31
+SMALLCAP,ADP03,Akums Drugs P,Stock,Very Bullish,548.25,3.02,"26 May, 2026",532.20,Jun 09 | 15:59
+SMALLCAP,WB01,Windlas Biotech,Stock,Bullish,835.40,2.60,"08 Jun, 2026",814.20,Jun 09 | 15:44
+SMALLCAP,GBH,Gr BSEHospital,ETF,Bullish,52.05,2.18,"05 Jun, 2026",50.94,Jun 09 | 15:50
+SMALLCAP,MML07,Muthoot Micro,Stock,Bullish,183.40,2.12,"02 Jun, 2026",179.60,Jun 09 | 15:51
+SMALLCAP,NEML,Namo Ewaste,Stock,Bullish,225.80,1.28,"25 May, 2026",222.95,Jun 09 | 15:40
+SMALLCAP,ZN8,Zer 8-13Y Gsec,ETF,Very Bullish,30.03,0.81,"27 May, 2026",29.79,Jun 09 | 15:31
+SMALLCAP,FFS05,Finbud Fin,Stock,Bullish,125.00,0.81,"09 Jun, 2026",124.00,Jun 09 | 15:31
+SMALLCAP,MAN10,MA Healthcare,ETF,Bullish,20.05,0.45,"08 Jun, 2026",19.96,Jun 09 | 15:31
+SMALLCAP,PII04,PowerGrid InvIT,Stock,Very Bullish,93.57,0.41,"05 Jun, 2026",93.19,Jun 09 | 15:59
+SMALLCAP,DNS,DSP Smallcp250,ETF,Bullish,17.04,0.35,"25 May, 2026",16.98,Jun 09 | 15:53
+SMALLCAP,RLL01,Raymond Life,Stock,Bullish,780.60,0.00,"09 Jun, 2026",780.60,Jun 09 | 15:56
+SMALLCAP,PM10,Precision Metal,Stock,Bullish,8.15,0.00,"09 Jun, 2026",8.15,Jun 09 | 15:58
+SMALLCAP,OBC01,Orissa Bengal,Stock,Bullish,58.71,0.00,"09 Jun, 2026",58.71,Jun 09 | 15:45
+SMALLCAP,HEP,HPL Electric ,Stock,Bullish,362.80,0.00,"09 Jun, 2026",362.80,Jun 09 | 15:56
+SMALLCAP,AI74,Aether Ind,Stock,Bullish,"1,135.00",-0.28,"05 Jun, 2026","1,138.20",Jun 09 | 15:48
+SMALLCAP,KIL07,Karnika Ind,Stock,Bullish,135.00,-1.39,"21 May, 2026",136.90,Jun 09 | 15:31
+SMALLCAP,BJH,Blue Jet,Stock,Bullish,467.90,-1.62,"04 Jun, 2026",475.60,Jun 09 | 15:59
+SMALLCAP,PP36,Paradeep Phosp,Stock,Bullish,126.26,-1.83,"25 May, 2026",128.61,Jun 09 | 15:57
+SMALLCAP,BCF03,Sindhu Trade,Stock,Bullish,25.06,-6.60,"20 May, 2026",26.83,Jun 09 | 15:55
