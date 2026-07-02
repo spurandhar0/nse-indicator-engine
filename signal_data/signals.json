@@ -37888,5 +37888,55 @@
     "neutral_count": 2,
     "total_count": 37,
     "bullish_pct": 94.6
+  },
+  {
+    "symbol": "ADANIPORTS",
+    "signal_date": "2026-07-02",
+    "close": 1883.2,
+    "bullish_count": 88,
+    "bearish_count": 1,
+    "neutral_count": 7,
+    "total_count": 96,
+    "bullish_pct": 91.7
+  },
+  {
+    "symbol": "ACC",
+    "signal_date": "2026-07-02",
+    "close": 1350.7,
+    "bullish_count": 72,
+    "bearish_count": 1,
+    "neutral_count": 6,
+    "total_count": 79,
+    "bullish_pct": 91.1
+  },
+  {
+    "symbol": "AMBUJACEM",
+    "signal_date": "2026-07-02",
+    "close": 428.95,
+    "bullish_count": 93,
+    "bearish_count": 1,
+    "neutral_count": 7,
+    "total_count": 101,
+    "bullish_pct": 92.1
+  },
+  {
+    "symbol": "APOLLOHOSP",
+    "signal_date": "2026-07-02",
+    "close": 8696.0,
+    "bullish_count": 68,
+    "bearish_count": 0,
+    "neutral_count": 4,
+    "total_count": 72,
+    "bullish_pct": 94.4
+  },
+  {
+    "symbol": "AAVAS",
+    "signal_date": "2026-07-02",
+    "close": 1503.9,
+    "bullish_count": 62,
+    "bearish_count": 1,
+    "neutral_count": 3,
+    "total_count": 66,
+    "bullish_pct": 93.9
   }
 ]
