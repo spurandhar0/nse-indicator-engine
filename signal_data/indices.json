@@ -1,55 +1,55 @@
 {
-  "updated": "31 Jul 2026 18:45 IST",
+  "updated": "03 Aug 2026 19:27 IST",
   "indices": [
     {
       "name": "Nifty 50",
       "symbol": "^NSEI",
       "color": "#4fc3f7",
-      "price": 24383.6,
-      "prev": 24317.15,
-      "change": 66.45,
-      "change_pct": 0.27,
-      "time": "31 Jul 2026 15:31"
+      "price": 24774.3,
+      "prev": 24383.6,
+      "change": 390.7,
+      "change_pct": 1.6,
+      "time": "03 Aug 2026 15:31"
     },
     {
       "name": "Sensex",
       "symbol": "^BSESN",
       "color": "#81c784",
-      "price": 78094.64,
-      "prev": 77928.15,
-      "change": 166.49,
-      "change_pct": 0.21,
-      "time": "31 Jul 2026 15:31"
+      "price": 78639.03,
+      "prev": 78094.64,
+      "change": 544.39,
+      "change_pct": 0.7,
+      "time": "03 Aug 2026 15:32"
     },
     {
       "name": "Nifty Bank",
       "symbol": "^NSEBANK",
       "color": "#ffb74d",
-      "price": 57264.85,
-      "prev": 57147.5,
-      "change": 117.35,
-      "change_pct": 0.21,
-      "time": "31 Jul 2026 15:31"
+      "price": 58247.95,
+      "prev": 57264.85,
+      "change": 983.1,
+      "change_pct": 1.72,
+      "time": "03 Aug 2026 15:31"
     },
     {
       "name": "Nifty IT",
       "symbol": "^CNXIT",
       "color": "#ce93d8",
-      "price": 30708.9,
-      "prev": 31194.55,
-      "change": -485.65,
-      "change_pct": -1.56,
-      "time": "31 Jul 2026 15:31"
+      "price": 31715.25,
+      "prev": 30708.95,
+      "change": 1006.3,
+      "change_pct": 3.28,
+      "time": "03 Aug 2026 15:31"
     },
     {
       "name": "Nifty Midcap50",
       "symbol": "^NSMIDCP",
       "color": "#80cbc4",
-      "price": 73651.3,
-      "prev": 72698.95,
-      "change": 952.35,
-      "change_pct": 1.31,
-      "time": "31 Jul 2026 15:31"
+      "price": 74608.7,
+      "prev": 73651.3,
+      "change": 957.4,
+      "change_pct": 1.3,
+      "time": "03 Aug 2026 15:31"
     }
   ]
 }
