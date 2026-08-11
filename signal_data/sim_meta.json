@@ -1,16 +1,16 @@
 {
-  "last_run": "2026-08-10 12:08 IST",
-  "last_trade_day": "2026-08-10",
-  "total_signals": 7522,
+  "last_run": "2026-08-11 12:06 IST",
+  "last_trade_day": "2026-08-11",
+  "total_signals": 7658,
   "open_count": 351,
-  "closed_count": 639,
+  "closed_count": 652,
   "fe_count": 320,
-  "profit_count": 624,
+  "profit_count": 637,
   "loss_count": 15,
   "win_rate": 97.7,
   "avg_gain_pct": 10.0,
   "avg_loss_pct": -25.0,
-  "new_exits": 19,
-  "new_buys_added": 4,
-  "new_positions": 19
+  "new_exits": 13,
+  "new_buys_added": 3,
+  "new_positions": 13
 }
