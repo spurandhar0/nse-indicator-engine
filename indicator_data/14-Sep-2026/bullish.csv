@@ -611,7 +611,6 @@ ALL NSE,ZLSL,BlackBuck,Stock,Very Bullish,628.15,8.74,"07 Aug, 2026",577.65,Sep 
 ALL NSE,PF13,Prime Focus,Stock,Very Bullish,310.85,8.59,"18 Aug, 2026",286.25,Sep 11 | 16:08
 ALL NSE,ILF,ILandFS,Stock,Bullish,9.11,8.58,"27 Aug, 2026",8.39,Sep 11 | 16:08
 ALL NSE,ETL01,Exicom Tele-Sys,Stock,Very Bullish,182.28,8.55,"28 Aug, 2026",167.93,Sep 11 | 16:08
-ALL NSE,GNS01,GROWWSC250,ETF,Bullish,10.64,8.35,"12 Jun, 2026",9.82,Sep 11 | 15:31
 ALL NSE,NHSL,Nephrocare Heal,Stock,Bullish,765.35,8.29,"03 Sep, 2026",706.75,Sep 11 | 16:08
 ALL NSE,BH02,Benares Hotels,Stock,Bullish,"11,085.00",8.15,"08 Sep, 2026","10,250.00",Sep 11 | 16:08
 ALL NSE,U02,Utssav CZ Gold ,Stock,Very Bullish,531.45,8.15,"07 Sep, 2026",491.40,Sep 11 | 15:53
@@ -832,7 +831,6 @@ ALL NSE,AV02,Aditya Vision,Stock,Bullish,616.45,0.30,"08 Sep, 2026",614.60,Sep 1
 ALL NSE,RM,Rane Holdings,Stock,Very Bullish,"1,696.20",0.26,"08 Sep, 2026","1,691.80",Sep 11 | 16:08
 ALL NSE,STL09,Sanathan Textil,Stock,Very Bullish,472.10,0.25,"07 Sep, 2026",470.90,Sep 11 | 16:08
 ALL NSE,JGE,Juniper Green,Stock,Bullish,265.35,0.22,"31 Aug, 2026",264.78,Sep 11 | 16:08
-ALL NSE,BBE02,BB Apr 32 ETF,ETF,Bullish,"1,350.41",0.18,"11 Sep, 2026","1,348.00",Sep 11 | 15:31
 ALL NSE,DI27,Dollar Ind,Stock,Very Bullish,273.55,0.16,"09 Sep, 2026",273.10,Sep 11 | 16:08
 ALL NSE,IFL02,IBL Finance,Stock,Very Bullish,61.00,0.16,"07 Sep, 2026",60.90,Sep 11 | 16:08
 ALL NSE,A09,S P Apparels,Stock,Bullish,"1,023.00",0.10,"28 Aug, 2026","1,022.00",Sep 11 | 16:08
@@ -862,6 +860,7 @@ ALL NSE,MA02,Mukta Arts,Stock,Very Bullish,58.57,0.00,"11 Sep, 2026",58.57,Sep 1
 ALL NSE,MA01,MAJESAUT,Stock,Bullish,366.70,0.00,"11 Sep, 2026",366.70,Sep 11 | 16:08
 ALL NSE,SFS03,Sumedha Fiscal,Stock,Bullish,41.40,0.00,"11 Sep, 2026",41.40,Sep 11 | 16:08
 ALL NSE,HTL02,HVAX Technologi,Stock,Bullish,669.00,0.00,"11 Sep, 2026",669.00,Sep 11 | 16:08
+ALL NSE,BBE02,BB Apr 32 ETF,ETF,Very Bullish,"1,350.41",0.00,"11 Sep, 2026","1,350.41",Sep 11 | 15:31
 ALL NSE,SI26,Singer India,Stock,Bullish,76.16,0.00,"11 Sep, 2026",76.16,Sep 11 | 16:08
 ALL NSE,KOE,Kirloskar Ind,Stock,Very Bullish,"3,828.30",0.00,"11 Sep, 2026","3,828.30",Sep 11 | 16:08
 ALL NSE,ASS01,Awfis Space Sol,Stock,Bullish,293.20,0.00,"11 Sep, 2026",293.20,Sep 11 | 16:08
@@ -901,7 +900,6 @@ ALL NSE,SPCL,Shivalic Power ,Stock,Bullish,64.70,0.00,"11 Sep, 2026",64.70,Sep 1
 ALL NSE,SIS02,Sika Interplant,Stock,Bullish,"1,085.55",0.00,"11 Sep, 2026","1,085.55",Sep 11 | 16:08
 ALL NSE,YOL,Yash Optics & L,Stock,Very Bullish,121.85,0.00,"11 Sep, 2026",121.85,Sep 11 | 16:08
 ALL NSE,SGB30,SGBOC28VII,Stock,Bullish,"15,199.00",0.00,"11 Sep, 2026","15,199.00",Sep 11 | 16:08
-ALL NSE,ABSLL14518,ABSLLIQUID,ETF,Bullish,"1,000.00",-0.00,"11 Sep, 2026","1,000.01",Sep 11 | 15:31
 ALL NSE,LOI01,Laxmi Organic,Stock,Bullish,175.56,-0.01,"03 Sep, 2026",175.58,Sep 11 | 16:08
 ALL NSE,EIL05,EPW India,Stock,Very Bullish,255.00,-0.02,"10 Sep, 2026",255.05,Sep 11 | 15:31
 ALL NSE,SR04,Speciality Rest,Stock,Very Bullish,141.70,-0.04,"10 Sep, 2026",141.76,Sep 11 | 16:08
@@ -962,10 +960,8 @@ ALL NSE,ARG,TARC,Stock,Very Bullish,131.39,-2.60,"07 Sep, 2026",134.90,Sep 11 | 
 ALL NSE,ZGS,Zeal Global,Stock,Bullish,76.55,-2.61,"07 Sep, 2026",78.60,Sep 11 | 15:50
 ALL NSE,SC,Sundaram-Clayto,Stock,Very Bullish,"13,024.00",-2.64,"08 Sep, 2026","13,377.00",Sep 11 | 16:08
 ALL NSE,SG05,Shilp Gravures,Stock,Bullish,163.94,-2.65,"10 Sep, 2026",168.40,Sep 11 | 15:56
-ALL NSE,PE09,Pulz Electronic,Stock,Bullish,23.95,-3.04,"10 Sep, 2026",24.70,Sep 11 | 15:31
 ALL NSE,TMR,Heads UP Vent,Stock,Bullish,6.99,-3.05,"04 Sep, 2026",7.21,Sep 11 | 16:08
 ALL NSE,JP09,Jindal PolyFilm,Stock,Very Bullish,671.30,-3.33,"01 Sep, 2026",694.45,Sep 11 | 16:08
-ALL NSE,NT02,EQUIPPP,Stock,Very Bullish,22.57,-3.51,"19 Aug, 2026",23.39,Sep 11 | 15:31
 ALL NSE,TGS01,Expleo Solution,Stock,Very Bullish,889.50,-3.63,"17 Aug, 2026",923.05,Sep 11 | 16:08
 ALL NSE,KP12,Kothari Petro,Stock,Bullish,138.57,-3.96,"08 Sep, 2026",144.29,Sep 11 | 16:08
 ALL NSE,RIP01,RPP Infra Proj,Stock,Bullish,60.34,-4.27,"10 Sep, 2026",63.03,Sep 11 | 16:08
