@@ -111718,5 +111718,515 @@
     "neutral_count": 4,
     "total_count": 74,
     "bullish_pct": 93.2
+  },
+  {
+    "symbol": "MRPL",
+    "signal_date": "2026-09-29",
+    "close": 171.65,
+    "bullish_count": 52,
+    "bearish_count": 0,
+    "neutral_count": 5,
+    "total_count": 57,
+    "bullish_pct": 91.2
+  },
+  {
+    "symbol": "INFY",
+    "signal_date": "2026-09-29",
+    "close": 1015.4,
+    "bullish_count": 160,
+    "bearish_count": 6,
+    "neutral_count": 11,
+    "total_count": 177,
+    "bullish_pct": 90.4
+  },
+  {
+    "symbol": "VBL",
+    "signal_date": "2026-09-29",
+    "close": 430.0,
+    "bullish_count": 98,
+    "bearish_count": 2,
+    "neutral_count": 5,
+    "total_count": 105,
+    "bullish_pct": 93.3
+  },
+  {
+    "symbol": "ITC",
+    "signal_date": "2026-09-29",
+    "close": 265.1,
+    "bullish_count": 85,
+    "bearish_count": 2,
+    "neutral_count": 5,
+    "total_count": 92,
+    "bullish_pct": 92.4
+  },
+  {
+    "symbol": "BANDHANBNK",
+    "signal_date": "2026-09-29",
+    "close": 185.31,
+    "bullish_count": 65,
+    "bearish_count": 1,
+    "neutral_count": 3,
+    "total_count": 69,
+    "bullish_pct": 94.2
+  },
+  {
+    "symbol": "HINDPETRO",
+    "signal_date": "2026-09-29",
+    "close": 349.2,
+    "bullish_count": 96,
+    "bearish_count": 6,
+    "neutral_count": 2,
+    "total_count": 104,
+    "bullish_pct": 92.3
+  },
+  {
+    "symbol": "DELHIVERY",
+    "signal_date": "2026-09-29",
+    "close": 417.4,
+    "bullish_count": 96,
+    "bearish_count": 3,
+    "neutral_count": 7,
+    "total_count": 106,
+    "bullish_pct": 90.6
+  },
+  {
+    "symbol": "PPLPHARMA",
+    "signal_date": "2026-09-29",
+    "close": 209.07,
+    "bullish_count": 61,
+    "bearish_count": 1,
+    "neutral_count": 2,
+    "total_count": 64,
+    "bullish_pct": 95.3
+  },
+  {
+    "symbol": "IPCALAB",
+    "signal_date": "2026-09-29",
+    "close": 1938.1,
+    "bullish_count": 73,
+    "bearish_count": 1,
+    "neutral_count": 4,
+    "total_count": 78,
+    "bullish_pct": 93.6
+  },
+  {
+    "symbol": "SHRIPISTON",
+    "signal_date": "2026-09-29",
+    "close": 4749.2,
+    "bullish_count": 29,
+    "bearish_count": 0,
+    "neutral_count": 3,
+    "total_count": 32,
+    "bullish_pct": 90.6
+  },
+  {
+    "symbol": "SONACOMS",
+    "signal_date": "2026-09-29",
+    "close": 815.65,
+    "bullish_count": 44,
+    "bearish_count": 0,
+    "neutral_count": 4,
+    "total_count": 48,
+    "bullish_pct": 91.7
+  },
+  {
+    "symbol": "SBILIFE",
+    "signal_date": "2026-09-29",
+    "close": 1735.0,
+    "bullish_count": 101,
+    "bearish_count": 4,
+    "neutral_count": 4,
+    "total_count": 109,
+    "bullish_pct": 92.7
+  },
+  {
+    "symbol": "TORNTPHARM",
+    "signal_date": "2026-09-29",
+    "close": 4894.0,
+    "bullish_count": 65,
+    "bearish_count": 0,
+    "neutral_count": 5,
+    "total_count": 70,
+    "bullish_pct": 92.9
+  },
+  {
+    "symbol": "TBOTEK",
+    "signal_date": "2026-09-29",
+    "close": 1684.7,
+    "bullish_count": 42,
+    "bearish_count": 1,
+    "neutral_count": 2,
+    "total_count": 45,
+    "bullish_pct": 93.3
+  },
+  {
+    "symbol": "CYIENTDLM",
+    "signal_date": "2026-09-29",
+    "close": 921.15,
+    "bullish_count": 88,
+    "bearish_count": 0,
+    "neutral_count": 6,
+    "total_count": 94,
+    "bullish_pct": 93.6
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "signal_date": "2026-09-29",
+    "close": 406.0,
+    "bullish_count": 138,
+    "bearish_count": 2,
+    "neutral_count": 6,
+    "total_count": 146,
+    "bullish_pct": 94.5
+  },
+  {
+    "symbol": "TATASTEEL",
+    "signal_date": "2026-09-29",
+    "close": 188.0,
+    "bullish_count": 76,
+    "bearish_count": 1,
+    "neutral_count": 5,
+    "total_count": 82,
+    "bullish_pct": 92.7
+  },
+  {
+    "symbol": "AXISBANK",
+    "signal_date": "2026-09-29",
+    "close": 1212.1,
+    "bullish_count": 179,
+    "bearish_count": 6,
+    "neutral_count": 2,
+    "total_count": 187,
+    "bullish_pct": 95.7
+  },
+  {
+    "symbol": "FINEORG",
+    "signal_date": "2026-09-29",
+    "close": 5140.0,
+    "bullish_count": 59,
+    "bearish_count": 1,
+    "neutral_count": 4,
+    "total_count": 64,
+    "bullish_pct": 92.2
+  },
+  {
+    "symbol": "INDIGO",
+    "signal_date": "2026-09-29",
+    "close": 4872.0,
+    "bullish_count": 139,
+    "bearish_count": 3,
+    "neutral_count": 6,
+    "total_count": 148,
+    "bullish_pct": 93.9
+  },
+  {
+    "symbol": "SUNPHARMA",
+    "signal_date": "2026-09-29",
+    "close": 1865.0,
+    "bullish_count": 117,
+    "bearish_count": 4,
+    "neutral_count": 4,
+    "total_count": 125,
+    "bullish_pct": 93.6
+  },
+  {
+    "symbol": "COALINDIA",
+    "signal_date": "2026-09-29",
+    "close": 425.0,
+    "bullish_count": 94,
+    "bearish_count": 0,
+    "neutral_count": 3,
+    "total_count": 97,
+    "bullish_pct": 96.9
+  },
+  {
+    "symbol": "ICICIGI",
+    "signal_date": "2026-09-29",
+    "close": 1515.0,
+    "bullish_count": 85,
+    "bearish_count": 1,
+    "neutral_count": 4,
+    "total_count": 90,
+    "bullish_pct": 94.4
+  },
+  {
+    "symbol": "WESTLIFE",
+    "signal_date": "2026-09-29",
+    "close": 596.6,
+    "bullish_count": 70,
+    "bearish_count": 1,
+    "neutral_count": 4,
+    "total_count": 75,
+    "bullish_pct": 93.3
+  },
+  {
+    "symbol": "MAHLIFE",
+    "signal_date": "2026-09-29",
+    "close": 361.0,
+    "bullish_count": 48,
+    "bearish_count": 2,
+    "neutral_count": 2,
+    "total_count": 52,
+    "bullish_pct": 92.3
+  },
+  {
+    "symbol": "CIPLA",
+    "signal_date": "2026-09-29",
+    "close": 1379.3,
+    "bullish_count": 100,
+    "bearish_count": 5,
+    "neutral_count": 6,
+    "total_count": 111,
+    "bullish_pct": 90.1
+  },
+  {
+    "symbol": "MAHLOG",
+    "signal_date": "2026-09-29",
+    "close": 425.7,
+    "bullish_count": 94,
+    "bearish_count": 2,
+    "neutral_count": 5,
+    "total_count": 101,
+    "bullish_pct": 93.1
+  },
+  {
+    "symbol": "HINDALCO",
+    "signal_date": "2026-09-29",
+    "close": 955.2,
+    "bullish_count": 113,
+    "bearish_count": 7,
+    "neutral_count": 3,
+    "total_count": 123,
+    "bullish_pct": 91.9
+  },
+  {
+    "symbol": "MGL",
+    "signal_date": "2026-09-29",
+    "close": 1050.5,
+    "bullish_count": 95,
+    "bearish_count": 6,
+    "neutral_count": 4,
+    "total_count": 105,
+    "bullish_pct": 90.5
+  },
+  {
+    "symbol": "AUROPHARMA",
+    "signal_date": "2026-09-29",
+    "close": 1697.7,
+    "bullish_count": 95,
+    "bearish_count": 0,
+    "neutral_count": 5,
+    "total_count": 100,
+    "bullish_pct": 95.0
+  },
+  {
+    "symbol": "JSWINFRA",
+    "signal_date": "2026-09-29",
+    "close": 350.0,
+    "bullish_count": 66,
+    "bearish_count": 1,
+    "neutral_count": 6,
+    "total_count": 73,
+    "bullish_pct": 90.4
+  },
+  {
+    "symbol": "HDFCBANK",
+    "signal_date": "2026-09-29",
+    "close": 722.7,
+    "bullish_count": 205,
+    "bearish_count": 1,
+    "neutral_count": 4,
+    "total_count": 210,
+    "bullish_pct": 97.6
+  },
+  {
+    "symbol": "ULTRACEMCO",
+    "signal_date": "2026-09-29",
+    "close": 10829.0,
+    "bullish_count": 186,
+    "bearish_count": 5,
+    "neutral_count": 6,
+    "total_count": 197,
+    "bullish_pct": 94.4
+  },
+  {
+    "symbol": "ICICIBANK",
+    "signal_date": "2026-09-29",
+    "close": 1292.2,
+    "bullish_count": 150,
+    "bearish_count": 7,
+    "neutral_count": 6,
+    "total_count": 163,
+    "bullish_pct": 92.0
+  },
+  {
+    "symbol": "PERSISTENT",
+    "signal_date": "2026-09-29",
+    "close": 5162.0,
+    "bullish_count": 135,
+    "bearish_count": 11,
+    "neutral_count": 3,
+    "total_count": 149,
+    "bullish_pct": 90.6
+  },
+  {
+    "symbol": "JINDALSTEL",
+    "signal_date": "2026-09-29",
+    "close": 1130.0,
+    "bullish_count": 94,
+    "bearish_count": 3,
+    "neutral_count": 5,
+    "total_count": 102,
+    "bullish_pct": 92.2
+  },
+  {
+    "symbol": "ADANIPORTS",
+    "signal_date": "2026-09-29",
+    "close": 1822.0,
+    "bullish_count": 92,
+    "bearish_count": 1,
+    "neutral_count": 6,
+    "total_count": 99,
+    "bullish_pct": 92.9
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "signal_date": "2026-09-29",
+    "close": 973.8,
+    "bullish_count": 154,
+    "bearish_count": 7,
+    "neutral_count": 6,
+    "total_count": 167,
+    "bullish_pct": 92.2
+  },
+  {
+    "symbol": "ETERNAL",
+    "signal_date": "2026-09-29",
+    "close": 327.85,
+    "bullish_count": 88,
+    "bearish_count": 3,
+    "neutral_count": 4,
+    "total_count": 95,
+    "bullish_pct": 92.6
+  },
+  {
+    "symbol": "AUBANK",
+    "signal_date": "2026-09-29",
+    "close": 1005.2,
+    "bullish_count": 117,
+    "bearish_count": 5,
+    "neutral_count": 6,
+    "total_count": 128,
+    "bullish_pct": 91.4
+  },
+  {
+    "symbol": "TCIEXP",
+    "signal_date": "2026-09-29",
+    "close": 531.85,
+    "bullish_count": 86,
+    "bearish_count": 0,
+    "neutral_count": 9,
+    "total_count": 95,
+    "bullish_pct": 90.5
+  },
+  {
+    "symbol": "DRREDDY",
+    "signal_date": "2026-09-29",
+    "close": 1251.9,
+    "bullish_count": 70,
+    "bearish_count": 1,
+    "neutral_count": 4,
+    "total_count": 75,
+    "bullish_pct": 93.3
+  },
+  {
+    "symbol": "GRANULES",
+    "signal_date": "2026-09-29",
+    "close": 866.75,
+    "bullish_count": 75,
+    "bearish_count": 2,
+    "neutral_count": 4,
+    "total_count": 81,
+    "bullish_pct": 92.6
+  },
+  {
+    "symbol": "SBIN",
+    "signal_date": "2026-09-29",
+    "close": 964.7,
+    "bullish_count": 110,
+    "bearish_count": 5,
+    "neutral_count": 7,
+    "total_count": 122,
+    "bullish_pct": 90.2
+  },
+  {
+    "symbol": "HCG",
+    "signal_date": "2026-09-29",
+    "close": 703.6,
+    "bullish_count": 48,
+    "bearish_count": 1,
+    "neutral_count": 4,
+    "total_count": 53,
+    "bullish_pct": 90.6
+  },
+  {
+    "symbol": "POONAWALLA",
+    "signal_date": "2026-09-29",
+    "close": 443.0,
+    "bullish_count": 78,
+    "bearish_count": 4,
+    "neutral_count": 4,
+    "total_count": 86,
+    "bullish_pct": 90.7
+  },
+  {
+    "symbol": "HCLTECH",
+    "signal_date": "2026-09-29",
+    "close": 1222.0,
+    "bullish_count": 159,
+    "bearish_count": 9,
+    "neutral_count": 5,
+    "total_count": 173,
+    "bullish_pct": 91.9
+  },
+  {
+    "symbol": "TECHM",
+    "signal_date": "2026-09-29",
+    "close": 1510.5,
+    "bullish_count": 111,
+    "bearish_count": 9,
+    "neutral_count": 3,
+    "total_count": 123,
+    "bullish_pct": 90.2
+  },
+  {
+    "symbol": "CANFINHOME",
+    "signal_date": "2026-09-29",
+    "close": 731.7,
+    "bullish_count": 108,
+    "bearish_count": 7,
+    "neutral_count": 3,
+    "total_count": 118,
+    "bullish_pct": 91.5
+  },
+  {
+    "symbol": "LTM",
+    "signal_date": "2026-09-29",
+    "close": 3936.0,
+    "bullish_count": 144,
+    "bearish_count": 11,
+    "neutral_count": 4,
+    "total_count": 159,
+    "bullish_pct": 90.6
+  },
+  {
+    "symbol": "LT",
+    "signal_date": "2026-09-29",
+    "close": 3749.1,
+    "bullish_count": 93,
+    "bearish_count": 7,
+    "neutral_count": 1,
+    "total_count": 101,
+    "bullish_pct": 92.1
   }
 ]
