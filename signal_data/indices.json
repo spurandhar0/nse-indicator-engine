@@ -1,55 +1,55 @@
 {
-  "updated": "13 Oct 2026 01:49 IST",
+  "updated": "13 Oct 2026 23:59 IST",
   "indices": [
     {
       "name": "Nifty 50",
       "symbol": "^NSEI",
       "color": "#4fc3f7",
-      "price": 22363.35,
-      "prev": 22520.45,
-      "change": -157.1,
-      "change_pct": -0.7,
-      "time": "12 Oct 2026 15:31"
+      "price": 22721.95,
+      "prev": 22363.35,
+      "change": 358.6,
+      "change_pct": 1.6,
+      "time": "13 Oct 2026 15:31"
     },
     {
       "name": "Sensex",
       "symbol": "^BSESN",
       "color": "#81c784",
-      "price": 71924.68,
-      "prev": 72472.33,
-      "change": -547.65,
-      "change_pct": -0.76,
-      "time": "12 Oct 2026 15:32"
+      "price": 73033.78,
+      "prev": 71924.68,
+      "change": 1109.1,
+      "change_pct": 1.54,
+      "time": "13 Oct 2026 15:32"
     },
     {
       "name": "Nifty Bank",
       "symbol": "^NSEBANK",
       "color": "#ffb74d",
-      "price": 54918.0,
-      "prev": 55256.65,
-      "change": -338.65,
-      "change_pct": -0.61,
-      "time": "12 Oct 2026 15:31"
+      "price": 55481.05,
+      "prev": 54918.0,
+      "change": 563.05,
+      "change_pct": 1.03,
+      "time": "13 Oct 2026 15:31"
     },
     {
       "name": "Nifty IT",
       "symbol": "^CNXIT",
       "color": "#ce93d8",
-      "price": 28349.6,
-      "prev": 28574.9,
-      "change": -225.3,
-      "change_pct": -0.79,
-      "time": "12 Oct 2026 15:31"
+      "price": 29830.1,
+      "prev": 28349.6,
+      "change": 1480.5,
+      "change_pct": 5.22,
+      "time": "13 Oct 2026 15:31"
     },
     {
       "name": "Nifty Midcap50",
       "symbol": "^NSMIDCP",
       "color": "#80cbc4",
-      "price": 68351.7,
-      "prev": 68166.7,
-      "change": 185.0,
-      "change_pct": 0.27,
-      "time": "12 Oct 2026 15:31"
+      "price": 68927.95,
+      "prev": 68351.7,
+      "change": 576.25,
+      "change_pct": 0.84,
+      "time": "13 Oct 2026 15:31"
     }
   ]
 }
