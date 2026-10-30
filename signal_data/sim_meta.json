@@ -1,16 +1,16 @@
 {
-  "last_run": "2026-10-29 17:41 IST",
-  "last_trade_day": "2026-10-29",
-  "total_signals": 13151,
-  "open_count": 384,
-  "closed_count": 1177,
+  "last_run": "2026-10-30 17:16 IST",
+  "last_trade_day": "2026-10-30",
+  "total_signals": 13237,
+  "open_count": 381,
+  "closed_count": 1195,
   "fe_count": 326,
-  "profit_count": 1147,
-  "loss_count": 30,
-  "win_rate": 97.5,
+  "profit_count": 1162,
+  "loss_count": 33,
+  "win_rate": 97.2,
   "avg_gain_pct": 10.0,
   "avg_loss_pct": -25.0,
-  "new_exits": 28,
-  "new_buys_added": 37,
-  "new_positions": 71
+  "new_exits": 18,
+  "new_buys_added": 36,
+  "new_positions": 15
 }
