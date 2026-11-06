@@ -1,16 +1,21 @@
-name: NSE Bhavcopy Fetch (Daily 6:15PM IST)
+name: NSE Bhavcopy Fetch (Daily 7PM IST)
 
 on:
   schedule:
-    - cron: "15 11 * * 1-5"   # 6:15 PM IST = 12:45 UTC, Mon-Fri
+    - cron: "30 13 * * 1-5"   # 7:00 PM IST = 13:30 UTC, Mon-Fri (NSE publication buffer)
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: nse-bhavcopy-fetch
+  cancel-in-progress: false
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4

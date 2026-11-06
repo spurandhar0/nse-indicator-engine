@@ -2,7 +2,7 @@ name: NSE Indicator Engine
 
 on:
   workflow_run:
-    workflows: ["NSE Bhavcopy Fetch (Daily 6:15PM IST)"]
+    workflows: ["NSE Bhavcopy Fetch (Daily 7PM IST)"]
     types: [completed]
   workflow_dispatch:
 
