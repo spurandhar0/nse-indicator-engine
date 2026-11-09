@@ -1,0 +1,122 @@
+name: Recover NSE Indicator Reports (4-5 Nov 2026)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: historical-indicator-recovery-nov-2026
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - date: 04-Nov-2026
+            source: 04b41f578aeff379329f25f7115450cfbc6136fc
+          - date: 05-Nov-2026
+            source: 9b2b97f614a6cd4f257268b65d50e86b7ef01fb3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install report dependencies
+        run: pip install requests pandas pytz
+      - name: Restore original snapshot and generate historical report
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          MC_AUTH_TOKEN: ${{ secrets.MC_AUTH_TOKEN }}
+        run: |
+          cat > /tmp/recover_indicator_report.py <<'PY'
+          """Recover one archived daily report without modifying the live output folders."""
+          import argparse
+          import importlib.util
+          import os
+          from pathlib import Path
+          import shutil
+          import subprocess
+          import tempfile
+          from datetime import datetime
+          
+          import pandas as pd
+          
+          
+          def main():
+              parser = argparse.ArgumentParser()
+              parser.add_argument('--date', required=True)
+              parser.add_argument('--source-ref', required=True)
+              args = parser.parse_args()
+              day = datetime.strptime(args.date, '%d-%b-%Y')
+              repo = Path.cwd()
+              destination = repo / 'recovery_reports'
+              destination.mkdir(exist_ok=True)
+              with tempfile.TemporaryDirectory(prefix='nse-report-recovery-') as tmp:
+                  root = Path(tmp)
+                  source = f'indicator_data/{args.date}'
+                  archive = subprocess.run(['git', 'archive', args.source_ref, source], check=True, capture_output=True)
+                  subprocess.run(['tar', '-xf', '-', '-C', str(root)], input=archive.stdout, check=True)
+                  if not list((root / source).glob('*.csv')):
+                      raise RuntimeError('Archived indicator snapshot is empty')
+                  shutil.copytree(repo / 'src', root / 'src')
+                  if (repo / 'bhav_data').exists():
+                      shutil.copytree(repo / 'bhav_data', root / 'bhav_data')
+                  os.chdir(root)
+                  spec = importlib.util.spec_from_file_location('recovery_engine', root / 'src/nse_engine.py')
+                  engine = importlib.util.module_from_spec(spec)
+                  spec.loader.exec_module(engine)
+                  bhav = root / 'bhav_data' / day.strftime('%b-%Y') / f'sec_bhavdata_full_{day:%d%m%Y}.csv'
+                  if not bhav.exists() and not engine._download_bhav(day, str(bhav)):
+                      raise RuntimeError(f'Exact-date bhavcopy unavailable: {args.date}')
+                  data = pd.read_csv(bhav)
+                  data.columns = data.columns.str.strip()
+                  if not {'SYMBOL', 'DATE1', 'CLOSE_PRICE'}.issubset(data.columns) or data.empty:
+                      raise RuntimeError('Invalid bhavcopy contents')
+                  dates = pd.to_datetime(data['DATE1'].str.strip(), dayfirst=True, errors='coerce')
+                  if dates.isna().any() or not dates.dt.date.eq(day.date()).all():
+                      raise RuntimeError('Bhavcopy date does not match requested report date')
+          
+                  def send_verified(filepath, caption):
+                      report = pd.read_csv(filepath, low_memory=False)
+                      if report.empty or set(report['Date']) != {args.date}:
+                          raise RuntimeError('Generated report has missing or incorrect dates')
+                      target = destination / Path(filepath).name
+                      shutil.copy2(filepath, target)
+                      if not engine.BOT_TOKEN or not engine.CHAT_ID:
+                          raise RuntimeError('Telegram credentials are not configured')
+                      with open(target, 'rb') as document:
+                          response = engine.requests.post(
+                              f'https://api.telegram.org/bot{engine.BOT_TOKEN}/sendDocument',
+                              data={'chat_id': engine.CHAT_ID, 'caption': 'Historical recovery\n' + caption, 'parse_mode': 'Markdown'},
+                              files={'document': document}, timeout=180)
+                      result = response.json()
+                      if response.status_code != 200 or not result.get('ok'):
+                          raise RuntimeError('Telegram did not accept recovered report')
+                      print(f'RECOVERY VERIFIED: date={args.date} rows={len(report)} files={report.IndicatorFile.nunique()} telegram_message_id={result["result"]["message_id"]}', flush=True)
+          
+                  engine.tg_file = send_verified
+                  engine.main()
+                  expected = destination / f'NSE_Indicator_Report_{args.date}.csv'
+                  if not expected.exists():
+                      raise RuntimeError('Expected recovered report was not generated')
+                  os.chdir(repo)
+          
+          
+          if __name__ == '__main__':
+              main()
+          PY
+          python /tmp/recover_indicator_report.py --date '${{ matrix.date }}' --source-ref '${{ matrix.source }}'
+      - name: Save recovered CSV
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NSE-Indicator-Report-${{ matrix.date }}
+          path: recovery_reports/*.csv
+          if-no-files-found: warn
+          retention-days: 30
