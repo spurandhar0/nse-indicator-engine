@@ -43,7 +43,7 @@ jobs:
           import shutil
           import subprocess
           import tempfile
-          from datetime import datetime
+          from datetime import datetime, timedelta
           
           import pandas as pd
           
@@ -59,11 +59,15 @@ jobs:
               destination.mkdir(exist_ok=True)
               with tempfile.TemporaryDirectory(prefix='nse-report-recovery-') as tmp:
                   root = Path(tmp)
-                  source = f'indicator_data/{args.date}'
+                  # These two archived MC runs finished just after midnight IST and
+                  # named their folders for the collection day, not the trading day.
+                  collection_day = day + timedelta(days=1)
+                  source = f'indicator_data/{collection_day:%d-%b-%Y}'
                   archive = subprocess.run(['git', 'archive', args.source_ref, source], check=True, capture_output=True)
                   subprocess.run(['tar', '-xf', '-', '-C', str(root)], input=archive.stdout, check=True)
                   if not list((root / source).glob('*.csv')):
                       raise RuntimeError('Archived indicator snapshot is empty')
+                  (root / source).rename(root / 'indicator_data' / args.date)
                   shutil.copytree(repo / 'src', root / 'src')
                   if (repo / 'bhav_data').exists():
                       shutil.copytree(repo / 'bhav_data', root / 'bhav_data')
@@ -93,7 +97,7 @@ jobs:
                       with open(target, 'rb') as document:
                           response = engine.requests.post(
                               f'https://api.telegram.org/bot{engine.BOT_TOKEN}/sendDocument',
-                              data={'chat_id': engine.CHAT_ID, 'caption': 'Historical recovery\n' + caption, 'parse_mode': 'Markdown'},
+                              data={'chat_id': engine.CHAT_ID, 'caption': f'Historical reconstruction: MC snapshot collected early {collection_day:%d-%b-%Y} IST; matched to {args.date} bhavcopy.\n' + caption[:800], 'parse_mode': 'Markdown'},
                               files={'document': document}, timeout=180)
                       result = response.json()
                       if response.status_code != 200 or not result.get('ok'):
