@@ -39,6 +39,7 @@ from io import StringIO
 import pandas as pd
 import requests
 from datetime import datetime
+from nse_bhavcopy_fetch import validate_csv
 import pytz
 
 # ─── CONFIG ──────────────────────────────────────────────────────────────────
@@ -292,6 +293,7 @@ def _download_bhav(dt_obj, save_path):
         _time.sleep(1)
         resp = session.get(url, headers=dl_headers, timeout=60)
         if resp.status_code == 200 and len(resp.content) > 1000:
+            validate_csv(resp.content, dt_obj.date())
             with open(save_path, "wb") as f:
                 f.write(resp.content)
             print(f"  ✅ Auto-downloaded: {filename} ({len(resp.content)//1024} KB) → {save_path}")
@@ -321,7 +323,13 @@ def load_bhav(trade_date_str):
             tg_message(f"⚠️ NSE Engine — Bhav file not found and auto-download failed for {trade_date_str}")
             return None
 
-    bhav = pd.read_csv(path)
+    try:
+        with open(path, "rb") as source:
+            validate_csv(source.read(), dt_obj.date())
+        bhav = pd.read_csv(path)
+    except (OSError, ValueError, pd.errors.ParserError) as exc:
+        print(f"  Invalid bhavcopy for {trade_date_str}: {exc}")
+        return None
     bhav.columns        = bhav.columns.str.strip()
     bhav["SYMBOL"]      = bhav["SYMBOL"].str.strip().str.upper()
     bhav["SERIES"]      = bhav["SERIES"].str.strip()
@@ -844,8 +852,8 @@ def detect_trend(fname, signal):
     return "Neutral"
 
 # ─── PROCESS ONE DATE FOLDER ─────────────────────────────────────────────────
-def process_date(date_folder, mc_map, mapping_df, name_map):
-    trade_date = os.path.basename(date_folder)
+def process_date(date_folder, mc_map, mapping_df, name_map, trade_date=None):
+    trade_date = trade_date or os.path.basename(date_folder)
     print(f"\n📅 Processing: {trade_date}")
 
     bhav_eq = load_bhav(trade_date)
@@ -1011,20 +1019,27 @@ def main():
         print(msg); tg_message(msg)
         return
 
-    # Process ONLY the latest date folder (today's data — not consolidated)
-    date_folders = date_folders[:1]
+    snapshot_date = os.environ.get("INDICATOR_SNAPSHOT_DATE") or ""
+    trade_date = os.environ.get("INDICATOR_TRADE_DATE") or None
+    for value in (snapshot_date, trade_date):
+        if value and datetime.strptime(value, "%d-%b-%Y").strftime("%d-%b-%Y") != value:
+            raise ValueError("Expected date as DD-Mon-YYYY")
+    if snapshot_date:
+        date_folders = [os.path.join(INDICATOR_ROOT, snapshot_date)]
+    else:
+        date_folders = date_folders[:1]
 
     all_results = []
     for folder in date_folders:
         if not os.path.isdir(folder):
             continue
-        results, mc_map, mapping_df = process_date(folder, mc_map, mapping_df, name_map)
+        results, mc_map, mapping_df = process_date(folder, mc_map, mapping_df, name_map, trade_date)
         all_results.extend(results)
 
     if not all_results:
         msg = f"⚠️ NSE Engine — {now_ist.strftime('%d-%b-%Y')}\\nNo matches found."
         print(msg); tg_message(msg)
-        return
+        raise SystemExit(1)
 
     df = pd.DataFrame(all_results)
 
