@@ -47,7 +47,11 @@ IST = timezone(timedelta(hours=5, minutes=30))
 NOW_IST = dt.now(tz=IST)
 RUN_TIMESTAMP = NOW_IST.strftime('%Y-%m-%d_%H%M')
 
-IST_DATE_FOLDER = NOW_IST.strftime('%d-%b-%Y')   # e.g., "08-Apr-2026"
+# Scheduled evening collection can start after midnight if Actions is delayed.
+session_time = NOW_IST
+if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and NOW_IST.hour < 6:
+    session_time -= timedelta(days=1)
+IST_DATE_FOLDER = session_time.strftime('%d-%b-%Y')
 OUTPUT_DIR = f'indicator_data/{IST_DATE_FOLDER}'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

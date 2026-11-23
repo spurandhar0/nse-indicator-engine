@@ -5,6 +5,15 @@ on:
     workflows: ["NSE Bhavcopy Fetch (Daily 7PM IST)"]
     types: [completed]
   workflow_dispatch:
+    inputs:
+      snapshot_date:
+        description: 'Indicator folder date (DD-Mon-YYYY)'
+        required: false
+        type: string
+      trade_date:
+        description: 'Bhavcopy trading date (DD-Mon-YYYY)'
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -29,6 +38,8 @@ jobs:
 
       - name: Run NSE Indicator Engine
         env:
+          INDICATOR_SNAPSHOT_DATE: ${{ inputs.snapshot_date }}
+          INDICATOR_TRADE_DATE: ${{ inputs.trade_date }}
           TG_BOT_TOKEN:  ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID:    ${{ secrets.TG_CHAT_ID }}
           MC_AUTH_TOKEN: ${{ secrets.MC_AUTH_TOKEN }}
